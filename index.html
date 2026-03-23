@@ -7,387 +7,167 @@
   <meta name="description" content="Ruishi Qi — Physics PhD candidate at UC Berkeley and incoming Stanford Science Fellow." />
   <style>
     :root {
-      --bg: #f7f7f5;
+      --bg: #f5f6f8;
       --surface: #ffffff;
-      --text: #1d1d1f;
-      --muted: #5c5c62;
-      --line: #d9d9de;
+      --surface-soft: #fafbfc;
+      --text: #1d2433;
+      --muted: #5e6778;
+      --line: #dde3ea;
       --accent: #1f4f8f;
-      --accent-soft: #e9f0fb;
-      --maxw: 920px;
+      --accent-soft: #eaf1fb;
+      --shadow: 0 10px 30px rgba(20, 28, 45, 0.06);
+      --radius: 20px;
+      --maxw: 1040px;
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       color: var(--text);
-      background: var(--bg);
-      line-height: 1.6;
+      background: linear-gradient(to bottom, #f9fafc 0%, #f5f6f8 100%);
+      line-height: 1.65;
     }
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
+    a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    .container {
-      width: min(100% - 2rem, var(--maxw));
-      margin: 0 auto;
-    }
+    .container { width: min(100% - 2rem, var(--maxw)); margin: 0 auto; }
 
     header {
-      background: linear-gradient(to bottom, #ffffff 0%, #fafafa 100%);
-      border-bottom: 1px solid var(--line);
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(8px);
+      position: sticky; top: 0; z-index: 30;
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(221,227,234,0.8);
     }
 
     .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      min-height: 64px;
+      min-height: 72px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1.2rem;
     }
 
-    .brand {
-      font-size: 1.1rem;
-      font-weight: 700;
-      letter-spacing: 0.01em;
-      color: var(--text);
-    }
+    .brand { display: flex; flex-direction: column; color: var(--text); }
+    .brand strong { font-size: 1.06rem; font-weight: 700; }
+    .brand span { color: var(--muted); font-size: 0.9rem; }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1rem;
-      padding: 0;
-      margin: 0;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
+    .tabs { display: flex; gap: 0.45rem; flex-wrap: wrap; }
 
-    nav a {
+    .tab-link {
+      border: none; background: transparent; cursor: pointer;
+      padding: 0.6rem 0.9rem; border-radius: 999px;
       color: var(--muted);
-      font-size: 0.96rem;
     }
 
-    .hero {
-      padding: 5rem 0 3rem;
+    .tab-link.active {
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 600;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.3fr 0.7fr;
-      gap: 2rem;
-      align-items: start;
-    }
+    .panel { display: none; }
+    .panel.active { display: block; }
 
-    h1 {
-      font-size: clamp(2.2rem, 4vw, 3.4rem);
-      line-height: 1.1;
-      margin: 0 0 0.9rem;
-      font-weight: 700;
-    }
+    main { padding: 2rem 0; }
 
-    .subtitle {
-      font-size: 1.08rem;
-      color: var(--muted);
-      max-width: 42rem;
-      margin-bottom: 1.4rem;
-    }
-
-    .hero-card {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 1.1rem 1.2rem;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
-    }
-
-    .hero-card h3 {
-      margin: 0 0 0.65rem;
-      font-size: 1rem;
-    }
-
-    .hero-card p,
-    .hero-card li {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .quick-links {
-      display: flex;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-      margin-top: 1.2rem;
-    }
+    h1 { font-size: 3rem; margin-bottom: 0.8rem; }
+    h2 { margin-bottom: 1rem; }
 
     .button {
-      display: inline-block;
-      padding: 0.75rem 1rem;
+      padding: 0.6rem 1rem;
       border-radius: 999px;
       background: var(--accent);
-      color: #fff;
-      font-size: 0.95rem;
-      border: 1px solid var(--accent);
+      color: white;
+      border: none;
+      cursor: pointer;
     }
 
     .button.secondary {
       background: transparent;
       color: var(--accent);
-      border-color: var(--line);
-    }
-
-    main section {
-      padding: 2.25rem 0;
-      border-top: 1px solid var(--line);
-    }
-
-    h2 {
-      font-size: 1.55rem;
-      margin: 0 0 1rem;
-      font-weight: 700;
-    }
-
-    p { margin: 0 0 1rem; }
-
-    .meta-list,
-    .pub-list,
-    .news-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .meta-list li,
-    .news-list li {
-      margin-bottom: 0.7rem;
-    }
-
-    .pub-list li {
-      padding: 0.95rem 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .pub-list li:last-child { border-bottom: none; }
-
-    .pub-title {
-      display: block;
-      font-weight: 700;
-      margin-bottom: 0.2rem;
-    }
-
-    .pub-meta {
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-    }
-
-    .section-card {
-      background: var(--surface);
       border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 1.1rem 1.2rem;
     }
 
-    .section-card h3 {
-      margin-top: 0;
-      margin-bottom: 0.8rem;
-      font-size: 1.05rem;
-    }
+    .pub-list li { margin-bottom: 1rem; }
 
-    footer {
-      padding: 2rem 0 3rem;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .small {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    @media (max-width: 860px) {
-      .hero-grid,
-      .two-col {
-        grid-template-columns: 1fr;
-      }
-
-      .nav {
-        align-items: flex-start;
-        padding: 0.75rem 0;
-        flex-direction: column;
-      }
-    }
   </style>
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <a class="brand" href="#top">Ruishi Qi</a>
-      <nav aria-label="Main navigation">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#research">Research</a></li>
-          <li><a href="#publications">Publications</a></li>
-          <li><a href="#cv">CV</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+
+<header>
+  <div class="container nav">
+    <div class="brand">
+      <strong>Ruishi Qi</strong>
+      <span>UC Berkeley · Stanford Science Fellow</span>
     </div>
-  </header>
 
-  <main id="top">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <h1>Ruishi Qi</h1>
-          <p class="subtitle">
-            Physics Ph.D. candidate at the University of California, Berkeley, and incoming Stanford Science Fellow. My research focuses on strongly correlated quantum matter in van der Waals electron–hole bilayers, with emphasis on excitonic insulators, condensates, and related collective phases.
-          </p>
-          <div class="quick-links">
-            <a class="button" href="#publications">Selected Publications</a>
-            <a class="button secondary" href="#cv">Curriculum Vitae</a>
-          </div>
-        </div>
-        <aside class="hero-card" aria-label="Summary">
-          <h3>Current Position</h3>
-          <p>Ph.D. Candidate, Department of Physics, UC Berkeley</p>
-          <h3 style="margin-top:1rem;">Incoming Appointment</h3>
-          <p>Stanford Science Fellow, Stanford University</p>
-          <h3 style="margin-top:1rem;">Research Areas</h3>
-          <p>Strongly correlated quantum matter, two-dimensional materials, excitonic insulators and condensates, low-temperature optical and transport spectroscopy</p>
-        </aside>
-      </div>
-    </section>
+    <nav class="tabs">
+      <button class="tab-link active" data-tab="about">About</button>
+      <button class="tab-link" data-tab="publications">Publications</button>
+      <button class="tab-link" data-tab="cv">CV</button>
+      <button class="tab-link" data-tab="contact">Contact</button>
+    </nav>
+  </div>
+</header>
 
-    <section id="about">
-      <div class="container">
-        <h2>About</h2>
-        <p>
-          I study many-body quantum phases formed by interacting electrons and holes in two-dimensional van der Waals heterostructures. My recent work explores equilibrium excitonic phenomena in electrically tunable bilayer systems, including interlayer excitons, trions, biexciton fluids, exciton condensates, and exciton crystals.
-        </p>
-        <p>
-          Experimentally, I develop low-temperature optical and transport techniques for correlated electronic systems, combining spectroscopy, compressibility, and Coulomb-drag measurements in high magnetic field and dilution-refrigerator environments.
-        </p>
-      </div>
-    </section>
+<main class="container">
 
-    <section id="research">
-      <div class="container">
-        <h2>Research</h2>
-        <div class="two-col">
-          <div class="section-card">
-            <h3>Current Focus</h3>
-            <ul class="meta-list">
-              <li>Equilibrium excitonic phases in van der Waals electron–hole bilayers</li>
-              <li>Interplay between excitonic insulators and quantum Hall states</li>
-              <li>Trions, biexcitons, and multicomponent excitonic fluids</li>
-              <li>Exciton condensation and exciton crystallization</li>
-            </ul>
-          </div>
-          <div class="section-card">
-            <h3>Experimental Methods</h3>
-            <ul class="meta-list">
-              <li>Low-temperature optical spectroscopy</li>
-              <li>Quantum transport and Coulomb drag</li>
-              <li>Dilution-refrigerator measurements in high magnetic field</li>
-              <li>Van der Waals device design and characterization</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+<section class="panel active" id="panel-about">
+  <h1>Ruishi Qi</h1>
+  <p>
+    Physics Ph.D. candidate at UC Berkeley. I study strongly correlated quantum matter in van der Waals electron–hole bilayers, focusing on excitonic insulators and related collective phases.
+  </p>
+</section>
 
-    <section id="publications">
-      <div class="container">
-        <h2>Selected Publications</h2>
-        <ul class="pub-list">
-          <li>
-            <span class="pub-title">Observation of two-component exciton condensates in an excitonic insulator</span>
-            <div class="pub-meta">R. Qi, Q. Li, J. Nie, …, F. Wang. arXiv:2603.15443 (2026); under revision at Nature.</div>
-          </li>
-          <li>
-            <span class="pub-title">Gate-tunable biexcitons in electron–hole–electron trilayers</span>
-            <div class="pub-meta">R. Qi, Q. Li, Z. Zhang, …, F. Wang. Under revision at Science.</div>
-          </li>
-          <li>
-            <span class="pub-title">An exciton crystal in a moiré excitonic insulator</span>
-            <div class="pub-meta">R. Qi, Q. Li, H. Kim, …, F. Wang. Nature Physics (2026).</div>
-          </li>
-          <li>
-            <span class="pub-title">Competition between excitonic insulators and quantum Hall states in correlated electron–hole bilayers</span>
-            <div class="pub-meta">R. Qi, Q. Li, Z. Zhang, …, F. Wang. Nature Materials 25, 35–41 (2026).</div>
-          </li>
-          <li>
-            <span class="pub-title">Electrically controlled interlayer trion fluid in electron–hole bilayers</span>
-            <div class="pub-meta">R. Qi, Q. Li, Z. Zhang, …, F. Wang. Science 390, 299–303 (2025).</div>
-          </li>
-          <li>
-            <span class="pub-title">Perfect Coulomb drag and exciton transport in an excitonic insulator</span>
-            <div class="pub-meta">R. Qi, A. Joe, Z. Zhang, …, F. Wang. Science 388, 278–283 (2025).</div>
-          </li>
-        </ul>
-        <p class="small" style="margin-top:1rem;">A full publication list can be linked here once you decide whether to use Google Scholar, a dedicated publications page, or both.</p>
-      </div>
-    </section>
+<section class="panel" id="panel-publications">
+  <h2>Publications</h2>
 
-    <section id="cv">
-      <div class="container">
-        <h2>Curriculum Vitae</h2>
-        <p>
-          A PDF version of my curriculum vitae will be linked here.
-        </p>
-        <p class="small">
-          Suggested file name: <code>Ruishi_Qi_CV.pdf</code>
-        </p>
-      </div>
-    </section>
+  <p>
+    <a class="button secondary" href="https://scholar.google.com/citations?user=NA7sfwsAAAAJ&hl=en" target="_blank">Google Scholar</a>
+  </p>
 
-    <section id="contact">
-      <div class="container two-col">
-        <div>
-          <h2>Contact</h2>
-          <ul class="meta-list">
-            <li>Email: <a href="mailto:ruishiqi@berkeley.edu">ruishiqi@berkeley.edu</a></li>
-            <li>Department of Physics, University of California, Berkeley</li>
-            <li>Berkeley, California, USA</li>
-          </ul>
-        </div>
-        <div class="section-card">
-          <h3>Notes for Customization</h3>
-          <ul class="meta-list">
-            <li>Replace placeholder publication text with final links.</li>
-            <li>Add Google Scholar, ORCID, and GitHub links in the header if desired.</li>
-            <li>Add a headshot only if you want a more personal homepage style.</li>
-            <li>This file can be used directly as <code>index.html</code> for GitHub Pages.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-  </main>
+  <ul class="pub-list">
+    <li>
+      <strong>Observation of two-component exciton condensates in an excitonic insulator</strong><br>
+      R. Qi, ... (2026)
+    </li>
+  </ul>
+</section>
 
-  <footer>
-    <div class="container">
-      <div>© <span id="year"></span> Ruishi Qi</div>
-    </div>
-  </footer>
+<section class="panel" id="panel-cv">
+  <h2>Curriculum Vitae</h2>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <p>
+    <a class="button" href="cv/Ruishi_Qi_CV.pdf" target="_blank">Open CV</a>
+  </p>
+
+  <p>
+    (Upload your PDF to a folder named <code>cv/</code> in your GitHub repo.)
+  </p>
+</section>
+
+<section class="panel" id="panel-contact">
+  <h2>Contact</h2>
+  <p>Email: ruishiqi@berkeley.edu</p>
+</section>
+
+</main>
+
+<script>
+const tabs = document.querySelectorAll('.tab-link');
+const panels = document.querySelectorAll('.panel');
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    panels.forEach(p => p.classList.remove('active'));
+
+    tab.classList.add('active');
+    document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
+  });
+});
+</script>
+
 </body>
 </html>
