@@ -27,7 +27,7 @@
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       color: var(--text);
       background: linear-gradient(to bottom, #f9fafc 0%, #f5f6f8 100%);
-      line-height: 1.65;
+      line-height: 1.7;
     }
 
     a { color: var(--accent); text-decoration: none; }
@@ -57,7 +57,7 @@
     .tab-link {
       border: none; background: transparent; cursor: pointer;
       padding: 0.6rem 0.9rem; border-radius: 999px;
-      color: var(--muted);
+      color: var(--muted); font: inherit;
     }
 
     .tab-link.active {
@@ -69,19 +69,76 @@
     .panel { display: none; }
     .panel.active { display: block; }
 
-    main { padding: 2rem 0; }
+    main { padding: 2rem 0 2.5rem; }
 
-    h1 { font-size: 3rem; margin-bottom: 0.8rem; }
-    h2 { margin-bottom: 1rem; }
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1.05;
+      margin: 0 0 0.9rem;
+      letter-spacing: -0.03em;
+    }
+
+    h2 {
+      margin: 0 0 1rem;
+      font-size: 1.7rem;
+      color: var(--accent);
+      font-weight: 500;
+      text-align: center;
+    }
+
+    h3 {
+      margin: 0 0 0.8rem;
+      font-size: 1.1rem;
+    }
+
+    .hero-card, .section-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      padding: 1.8rem 1.8rem 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .section-card {
+      padding: 1.5rem 1.5rem 1.35rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .lead {
+      font-size: 1.08rem;
+      color: var(--muted);
+      margin: 0;
+      max-width: 54rem;
+    }
+
+    .about-text p {
+      margin: 0 0 1rem;
+    }
+
+    .button-row, .link-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
 
     .button {
-      padding: 0.6rem 1rem;
+      padding: 0.68rem 1rem;
       border-radius: 999px;
       background: var(--accent);
       color: white;
       border: none;
       cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      font-weight: 600;
     }
+
+    .button:hover { text-decoration: none; }
 
     .button.secondary {
       background: transparent;
@@ -89,8 +146,39 @@
       border: 1px solid var(--line);
     }
 
+    .news-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .news-list li {
+      padding: 0.95rem 0;
+      border-top: 1px solid var(--line);
+      font-size: 1.02rem;
+    }
+
+    .news-list li:first-child { border-top: none; }
+
+    .news-date {
+      white-space: nowrap;
+      font-weight: 500;
+    }
+
+    .news-divider {
+      color: var(--muted);
+      padding: 0 0.35rem;
+    }
+
     .pub-list li { margin-bottom: 1rem; }
 
+    @media (max-width: 820px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 0.9rem 0;
+      }
+    }
   </style>
 </head>
 <body>
@@ -103,7 +191,7 @@
     </div>
 
     <nav class="tabs">
-      <button class="tab-link active" data-tab="about">About</button>
+      <button class="tab-link active" data-tab="home">Home</button>
       <button class="tab-link" data-tab="publications">Publications</button>
       <button class="tab-link" data-tab="cv">CV</button>
       <button class="tab-link" data-tab="contact">Contact</button>
@@ -113,26 +201,119 @@
 
 <main class="container">
 
-<section class="panel active" id="panel-about">
-  <h1>Ruishi Qi</h1>
-  <p>
-    Physics Ph.D. candidate at UC Berkeley. I study strongly correlated quantum matter in van der Waals electron–hole bilayers, focusing on excitonic insulators and related collective phases.
-  </p>
+<section class="panel active" id="panel-home">
+  <div class="hero-card">
+    <h1>Ruishi Qi</h1>
+    <p class="lead">
+      Physics Ph.D. candidate at UC Berkeley working on strongly interacting electron-hole systems in two-dimensional van der Waals heterostructures.
+    </p>
+  </div>
+
+  <div class="section-card">
+    <h2>About</h2>
+    <div class="about-text">
+      <p>I am a Ph.D. candidate in Physics at the University of California, Berkeley. I received my Bachelor's degree in Physics from Peking University in 2020. Starting this summer, I will join Stanford as a Stanford Science Fellow.</p>
+      <p>At Berkeley, I work in Prof. Feng Wang's group, where my Ph.D. research focuses on strongly interacting electron-hole systems in two-dimensional van der Waals heterostructures. I combine high-quality device fabrication with low-temperature optical and electrical measurements to study interaction-driven phases in reduced dimensions. My current research interests center on excitonic and correlated electronic phases, including excitonic insulators, biexciton and trion fluids, and related many-body states arising from strong Coulomb interactions in 2D systems.</p>
+      <p>During my undergraduate studies at Peking University, I carried out research in Prof. Peng Gao's lab. Using electron energy-loss spectroscopy inside an electron microscope, I studied phonon dynamics at the nanometer scale.</p>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <h2>News</h2>
+    <ul class="news-list">
+      <li><span class="news-date">Jan 2026</span><span class="news-divider">|</span>I am awarded the 2026 <strong>Stanford Science Fellow</strong>. I will join Stanford this summer.</li>
+      <li><span class="news-date">Jan 2026</span><span class="news-divider">|</span>Our paper <em>An exciton crystal in a moire excitonic insulator</em> is accepted by <strong>Nature Physics</strong>.</li>
+      <li><span class="news-date">Oct 2025</span><span class="news-divider">|</span>Our paper <em>Electrically controlled interlayer trion fluid in electron-hole bilayers</em> is published in <strong>Science</strong>.</li>
+      <li><span class="news-date">Aug 2025</span><span class="news-divider">|</span>Our paper <em>Competition between excitonic insulators and quantum Hall states in correlated electron-hole fluids</em> is published in <strong>Nature Materials</strong>.</li>
+      <li><span class="news-date">Apr 2025</span><span class="news-divider">|</span>Our paper <em>Perfect Coulomb drag and exciton transport in an excitonic insulator</em> is published in <strong>Science</strong>.</li>
+      <li><span class="news-date">Dec 2023</span><span class="news-divider">|</span>Our paper <em>Thermodynamic behavior of correlated electron-hole fluids in van der Waals heterostructures</em> is published in <strong>Nature Communications</strong>.</li>
+      <li><span class="news-date">Nov 2021</span><span class="news-divider">|</span>Our paper <em>Measuring phonon dispersion at an interface</em> is published in <strong>Nature</strong>.</li>
+      <li><span class="news-date">Feb 2021</span><span class="news-divider">|</span>Our paper <em>Four-dimensional vibrational spectroscopy for nanoscale mapping of phonon dispersion in BN nanotubes</em> is published in <strong>Nature Communications</strong>.</li>
+      <li><span class="news-date">July 2020</span><span class="news-divider">|</span>I received my B.S. degree at Peking University. I will pursue my Ph.D. at <strong>UC Berkeley</strong>.</li>
+      <li><span class="news-date">July 2019</span><span class="news-divider">|</span>Our paper <em>Probing Far-Infrared Surface Phonon Polaritons in Semiconductor Nanostructures at Nanoscale</em> is published in <strong>Nano Letters</strong>.</li>
+    </ul>
+  </div>
+
+  <div class="section-card">
+    <h2>Links</h2>
+    <div class="link-row">
+      <a class="button secondary" href="https://stanfordsciencefellows.stanford.edu/people/ruishi-qi" target="_blank">Stanford Science Fellows Profile</a>
+      <a class="button secondary" href="https://physics.berkeley.edu/research-faculty/ultrafast-nano-optics-group" target="_blank">Feng Wang Group</a>
+      <a class="button secondary" href="https://scholar.google.com/citations?user=NA7sfwsAAAAJ&hl=en" target="_blank">Google Scholar</a>
+      <a class="button secondary" href="https://www.researchgate.net/profile/Ruishi-Qi?ev=hdr_xprf" target="_blank">ResearchGate</a>
+    </div>
+  </div>
 </section>
 
 <section class="panel" id="panel-publications">
-  <h2>Publications</h2>
-
-  <p>
-    <a class="button secondary" href="https://scholar.google.com/citations?user=NA7sfwsAAAAJ&hl=en" target="_blank">Google Scholar</a>
-  </p>
-
-  <ul class="pub-list">
-    <li>
-      <strong>Observation of two-component exciton condensates in an excitonic insulator</strong><br>
-      R. Qi, ... (2026)
-    </li>
-  </ul>
+  <div class="section-card">
+    <h2>Publications</h2>
+    <div class="button-row" style="margin-bottom: 1rem; justify-content: center;">
+      <a class="button secondary" href="https://scholar.google.com/citations?user=NA7sfwsAAAAJ&hl=en" target="_blank">Google Scholar</a>
+    </div>
+    <ul class="news-list">
+      <li>
+        <div><strong>Observation of two-component exciton condensates in an excitonic insulator</strong></div>
+        <div><strong>R. Qi</strong>, Q. Li, J. Nie, ..., F. Wang</div>
+        <div><em>arXiv:2603.15443</em> (2026); under revision at <em>Nature</em></div>
+      </li>
+      <li>
+        <div><strong>Gate-tunable biexcitons in electron-hole-electron trilayers</strong></div>
+        <div><strong>R. Qi</strong>, Q. Li, Z. Zhang, ..., F. Wang</div>
+        <div>Under revision at <em>Science</em></div>
+      </li>
+      <li>
+        <div><strong>An exciton crystal in a moiré excitonic insulator</strong></div>
+        <div><strong>R. Qi</strong>, Q. Li, H. Kim, ..., F. Wang</div>
+        <div><em>Nature Physics</em> (2026)</div>
+      </li>
+      <li>
+        <div><strong>Orbital dependent Coulomb drag in electron-hole bilayer graphene heterostructures</strong></div>
+        <div>Z. Zhang, <strong>R. Qi</strong>, J. Xie, ..., F. Wang</div>
+        <div><em>Physical Review Letters</em>, accepted (2026)</div>
+      </li>
+      <li>
+        <div><strong>Nature of emergent moiré excitations in MoSe2/WS2 moiré superlattices</strong></div>
+        <div>Z. Lu, <strong>R. Qi</strong>, R. Dutta, ..., F. Wang</div>
+        <div><em>Nano Letters</em> (2026)</div>
+      </li>
+      <li>
+        <div><strong>Competition between excitonic insulators and quantum Hall states in correlated electron-hole bilayers</strong></div>
+        <div><strong>R. Qi</strong>, Q. Li, Z. Zhang, ..., F. Wang</div>
+        <div><em>Nature Materials</em> <strong>25</strong>, 35-41 (2026)</div>
+      </li>
+      <li>
+        <div><strong>Electrically controlled interlayer trion fluid in electron-hole bilayers</strong></div>
+        <div><strong>R. Qi</strong>, Q. Li, Z. Zhang, ..., F. Wang</div>
+        <div><em>Science</em> <strong>390</strong> (6770), 299-303 (2025)</div>
+      </li>
+      <li>
+        <div><strong>Perfect Coulomb drag and exciton transport in an excitonic insulator</strong></div>
+        <div><strong>R. Qi</strong>, A. Joe, Z. Zhang, ..., F. Wang</div>
+        <div><em>Science</em> <strong>388</strong> (6744), 278-283 (2025)</div>
+      </li>
+      <li>
+        <div><strong>Thermodynamic behavior of correlated electron-hole fluids in van der Waals heterostructures</strong></div>
+        <div><strong>R. Qi</strong>, A. Joe, Z. Zhang, ..., F. Wang</div>
+        <div><em>Nature Communications</em> <strong>14</strong>, 8264 (2023)</div>
+      </li>
+      <li>
+        <div><strong>Measuring phonon dispersion at an interface</strong></div>
+        <div><strong>R. Qi</strong>, R. Shi, Y. Li, ..., P. Gao</div>
+        <div><em>Nature</em> <strong>599</strong>, 399-403 (2021)</div>
+      </li>
+      <li>
+        <div><strong>Four-dimensional vibrational spectroscopy for nanoscale mapping of phonon dispersion in BN nanotubes</strong></div>
+        <div><strong>R. Qi</strong>, N. Li, J. Du, ..., P. Gao</div>
+        <div><em>Nature Communications</em> <strong>12</strong>, 1179 (2021)</div>
+      </li>
+      <li>
+        <div><strong>Probing far-infrared surface phonon polaritons in semiconductor nanostructures at nanoscale</strong></div>
+        <div><strong>R. Qi</strong>, R. Wang, Y. Li, ..., P. Gao</div>
+        <div><em>Nano Letters</em> <strong>19</strong> (8), 5070-5076 (2019)</div>
+      </li>
+    </ul>
+  </div>
 </section>
 
 <section class="panel" id="panel-cv">
