@@ -193,7 +193,7 @@
     <nav class="tabs">
       <button class="tab-link active" data-tab="home">Home</button>
       <button class="tab-link" data-tab="publications">Publications</button>
-      <button class="tab-link" data-tab="cv">CV</button>
+      <a class="tab-link" href="cv/Ruishi_Qi_CV.pdf" target="_blank">CV</a>
       <button class="tab-link" data-tab="contact">Contact</button>
     </nav>
   </div>
@@ -316,38 +316,41 @@
   </div>
 </section>
 
-<section class="panel" id="panel-cv">
-  <h2>Curriculum Vitae</h2>
 
-  <p>
-    <a class="button" href="cv/Ruishi_Qi_CV.pdf" target="_blank">Open CV</a>
-  </p>
-
-  <p>
-    (Upload your PDF to a folder named <code>cv/</code> in your GitHub repo.)
-  </p>
-</section>
 
 <section class="panel" id="panel-contact">
-  <h2>Contact</h2>
-  <p>Email: ruishiqi@berkeley.edu</p>
+  <div class="section-card">
+    <h2>Contact</h2>
+    <div class="about-text">
+      <p><strong>Email:</strong> <a href="mailto:ruishiqi@berkeley.edu">ruishiqi@berkeley.edu</a></p>
+      <p><strong>Phone:</strong> 510-833-4696</p>
+      <p><strong>Address:</strong> 225 Birge Hall, University of California, Berkeley, CA 94720, USA</p>
+    </div>
+  </div>
 </section>
 
 </main>
 
 <script>
-const tabs = document.querySelectorAll('.tab-link');
-const panels = document.querySelectorAll('.panel');
+  const tabs = document.querySelectorAll('[data-tab]');
+  const panels = document.querySelectorAll('.panel');
 
-tabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    tabs.forEach(t => t.classList.remove('active'));
-    panels.forEach(p => p.classList.remove('active'));
+  function activateTab(name) {
+    tabs.forEach(tab => {
+      tab.classList.toggle('active', tab.dataset.tab === name);
+    });
+    panels.forEach(panel => {
+      panel.classList.toggle('active', panel.id === 'panel-' + name);
+    });
+  }
 
-    tab.classList.add('active');
-    document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      activateTab(tab.dataset.tab);
+    });
   });
-});
+
+  activateTab('home');
 </script>
 
 </body>
