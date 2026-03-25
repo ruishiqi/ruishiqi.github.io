@@ -17,12 +17,13 @@
       --accent-soft: #eaf1fb;
       --shadow: 0 10px 30px rgba(20, 28, 45, 0.06);
       --radius: 20px;
-      --maxw: 1040px;
+      --maxw: 1320px;
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
+      font-size: clamp(14px, 1.6vw, 16px);
       margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       color: var(--text);
@@ -37,7 +38,7 @@
 
     header {
       position: sticky; top: 0; z-index: 30;
-      background: rgba(255,255,255,0.88);
+      background: rgba(255,255,255,0.7);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(221,227,234,0.8);
     }
@@ -71,9 +72,9 @@
     
 
     .pub-title {
-      font-size: 1.25rem;
+      font-size: 1.33rem;
       font-weight: 450;
-      line-height: 1.4;
+      line-height: 1.5;
       margin-bottom: 0.2rem;
     }
 
@@ -84,7 +85,7 @@
     }
 
     .pub-journal {
-      font-size: 1.05rem;
+      font-size: 1.11rem;
       font-weight: 450;
     }
     
@@ -359,7 +360,7 @@
 
 
 
-    @media (max-width: 980px) {
+    @media (max-width: 820px) {
       .hero-row {
         grid-template-columns: 1fr;
       }
@@ -369,11 +370,27 @@
       }
     }
 
-    @media (max-width: 820px) {
+    @media (max-width: 1020px) {
       .nav {
         align-items: flex-start;
         flex-direction: column;
         padding: 0.9rem 0;
+      }
+    }
+
+    .research-item {
+      display: grid;
+      grid-template-columns: 35fr 65fr;
+      gap: 2rem;
+      /* margin-bottom: 1em;
+      margin-top: 1em; */
+      border-top: 1px solid var(--line);
+      align-items: center;
+    }
+    .research-item:first-child { border-top: none; }
+    @media (max-width: 620px) {
+      .research-item {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -545,7 +562,7 @@
 
     <div style="display:flex; flex-direction:column; gap:2rem;">
 
-      <div style="display:grid; grid-template-columns: 2fr 3fr; gap: 1.5rem; align-items:center; padding-bottom:1.5rem; border-bottom:1px solid var(--line);">
+      <div class="research-item">
         <div>
           <img src="images/ei.png" alt="Correlated excitonic insulator" style="width:90%; display:block; margin:0 auto; border-radius:6px; " />
         </div>
@@ -563,7 +580,7 @@
         </div>
       </div>
 
-      <div style="display:grid; grid-template-columns: 2fr 3fr; gap: 1.5rem; align-items:center; padding-bottom:1.5rem; border-bottom:1px solid var(--line);">
+      <div class="research-item">
         <div>
           <img src="images/trion.png" alt="Interlayer trion fluid" style="width:90%; display:block; margin:0 auto; border-radius:6px; " />
         </div>
@@ -576,7 +593,7 @@
         </div>
       </div>
 
-      <div style="display:grid; grid-template-columns: 2fr 3fr; gap: 1.5rem; align-items:center; padding-bottom:1.5rem; border-bottom:1px solid var(--line);">
+      <div class="research-item">
         <div>
           <img src="images/crystal.png" alt="Exciton crystal" style="width:90%; display:block; margin:0 auto; border-radius:6px; " />
         </div>
@@ -589,7 +606,7 @@
         </div>
       </div>
 
-      <div style="display:grid; grid-template-columns: 2fr 3fr; gap: 1.5rem; align-items:center;">
+      <div class="research-item">
         <div>
           <img src="images/condensate.png" alt="Two-component exciton condensate" style="width:90%; display:block; margin:0 auto; border-radius:6px; " />
         </div>
@@ -607,19 +624,21 @@
 
   <div class="section-card" style="opacity:0.9;">
     <h2>Earlier Work</h2>
+    <div style="display:flex; flex-direction:column; gap:2rem;">
 
-    <div style="display:grid; grid-template-columns: 2fr 3fr; gap:1.5rem; align-items:center;">
-      <div>
-        <img src="images/phonon.png" style="width:90%; margin:0 auto; display:block; border-radius:6px; " />
-      </div>
-      <div>
-        <h3>Interface phonons at the nanoscale</h3>
-        <p class="lead">
-          Direct measurement of phonon dispersion at interfaces using electron energy-loss spectroscopy with nanometer spatial resolution.
-        </p>
-        <p>
-          <a href="https://www.nature.com/articles/s41586-021-03949-3" target="_blank">Nature (2021)</a>
-        </p>
+      <div class="research-item">
+        <div>
+          <img src="images/phonon.png" style="width:90%; margin:0 auto; display:block; border-radius:6px; " />
+        </div>
+        <div>
+          <h3>Interface phonons at the nanoscale</h3>
+          <p class="lead">
+            Direct measurement of phonon dispersion at interfaces using electron energy-loss spectroscopy with nanometer spatial resolution.
+          </p>
+          <p>
+            <a href="https://www.nature.com/articles/s41586-021-03949-3" target="_blank">Nature (2021)</a>
+          </p>
+        </div>
       </div>
     </div>
   </div>
