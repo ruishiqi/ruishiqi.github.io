@@ -17,7 +17,7 @@
       --accent-soft: #eaf1fb;
       --shadow: 0 10px 30px rgba(20, 28, 45, 0.06);
       --radius: 20px;
-      --maxw: 1320px;
+      --maxw: 1200px;
     }
 
     * { box-sizing: border-box; }
@@ -196,7 +196,7 @@
 
     .hero-row {
       display: grid;
-      grid-template-columns: minmax(320px, 2fr) minmax(0, 3fr);
+      grid-template-columns: minmax(320px, 45fr) minmax(0, 55fr);
       gap: 1.25rem;
       margin-bottom: 1.25rem;
       align-items: stretch;
@@ -243,7 +243,7 @@
       width: 100%;
       justify-content: center;
       text-align: center;
-      padding: 0.72rem 0.9rem;
+      padding: 0.5rem 0.7rem;
     }
 
     .carousel {
@@ -308,11 +308,11 @@
     }
 
     .arrow.left {
-      left: 14px;
+      left: 4px;
     }
 
     .arrow.right {
-      right: 14px;
+      right: 4px;
     }
 
     .dots {
@@ -347,16 +347,16 @@
 
     .caption {
       position: absolute;
-      left: 50%;
-      top: 4px;
-      transform: translateX(-50%);
+      left: 3px;
+      top: 3px;
+      /* transform: translateX(-50%); */
       z-index: 5;
       background: rgba(245, 245, 245, 0.8);
       backdrop-filter: blur(5px);
       color: #1d2433;
       padding: 8px 8px;
-      border-radius: calc(var(--radius) - 4px);
-      font-size: 16px;
+      border-radius: calc(var(--radius) - 3px);
+      font-size: 15px;
       font-weight: 550;
       max-width: 500px;
       /* box-shadow: 0 4px 16px rgba(20, 28, 45, 0.12); */
@@ -437,10 +437,8 @@
     <div class="hero-left">
       <div class="hero-card">
         <h1>Ruishi Qi</h1>
-        <p class="lead">
-                Welcome to Ruishi's personal website! I'm currently a Ph.D. candidate at Department of Physics, UC Berkeley.
-        </p>
-        <p> </p>
+        <p>I am a condensed matter experimentalist working on strongly correlated quantum matter in low-dimensional materials. I received my B.S. in Physics from Peking University in 2020, where I was inspired to become an experimental condensed matter physicist thanks to the research experience in Prof. Peng Gao's lab. I then moved to UC Berkeley, where I am currently a Ph.D. candidate in Prof. Feng Wang's group. My Ph.D. research focuses on strongly interacting electron-hole systems in van der Waals heterostructures. Starting this summer, I will join Stanford as a Stanford Science Fellow, working with Prof. Tony Heinz.</p>
+        <!-- <p> </p> -->
         <div class="link-row">
           <a class="button secondary" href="https://stanfordsciencefellows.stanford.edu/people/ruishi-qi" target="_blank">Stanford Science Fellows Profile</a>
           <a class="button secondary" href="https://physics.berkeley.edu/research-faculty/ultrafast-nano-optics-group" target="_blank">Feng Wang Group</a>
@@ -489,17 +487,18 @@
     </div>
   </div>
 
-  <div class="section-card">
+  <!-- <div class="section-card">
     <h2>About</h2>
     <div class="about-text">
       <p>I am a Ph.D. candidate in Physics at the University of California, Berkeley. I work in Prof. Feng Wang's group, where my Ph.D. research focuses on strongly interacting electron-hole systems in two-dimensional van der Waals heterostructures. I combine high-quality device fabrication with low-temperature optical and electrical measurements to study interaction-driven phases in reduced dimensions. My current research interests center on excitonic and correlated electronic phases, including excitonic insulators, biexciton and trion fluids, and related many-body states arising from strong Coulomb interactions in 2D systems.</p>
       <p>Starting this summer, I will join Stanford as a Stanford Science Fellow, working with Prof. Tony Heinz.</p>
     </div>
-  </div>
+  </div> -->
 
   <div class="section-card">
     <h2>News</h2>
     <ul class="news-list">
+      <li><span class="news-date">Mar 2026</span><span class="news-divider">|</span>Our paper <em>Orbital-dependent Coulomb drag in electron-hole bilayer graphene heterostructures</em> is published in <strong>Physical Review Letters</strong>.</li>
       <li><span class="news-date">Jan 2026</span><span class="news-divider">|</span>I am awarded the 2026-2029 <strong>Stanford Science Fellow</strong>. I will join Stanford this summer.</li>
       <li><span class="news-date">Jan 2026</span><span class="news-divider">|</span>Our paper <em>An exciton crystal in a moire excitonic insulator</em> is published in <strong>Nature Physics</strong>.</li>
       <li><span class="news-date">Oct 2025</span><span class="news-divider">|</span>Our paper <em>Electrically controlled interlayer trion fluid in electron-hole bilayers</em> is published in <strong>Science</strong>.</li>
@@ -693,7 +692,7 @@
   </div>
 
   <div class="section-card">
-    <h2>Leading-author research articles</h2>
+    <h2>First/corresponding-author research articles</h2>
 
     <ul class="news-list">
 
@@ -706,7 +705,7 @@
       <li>
         <div class="pub-title">Orbital dependent Coulomb drag in electron-hole bilayer graphene heterostructures</div>
         <div class="pub-authors">Zuocheng Zhang, <strong>Ruishi Qi</strong>, Jingxu Xie, Qize Li, Takashi Taniguchi, Kenji Watanabe, Michael F. Crommie, Feng Wang</div>
-        <div class="pub-journal"><em>Physical Review Letters</em>, accepted (2026)</div>
+        <div class="pub-journal"><em>Physical Review Letters</em>, 136, 126303 (2026)</div>
       </li>
 
       <li>
@@ -717,7 +716,7 @@
 
       <li>
         <div class="pub-title">Competition between excitonic insulators and quantum Hall states in correlated electron-hole bilayers</div>
-        <div class="pub-authors"><strong>Ruishi Qi</strong>, Qize Li, Zuocheng Zhang, Sudi Chen, Jingxu Xie, Yunbo Ou, Zhiyuan Cui, David D. Dai, Andrew Y. Joe, Takashi Taniguchi, Kenji Watanabe, Sefaattin Tongay, Alex Zettl, Liang Fu, Feng Wang</div>
+        <div class="pub-authors"><strong>Ruishi Qi</strong>, Qize Li, Zuocheng Zhang, Jiahui Nie, Bo Zou, Zhiyuan Cui, Haleem Kim, Collin Sanborn, Sudi Chen, Jingxu Xie, Takashi Taniguchi, Kenji Watanabe, Michael F. Crommie, Allan H. MacDonald, Feng Wang </div>
         <div class="pub-journal"><em>Nature Materials</em> 25, 35–41 (2026)</div>
       </li>
 
@@ -735,19 +734,19 @@
 
       <li>
         <div class="pub-title">Thermodynamic behavior of correlated electron-hole fluids in van der Waals heterostructures</div>
-        <div class="pub-authors"><strong>Ruishi Qi</strong>, Andrew Y. Joe, Zuocheng Zhang, Yongxin Zeng, Tiancheng Zheng, Qixin Feng, Jingxu Xie, Emma Regan, Zheyu Lu, Takashi Taniguchi, Kenji Watanabe, Sefaattin Tongay, Michael F. Crommie, Allan H. MacDonald, Feng Wang</div>
+        <div class="pub-authors"><strong>Ruishi Qi</strong>, Andrew Y. Joe, Zuocheng Zhang, Yongxin Zeng, Tiancheng Zheng, Qixin Feng, Jingxu Xie, Emma Regan, Zheyu Lu, Takashi Taniguchi, Kenji Watanabe, Sefaattin Tongay, Michael F. Crommie, Allan H. MacDonald, Feng Wang </div>
         <div class="pub-journal"><em>Nature Communications</em> 14, 8264 (2023)</div>
       </li>
 
       <li>
         <div class="pub-title">Measuring phonon dispersion at an interface</div>
-        <div class="pub-authors"><strong>Ruishi Qi</strong>, Ruochen Shi, Yuanwei Sun, Yuehui Li, Mei Wu, Ning Li, Jinlong Du, Kaihui Liu, Chunlin Chen, Dapeng Yu, En-Ge Wang, Peng Gao</div>
+        <div class="pub-authors"><strong>Ruishi Qi</strong>, Ruochen Shi, Yuehui Li, Yuanwei Sun, Mei Wu, Ning Li, Jinlong Du, Kaihui Liu, Chunlin Chen,  Ji Chen, Feng Wang, Dapeng Yu, En-Ge Wang, Peng Gao</div>
         <div class="pub-journal"><em>Nature</em> 599, 399–403 (2021)</div>
       </li>
 
       <li>
         <div class="pub-title">Four-dimensional vibrational spectroscopy for nanoscale mapping of phonon dispersion in BN nanotubes</div>
-        <div class="pub-authors"><strong>Ruishi Qi</strong>, Ning Li, Jinlong Du, Ruochen Shi, Yang Huang, Xiaoxia Yang, Lei Liu, Zhi Xu, Qing Dai, Dapeng Yu, Peng Gao</div>
+        <div class="pub-authors"><strong>Ruishi Qi</strong>, Ning Li, Jinlong Du, Ruochen Shi, Yang Huang, Xiaoxia Yang, Lei Liu, Zhi Xu, Qing Dai, Dapeng Yu, Peng Gao </div>
         <div class="pub-journal"><em>Nature Communications</em> 12, 1179 (2021)</div>
       </li>
 
