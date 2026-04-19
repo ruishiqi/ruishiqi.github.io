@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta name="google-site-verification" content="E-wbC4l4Fm26j9HIg4xlPpg-3zAd63bc64rCMernNzY" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ruishi Qi</title>
@@ -31,9 +32,14 @@
       line-height: 1.5;
     }
 
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
+    /* a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; } */
+    a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-thickness: 0.5px;
+      text-underline-offset: 2px;
+    }
     .container { width: min(100% - 2rem, var(--maxw)); margin: 0 auto; }
 
     header {
@@ -59,6 +65,7 @@
       border: none; background: transparent; cursor: pointer;
       padding: 0.6rem 0.9rem; border-radius: 999px;
       color: var(--muted); font: inherit;
+      text-decoration: none;
     }
 
     .tab-link.active {
@@ -92,7 +99,7 @@
     main { padding: 2rem 0 2.5rem; }
 
     h1 {
-      font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+      font-size: clamp(2.0rem, 4.0vw, 3.0rem);
       line-height: 1.05;
       margin: 0 0 0.9rem;
       letter-spacing: -0.02em;
@@ -157,6 +164,7 @@
       display: inline-flex;
       align-items: center;
       font-weight: 600;
+      text-decoration: none;
     }
 
     .button:hover { text-decoration: none; }
@@ -196,7 +204,7 @@
 
     .hero-row {
       display: grid;
-      grid-template-columns: minmax(320px, 45fr) minmax(0, 55fr);
+      grid-template-columns: 1fr 1fr;
       gap: 1.25rem;
       margin-bottom: 1.25rem;
       align-items: stretch;
@@ -222,9 +230,9 @@
     }
 
     .hero-left h1 {
-      font-size: clamp(2.4rem, 4vw, 3.6rem);
+      font-size: clamp(2.0rem, 4.0vw, 3.0rem);
       line-height: 1.0;
-      margin-bottom: 1.1rem;
+      margin-bottom: 0.3rem;
     }
 
     .hero-left .lead {
@@ -282,8 +290,8 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      width: 42px;
-      height: 42px;
+      width: 32px;
+      height: 32px;
       border: none;
       border-radius: 999px;
       background: rgba(20, 28, 45, 0.28);
@@ -297,6 +305,7 @@
       align-items: center;
       justify-content: center;
       transition: background 0.2s ease, transform 0.2s ease;
+      padding-bottom: 4px
     }
 
     .arrow:hover {
@@ -388,6 +397,7 @@
       .tab-link {
         padding: 0.45rem 0.7rem;
         line-height: 1.2;
+        text-decoration: none;
       }
     }
 
@@ -641,7 +651,7 @@
           <p class="lead" style="text-align:left;">
             Observation of a two-component exciton condensate in an equilibrium electron-hole bilayer, revealing a multi-component strongly correlated condensate phase in van der Waals heterostructures.
           </p>
-          <p><a href="https://arxiv.org/abs/2603.15443" target="_blank">arXiv</a></p>
+          <p><a href="https://arxiv.org/abs/2603.15443" target="_blank">arXiv (2026)</a></p>
         </div>
       </div>
 
@@ -679,13 +689,14 @@
 
       <li>
         <div class="pub-title">Observation of two-component exciton condensates in an excitonic insulator</div>
-        <div class="pub-authors"><strong>Ruishi Qi</strong>, Qize Li, Jiahui Nie, Ruichen Xia, Haleem Kim, Hyungbin Lim, Jingxu Xie, Takashi Taniguchi, Kenji Watanabe, Michael F. Crommie, Allan H. MacDonald, Feng Wang</div>
-        <div class="pub-journal"><em>arXiv:2603.15443</em> (2026); under revision at <em>Nature</em></div>
+        <div class="pub-authors">Ruishi Qi, Qize Li, Jiahui Nie, Ruichen Xia, Haleem Kim, Hyungbin Lim, Jingxu Xie, Takashi Taniguchi, Kenji Watanabe, Michael F. Crommie, Allan H. MacDonald, Feng Wang</div>
+        <div class="pub-journal"><a href="https://arxiv.org/abs/2603.15443" target="_blank"><em>arXiv</em></a>:2603.15443 (2026); under revision at <em>Nature</em></div>
+        
       </li>
 
       <li>
         <div class="pub-title">Gate-tunable biexcitons in electron-hole-electron trilayers</div>
-        <div class="pub-authors"><strong>Ruishi Qi</strong>, Qize Li, Zuocheng Zhang, Jingxu Xie, Zhiyuan Cui, Takashi Taniguchi, Kenji Watanabe, Michael F. Crommie, Feng Wang</div>
+        <div class="pub-authors">Ruishi Qi, Qize Li, Zuocheng Zhang, Jingxu Xie, Zhiyuan Cui, Takashi Taniguchi, Kenji Watanabe, Michael F. Crommie, Feng Wang</div>
         <div class="pub-journal">Under revision at <em>Science</em></div>
       </li>
     </ul>
@@ -698,64 +709,83 @@
 
       <li>
         <div class="pub-title">An exciton crystal in a moiré excitonic insulator</div>
-        <div class="pub-authors"><strong>Ruishi Qi</strong>, Qize Li, Haleem Kim, Jiahui Nie, Zuocheng Zhang, Ruichen Xia, Zhiyuan Cui, Jianghan Xiao, Takashi Taniguchi, Kenji Watanabe, Michael F. Crommie, Feng Wang</div>
-        <div class="pub-journal"><em>Nature Physics</em> (2026)</div>
+        <div class="pub-authors">Ruishi Qi, Qize Li, Haleem Kim, Jiahui Nie, Zuocheng Zhang, Ruichen Xia, Zhiyuan Cui, Jianghan Xiao, Takashi Taniguchi, Kenji Watanabe, Michael F. Crommie, Feng Wang</div>
+        <div class="pub-journal"><a href="https://www.nature.com/articles/s41567-026-03184-9" target="_blank"><em>Nature Physics</em></a>, 22, 514-520 (2026). Related commentary:
+        <a href="https://doi.org/10.1038/s41578-026-00916-4" target="_blank"><em>Nature Reviews Materials</em> Research Highlight</a> ·
+        <a href="https://doi.org/10.1038/s41567-026-03244-0" target="_blank"><em>Nature Physics</em> News&Views</a>
+        </div>
       </li>
 
       <li>
         <div class="pub-title">Orbital dependent Coulomb drag in electron-hole bilayer graphene heterostructures</div>
-        <div class="pub-authors">Zuocheng Zhang, <strong>Ruishi Qi</strong>, Jingxu Xie, Qize Li, Takashi Taniguchi, Kenji Watanabe, Michael F. Crommie, Feng Wang</div>
-        <div class="pub-journal"><em>Physical Review Letters</em>, 136, 126303 (2026)</div>
+        <div class="pub-authors">Zuocheng Zhang, Ruishi Qi, Jingxu Xie, Qize Li, Takashi Taniguchi, Kenji Watanabe, Michael F. Crommie, Feng Wang</div>
+        <div class="pub-journal"><a href="https://doi.org/10.1103/4v1f-lkh2" target="_blank"><em>Physical Review Letters</em></a>, 136, 126303 (2026). [Editor's suggestion]</div>
       </li>
-
       <li>
         <div class="pub-title">Nature of emergent moiré excitations in MoSe2/WS2 moiré superlattices</div>
-        <div class="pub-authors">Zheyu Lu, <strong>Ruishi Qi</strong>, Rwik Dutta, Jingxu Xie, Jiahui Nie, Ziyu Wang, Yibo Feng, Woochang Kim, Kenji Watanabe, Takashi Taniguchi, Archana Raja, Mit H. Naik, Steven G. Louie, Feng Wang</div>
-        <div class="pub-journal"><em>Nano Letters</em> (2026)</div>
+        <div class="pub-authors">Zheyu Lu, Ruishi Qi, Rwik Dutta, Jingxu Xie, Jiahui Nie, Ziyu Wang, Yibo Feng, Woochang Kim, Kenji Watanabe, Takashi Taniguchi, Archana Raja, Mit H. Naik, Steven G. Louie, Feng Wang</div>
+        <div class="pub-journal">
+          <a href="https://doi.org/10.1021/acs.nanolett.5c06149" target="_blank"><em>Nano Letters</em></a> 26 (12), 4096-4102 (2026)
+        </div>
       </li>
 
       <li>
         <div class="pub-title">Competition between excitonic insulators and quantum Hall states in correlated electron-hole bilayers</div>
-        <div class="pub-authors"><strong>Ruishi Qi</strong>, Qize Li, Zuocheng Zhang, Jiahui Nie, Bo Zou, Zhiyuan Cui, Haleem Kim, Collin Sanborn, Sudi Chen, Jingxu Xie, Takashi Taniguchi, Kenji Watanabe, Michael F. Crommie, Allan H. MacDonald, Feng Wang </div>
-        <div class="pub-journal"><em>Nature Materials</em> 25, 35–41 (2026)</div>
+        <div class="pub-authors">Ruishi Qi, Qize Li, Zuocheng Zhang, Jiahui Nie, Bo Zou, Zhiyuan Cui, Haleem Kim, Collin Sanborn, Sudi Chen, Jingxu Xie, Takashi Taniguchi, Kenji Watanabe, Michael F. Crommie, Allan H. MacDonald, Feng Wang </div>
+        <div class="pub-journal">
+          <a href="https://doi.org/10.1038/s41563-025-02316-5" target="_blank"><em>Nature Materials</em></a> 25, 35–41 (2026)
+        </div>
       </li>
 
       <li>
         <div class="pub-title">Electrically controlled interlayer trion fluid in electron-hole bilayers</div>
-        <div class="pub-authors"><strong>Ruishi Qi</strong>, Qize Li, Zuocheng Zhang, Sudi Chen, Jingxu Xie, Yunbo Ou, Zhiyuan Cui, David D. Dai, Andrew Y. Joe, Takashi Taniguchi, Kenji Watanabe, Sefaattin Tongay, Alex Zettl, Liang Fu, Feng Wang</div>
-        <div class="pub-journal"><em>Science</em> 390, 299–303 (2025)</div>
+        <div class="pub-authors">Ruishi Qi, Qize Li, Zuocheng Zhang, Sudi Chen, Jingxu Xie, Yunbo Ou, Zhiyuan Cui, David D. Dai, Andrew Y. Joe, Takashi Taniguchi, Kenji Watanabe, Sefaattin Tongay, Alex Zettl, Liang Fu, Feng Wang</div>
+        <div class="pub-journal">
+          <a href="https://doi.org/10.1126/science.adn4584" target="_blank"><em>Science</em></a> 390, 299–303 (2025). Related commentary:
+        <a href="https://www.science.org/doi/10.1126/science.aec0463" target="_blank"><em>Science</em> Perspective</a>
+        </div>
       </li>
 
       <li>
         <div class="pub-title">Perfect Coulomb drag and exciton transport in an excitonic insulator</div>
-        <div class="pub-authors"><strong>Ruishi Qi</strong>, Andrew Y. Joe, Zuocheng Zhang, Jingxu Xie, Qixin Feng, Zheyu Lu, Ziyu Wang, Takashi Taniguchi, Kenji Watanabe, Sefaattin Tongay, Feng Wang</div>
-        <div class="pub-journal"><em>Science</em> 388, 278–283 (2025)</div>
+        <div class="pub-authors">Ruishi Qi, Andrew Y. Joe, Zuocheng Zhang, Jingxu Xie, Qixin Feng, Zheyu Lu, Ziyu Wang, Takashi Taniguchi, Kenji Watanabe, Sefaattin Tongay, Feng Wang</div>
+        <div class="pub-journal">
+          <a href="https://doi.org/10.1126/science.adl1839" target="_blank"><em>Science</em></a> 388, 278–283 (2025). . Related commentary:
+        <a href="https://www.condmatjclub.org/jccm_january_2026_01" target="_blank"><em>Journal Club for Condensed Matter Physics</em></a>
+        </div>
       </li>
 
       <li>
         <div class="pub-title">Thermodynamic behavior of correlated electron-hole fluids in van der Waals heterostructures</div>
-        <div class="pub-authors"><strong>Ruishi Qi</strong>, Andrew Y. Joe, Zuocheng Zhang, Yongxin Zeng, Tiancheng Zheng, Qixin Feng, Jingxu Xie, Emma Regan, Zheyu Lu, Takashi Taniguchi, Kenji Watanabe, Sefaattin Tongay, Michael F. Crommie, Allan H. MacDonald, Feng Wang </div>
-        <div class="pub-journal"><em>Nature Communications</em> 14, 8264 (2023)</div>
+        <div class="pub-authors">Ruishi Qi, Andrew Y. Joe, Zuocheng Zhang, Yongxin Zeng, Tiancheng Zheng, Qixin Feng, Jingxu Xie, Emma Regan, Zheyu Lu, Takashi Taniguchi, Kenji Watanabe, Sefaattin Tongay, Michael F. Crommie, Allan H. MacDonald, Feng Wang </div>
+        <div class="pub-journal">
+          <a href="https://doi.org/10.1038/s41467-023-43799-7" target="_blank"><em>Nature Communications</em></a> 14, 8264 (2023)
+        </div>
       </li>
 
       <li>
         <div class="pub-title">Measuring phonon dispersion at an interface</div>
-        <div class="pub-authors"><strong>Ruishi Qi</strong>, Ruochen Shi, Yuehui Li, Yuanwei Sun, Mei Wu, Ning Li, Jinlong Du, Kaihui Liu, Chunlin Chen,  Ji Chen, Feng Wang, Dapeng Yu, En-Ge Wang, Peng Gao</div>
-        <div class="pub-journal"><em>Nature</em> 599, 399–403 (2021)</div>
+        <div class="pub-authors">Ruishi Qi, Ruochen Shi, Yuehui Li, Yuanwei Sun, Mei Wu, Ning Li, Jinlong Du, Kaihui Liu, Chunlin Chen,  Ji Chen, Feng Wang, Dapeng Yu, En-Ge Wang, Peng Gao</div>
+        <div class="pub-journal">
+          <a href="https://doi.org/10.1038/s41586-021-03971-9" target="_blank"><em>Nature</em></a> 599, 399–403 (2021)
+        </div>
       </li>
 
       <li>
         <div class="pub-title">Four-dimensional vibrational spectroscopy for nanoscale mapping of phonon dispersion in BN nanotubes</div>
-        <div class="pub-authors"><strong>Ruishi Qi</strong>, Ning Li, Jinlong Du, Ruochen Shi, Yang Huang, Xiaoxia Yang, Lei Liu, Zhi Xu, Qing Dai, Dapeng Yu, Peng Gao </div>
-        <div class="pub-journal"><em>Nature Communications</em> 12, 1179 (2021)</div>
+        <div class="pub-authors">Ruishi Qi, Ning Li, Jinlong Du, Ruochen Shi, Yang Huang, Xiaoxia Yang, Lei Liu, Zhi Xu, Qing Dai, Dapeng Yu, Peng Gao </div>
+        <div class="pub-journal">
+          <a href="https://doi.org/10.1038/s41467-021-21452-5" target="_blank"><em>Nature Communications</em></a> 12, 1179 (2021)
+        </div>
       </li>
 
       <li>
         <div class="pub-title">Probing far-infrared surface phonon polaritons in semiconductor nanostructures at nanoscale</div>
-        <div class="pub-authors"><strong>Ruishi Qi</strong>, Renfei Wang, Yuehui Li, Yuanwei Sun, Shulin Chen, Bo Han, Ning Li, Qing Zhang, Xinfeng Liu, Dapeng Yu, Peng Gao</div>
-        <div class="pub-journal"><em>Nano Letters</em> 19, 5070–5076 (2019)</div>
+        <div class="pub-authors">Ruishi Qi, Renfei Wang, Yuehui Li, Yuanwei Sun, Shulin Chen, Bo Han, Ning Li, Qing Zhang, Xinfeng Liu, Dapeng Yu, Peng Gao</div>
+        <div class="pub-journal">
+          <a href="https://doi.org/10.1021/acs.nanolett.9b01350" target="_blank"><em>Nano Letters</em></a> 19, 5070–5076 (2019)
+        </div>
       </li>
-
     </ul>
   </div>
 
@@ -887,7 +917,12 @@
     buildDots();
     startAutoPlay();
 
-
+    document.querySelectorAll('.pub-authors').forEach(el => {
+      el.innerHTML = el.innerHTML.replace(
+        /\bRuishi Qi\b/g,
+        '<strong>Ruishi Qi</strong>'
+      );
+    });
 
 </script>
 
