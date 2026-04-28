@@ -106,6 +106,49 @@
       font-weight: 450;
     }
 
+    .pub-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.55rem;
+    }
+
+    .pub-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.2rem 0.48rem;
+      border: 1px solid rgba(232, 93, 4, 0.18);
+      border-radius: 999px;
+      background: rgba(251, 245, 234, 0.62);
+      color: #7c4a22;
+      font-size: 0.82rem;
+      line-height: 1.2;
+      font-weight: 550;
+      text-decoration: none;
+    }
+
+    #panel-publications .pub-journal a.pub-badge {
+      color: #7c4a22;
+      font-weight: 550;
+    }
+
+    .pub-badge:hover {
+      color: #7c4a22;
+      background: rgba(251, 245, 234, 0.62);
+      border-color: rgba(232, 93, 4, 0.18);
+      text-decoration: none;
+    }
+
+    .pub-badge::before {
+      content: "";
+      width: 0.28rem;
+      height: 0.28rem;
+      border-radius: 50%;
+      background: var(--accent-secondary);
+      opacity: 0.55;
+    }
+
     #panel-publications .news-list li {
       padding: 1.1rem 0 1.2rem;
     }
@@ -267,12 +310,32 @@
 
     .news-date {
       white-space: nowrap;
-      font-weight: 500;
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.95rem;
+      line-height: 1.55;
     }
 
     .news-divider {
       color: var(--muted);
       padding: 0 0.35rem;
+    }
+
+    .news-timeline li {
+      display: grid;
+      grid-template-columns: 6.2rem minmax(0, 1fr);
+      gap: 0.95rem;
+    }
+
+    .news-timeline .news-divider {
+      display: none;
+    }
+
+    @media (max-width: 620px) {
+      .news-timeline li {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+      }
     }
 
     .pub-list li { margin-bottom: 1rem; }
@@ -308,7 +371,7 @@
     .hero-left h1 {
       font-size: clamp(2.0rem, 4.0vw, 3.0rem);
       line-height: 1.0;
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.7rem;
     }
 
     .hero-left .lead {
@@ -630,7 +693,7 @@
     <div class="hero-left">
       <div class="hero-card">
         <h1>Ruishi Qi</h1>
-        <p class="hero-tagline">Experimental condensed matter physicist studying strongly correlated exciton matter in two-dimensional quantum materials.</p>
+        <p class="hero-tagline">Experimental condensed matter physicist studying strongly correlated excitonic matter in two-dimensional quantum materials.</p>
         <ul class="affiliation-list">
           <li><span class="affiliation-role">Incoming</span><span>Stanford Science Fellow, Stanford University</span></li>
           <li><span class="affiliation-role">Ph.D.</span><span>Physics, UC Berkeley</span></li>
@@ -731,18 +794,18 @@
 
   <div class="section-card">
     <h2>News</h2>
-    <ul class="news-list">
-      <li><span class="news-date">Mar 2026</span><span class="news-divider">|</span>Our paper <a href="https://doi.org/10.1103/4v1f-lkh2" target="_blank"><em>Orbital-dependent Coulomb drag in electron-hole bilayer graphene heterostructures</em></a> is published in <strong>Physical Review Letters</strong>.</li>
-      <li><span class="news-date">Jan 2026</span><span class="news-divider">|</span>I am awarded the 2026-2029 <strong>Stanford Science Fellow</strong>. I will join Stanford this summer.</li>
-      <li><span class="news-date">Jan 2026</span><span class="news-divider">|</span>Our paper <a href="https://www.nature.com/articles/s41567-026-03184-9" target="_blank"><em>An exciton crystal in a moiré excitonic insulator</em></a> is published in <strong>Nature Physics</strong>.</li>
-      <li><span class="news-date">Oct 2025</span><span class="news-divider">|</span>Our paper <a href="https://www.science.org/doi/10.1126/science.adn4584" target="_blank"><em>Electrically controlled interlayer trion fluid in electron-hole bilayers</em></a> is published in <strong>Science</strong>.</li>
-      <li><span class="news-date">Aug 2025</span><span class="news-divider">|</span>Our paper <a href="https://doi.org/10.1038/s41563-025-02316-5" target="_blank"><em>Competition between excitonic insulators and quantum Hall states in correlated electron-hole fluids</em></a> is published in <strong>Nature Materials</strong>.</li>
-      <li><span class="news-date">Apr 2025</span><span class="news-divider">|</span>Our paper <a href="https://doi.org/10.1126/science.adl1839" target="_blank"><em>Perfect Coulomb drag and exciton transport in an excitonic insulator</em></a> is published in <strong>Science</strong>.</li>
-      <li><span class="news-date">Dec 2023</span><span class="news-divider">|</span>Our paper <a href="https://doi.org/10.1038/s41467-023-43799-7" target="_blank"><em>Thermodynamic behavior of correlated electron-hole fluids in van der Waals heterostructures</em></a> is published in <strong>Nature Communications</strong>.</li>
-      <li><span class="news-date">Nov 2021</span><span class="news-divider">|</span>Our paper <a href="https://doi.org/10.1038/s41586-021-03971-9" target="_blank"><em>Measuring phonon dispersion at an interface</em></a> is published in <strong>Nature</strong>.</li>
-      <li><span class="news-date">Feb 2021</span><span class="news-divider">|</span>Our paper <a href="https://doi.org/10.1038/s41467-021-21452-5" target="_blank"><em>Four-dimensional vibrational spectroscopy for nanoscale mapping of phonon dispersion in BN nanotubes</em></a> is published in <strong>Nature Communications</strong>.</li>
-      <li><span class="news-date">Jul 2020</span><span class="news-divider">|</span>I received my B.S. degree at Peking University, with the highest graduation honors: Weiming Scholar, Outstanding Graduate in Peking University, and Outstanding Graduate in Beijing. I will pursue my Ph.D. at <strong>UC Berkeley</strong>.</li>
-      <li><span class="news-date">Jul 2019</span><span class="news-divider">|</span>Our paper <a href="https://doi.org/10.1021/acs.nanolett.9b01350" target="_blank"><em>Probing Far-Infrared Surface Phonon Polaritons in Semiconductor Nanostructures at Nanoscale</em></a> is published in <strong>Nano Letters</strong>.</li>
+    <ul class="news-list news-timeline">
+      <li><span class="news-date">Mar 2026</span><span class="news-divider">|</span><span class="news-content">Our paper <a href="https://doi.org/10.1103/4v1f-lkh2" target="_blank"><em>Orbital-dependent Coulomb drag in electron-hole bilayer graphene heterostructures</em></a> is published in <strong>Physical Review Letters</strong>.</span></li>
+      <li><span class="news-date">Jan 2026</span><span class="news-divider">|</span><span class="news-content">I am awarded the 2026-2029 <strong>Stanford Science Fellow</strong>. I will join Stanford this summer.</span></li>
+      <li><span class="news-date">Jan 2026</span><span class="news-divider">|</span><span class="news-content">Our paper <a href="https://www.nature.com/articles/s41567-026-03184-9" target="_blank"><em>An exciton crystal in a moiré excitonic insulator</em></a> is published in <strong>Nature Physics</strong>.</span></li>
+      <li><span class="news-date">Oct 2025</span><span class="news-divider">|</span><span class="news-content">Our paper <a href="https://www.science.org/doi/10.1126/science.adn4584" target="_blank"><em>Electrically controlled interlayer trion fluid in electron-hole bilayers</em></a> is published in <strong>Science</strong>.</span></li>
+      <li><span class="news-date">Aug 2025</span><span class="news-divider">|</span><span class="news-content">Our paper <a href="https://doi.org/10.1038/s41563-025-02316-5" target="_blank"><em>Competition between excitonic insulators and quantum Hall states in correlated electron-hole fluids</em></a> is published in <strong>Nature Materials</strong>.</span></li>
+      <li><span class="news-date">Apr 2025</span><span class="news-divider">|</span><span class="news-content">Our paper <a href="https://doi.org/10.1126/science.adl1839" target="_blank"><em>Perfect Coulomb drag and exciton transport in an excitonic insulator</em></a> is published in <strong>Science</strong>.</span></li>
+      <li><span class="news-date">Dec 2023</span><span class="news-divider">|</span><span class="news-content">Our paper <a href="https://doi.org/10.1038/s41467-023-43799-7" target="_blank"><em>Thermodynamic behavior of correlated electron-hole fluids in van der Waals heterostructures</em></a> is published in <strong>Nature Communications</strong>.</span></li>
+      <li><span class="news-date">Nov 2021</span><span class="news-divider">|</span><span class="news-content">Our paper <a href="https://doi.org/10.1038/s41586-021-03971-9" target="_blank"><em>Measuring phonon dispersion at an interface</em></a> is published in <strong>Nature</strong>.</span></li>
+      <li><span class="news-date">Feb 2021</span><span class="news-divider">|</span><span class="news-content">Our paper <a href="https://doi.org/10.1038/s41467-021-21452-5" target="_blank"><em>Four-dimensional vibrational spectroscopy for nanoscale mapping of phonon dispersion in BN nanotubes</em></a> is published in <strong>Nature Communications</strong>.</span></li>
+      <li><span class="news-date">Jul 2020</span><span class="news-divider">|</span><span class="news-content">I received my B.S. degree at Peking University, with the highest graduation honors: Weiming Scholar, Outstanding Graduate in Peking University, and Outstanding Graduate in Beijing. I will pursue my Ph.D. at <strong>UC Berkeley</strong>.</span></li>
+      <li><span class="news-date">Jul 2019</span><span class="news-divider">|</span><span class="news-content">Our paper <a href="https://doi.org/10.1021/acs.nanolett.9b01350" target="_blank"><em>Probing Far-Infrared Surface Phonon Polaritons in Semiconductor Nanostructures at Nanoscale</em></a> is published in <strong>Nano Letters</strong>.</span></li>
     </ul>
   </div>
 
@@ -812,7 +875,7 @@
       My research focuses on interacting electron-hole systems in two-dimensional van der Waals heterostructures, with emphasis on excitons, trions, biexcitons, and their many-body collective quantum phases such as superfluids and crystals.
     </p>
     <p class="lead" style="text-align:left; margin-top:1rem;">
-      I aim to establish electrically tunable electron-hole systems as a versatile platform for discovering and controlling strongly correlated quantum matter. By combining designer van der Waals heterostructures with low-temperature optical and transport probes, my work seeks to reveal how composite particles such as excitons, trions, and biexcitons organize into collective phases.
+      I aim to establish electrically tunable electron-hole systems as a versatile platform for discovering and controlling strongly correlated quantum matter. By combining van der Waals heterostructures with low-temperature optical and transport probes, my work seeks to reveal how composite particles such as excitons, trions, and biexcitons organize into collective phases.
     </p>
     <p class="lead" style="text-align:left; margin-top:1rem;">
       Looking ahead, I am interested in using this platform to explore equilibrium condensates, crystalline states, multicomponent quantum fluids, and new regimes where strong Coulomb interactions, dimensionality, topology, and optical control meet. A central goal is to build experimental systems where correlated bosonic and fermionic matter can be created, measured, and tuned with microscopic precision.
@@ -940,16 +1003,22 @@
       <li>
         <div class="pub-title">An exciton crystal in a moiré excitonic insulator</div>
         <div class="pub-authors">Ruishi Qi, Qize Li, Haleem Kim, Jiahui Nie, Zuocheng Zhang, Ruichen Xia, Zhiyuan Cui, Jianghan Xiao, Takashi Taniguchi, Kenji Watanabe, Michael F. Crommie, Feng Wang</div>
-        <div class="pub-journal"><a href="https://www.nature.com/articles/s41567-026-03184-9" target="_blank"><em>Nature Physics</em></a>, 22, 514-520 (2026). Related commentary:
-        <a href="https://doi.org/10.1038/s41578-026-00916-4" target="_blank"><em>Nature Reviews Materials</em> Research Highlight</a> ·
-        <a href="https://doi.org/10.1038/s41567-026-03244-0" target="_blank"><em>Nature Physics</em> News & Views</a>
+        <div class="pub-journal"><a href="https://www.nature.com/articles/s41567-026-03184-9" target="_blank"><em>Nature Physics</em></a>, 22, 514-520 (2026)
+          <div class="pub-badges">
+            <a class="pub-badge" href="https://doi.org/10.1038/s41578-026-00916-4" target="_blank">Nature Reviews Materials Research Highlight</a>
+            <a class="pub-badge" href="https://doi.org/10.1038/s41567-026-03244-0" target="_blank">Nature Physics News &amp; Views</a>
+          </div>
         </div>
       </li>
 
       <li>
         <div class="pub-title">Orbital dependent Coulomb drag in electron-hole bilayer graphene heterostructures</div>
         <div class="pub-authors">Zuocheng Zhang, Ruishi Qi, Jingxu Xie, Qize Li, Takashi Taniguchi, Kenji Watanabe, Michael F. Crommie, Feng Wang</div>
-        <div class="pub-journal"><a href="https://doi.org/10.1103/4v1f-lkh2" target="_blank"><em>Physical Review Letters</em></a>, 136, 126303 (2026). [Editor's suggestion]</div>
+        <div class="pub-journal"><a href="https://doi.org/10.1103/4v1f-lkh2" target="_blank"><em>Physical Review Letters</em></a>, 136, 126303 (2026)
+          <div class="pub-badges">
+            <span class="pub-badge">Editor's Suggestion</span>
+          </div>
+        </div>
       </li>
       <li>
         <div class="pub-title">Nature of emergent moiré excitations in MoSe2/WS2 moiré superlattices</div>
@@ -971,8 +1040,10 @@
         <div class="pub-title">Electrically controlled interlayer trion fluid in electron-hole bilayers</div>
         <div class="pub-authors">Ruishi Qi, Qize Li, Zuocheng Zhang, Sudi Chen, Jingxu Xie, Yunbo Ou, Zhiyuan Cui, David D. Dai, Andrew Y. Joe, Takashi Taniguchi, Kenji Watanabe, Sefaattin Tongay, Alex Zettl, Liang Fu, Feng Wang</div>
         <div class="pub-journal">
-          <a href="https://doi.org/10.1126/science.adn4584" target="_blank"><em>Science</em></a> 390, 299–303 (2025). Related commentary:
-        <a href="https://www.science.org/doi/10.1126/science.aec0463" target="_blank"><em>Science</em> Perspective</a>
+          <a href="https://doi.org/10.1126/science.adn4584" target="_blank"><em>Science</em></a> 390, 299–303 (2025)
+          <div class="pub-badges">
+            <a class="pub-badge" href="https://www.science.org/doi/10.1126/science.aec0463" target="_blank">Science Perspective</a>
+          </div>
         </div>
       </li>
 
@@ -980,8 +1051,10 @@
         <div class="pub-title">Perfect Coulomb drag and exciton transport in an excitonic insulator</div>
         <div class="pub-authors">Ruishi Qi, Andrew Y. Joe, Zuocheng Zhang, Jingxu Xie, Qixin Feng, Zheyu Lu, Ziyu Wang, Takashi Taniguchi, Kenji Watanabe, Sefaattin Tongay, Feng Wang</div>
         <div class="pub-journal">
-          <a href="https://doi.org/10.1126/science.adl1839" target="_blank"><em>Science</em></a> 388, 278–283 (2025). Related commentary:
-        <a href="https://www.condmatjclub.org/jccm_january_2026_01" target="_blank"><em>Journal Club for Condensed Matter Physics</em></a>
+          <a href="https://doi.org/10.1126/science.adl1839" target="_blank"><em>Science</em></a> 388, 278–283 (2025)
+          <div class="pub-badges">
+            <a class="pub-badge" href="https://www.condmatjclub.org/jccm_january_2026_01" target="_blank">Journal Club for Condensed Matter Physics</a>
+          </div>
         </div>
       </li>
 
