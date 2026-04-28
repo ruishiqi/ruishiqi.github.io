@@ -101,6 +101,11 @@
       line-height: 1.45;
     }
 
+    .pub-note {
+      color: var(--muted);
+      font-weight: 450;
+    }
+
     #panel-publications .news-list li {
       padding: 1.1rem 0 1.2rem;
     }
@@ -108,6 +113,59 @@
     #panel-publications .pub-journal a {
       color: var(--accent-secondary);
       font-weight: 600;
+    }
+
+    .publication-collapse {
+      padding-top: 0.2rem;
+    }
+
+    .publication-collapse-toggle {
+      position: relative;
+      width: 100%;
+      border: none;
+      background: transparent;
+      color: var(--accent);
+      cursor: pointer;
+      font: inherit;
+      display: block;
+      padding: 0 3rem;
+      text-align: center;
+    }
+
+    .publication-collapse-toggle h2 {
+      margin: 0;
+    }
+
+    .collapse-icon {
+      position: absolute;
+      right: 0.6rem;
+      top: 50%;
+      width: 1.05rem;
+      height: 1.05rem;
+      border-right: 4px solid var(--accent-secondary);
+      border-bottom: 4px solid var(--accent-secondary);
+      transform: translateY(-65%) rotate(45deg);
+      transition: transform 0.2s ease;
+    }
+
+    .publication-collapse.expanded .collapse-icon {
+      transform: translateY(-35%) rotate(225deg);
+    }
+
+    .collaborative-publication-list {
+      display: none;
+      margin-top: 1rem;
+    }
+
+    .publication-collapse.expanded .collaborative-publication-list {
+      display: block;
+    }
+
+    .publication-profile-links {
+      grid-template-columns: repeat(2, minmax(0, 15rem));
+      justify-content: center;
+      max-width: none;
+      margin: 0 auto 1rem;
     }
     
     main { padding: 2rem 0 2.5rem; }
@@ -961,10 +1019,190 @@
     </ul>
   </div>
 
+  <div class="section-card publication-collapse" id="collaborativePublications">
+    <button class="publication-collapse-toggle" type="button" aria-expanded="false" aria-controls="collaborativePublicationList">
+      <h2>Additional collaborative publications</h2>
+      <span class="collapse-icon" aria-hidden="true"></span>
+    </button>
+
+    <ul class="news-list collaborative-publication-list" id="collaborativePublicationList">
+      <li>
+        <div class="pub-title">Electron Microscopy Measurement of Picometer-Level Distortion Induced Local Phonons at a Defect</div>
+        <div class="pub-authors">Bo Han, Ruochen Shi, Huining Peng, Yingjie Lv, Ruishi Qi, Yuehui Li, Jingmin Zhang, Jinlong Du, Pu Yu, Peng Gao</div>
+        <div class="pub-journal"><a href="https://pubs.acs.org/doi/10.1021/acs.nanolett.5c05660" target="_blank"><em>Nano Letters</em></a> 26 (4), 1449-1454 (2026)</div>
+      </li>
+
+      <li>
+        <div class="pub-title">Terahertz electrodynamics in a zero-field Wigner crystal</div>
+        <div class="pub-authors">Su-Di Chen, Ruishi Qi, Ha-Leem Kim, Qixin Feng, Ruichen Xia, Dishan Abeysinghe, Jingxu Xie, Takashi Taniguchi, Kenji Watanabe, Dung-Hai Lee, Feng Wang</div>
+        <div class="pub-journal"><a href="https://arxiv.org/abs/2509.10624" target="_blank"><em>arXiv</em></a>:2509.10624 (2025)</div>
+      </li>
+
+      <li>
+        <div class="pub-title">Contactless cavity sensing of superfluid stiffness in atomically thin 4Hb-TaS2</div>
+        <div class="pub-authors">Trevor Chistolini, Ha-Leem Kim, Qiyu Wang, Su-Di Chen, Luke Pritchard Cairns, Ryan Patrick Day, Collin Sanborn, Hyunseong Kim, Zahra Pedramrazi, Ruishi Qi, Takashi Taniguchi, Kenji Watanabe, James G. Analytis, David I. Santiago, Irfan Siddiqi, Feng Wang</div>
+        <div class="pub-journal"><a href="https://arxiv.org/abs/2510.25124" target="_blank"><em>arXiv</em></a>:2510.25124 (2025)</div>
+      </li>
+
+      <li>
+        <div class="pub-title">Direct Measurement of Terahertz Conductivity in a Gated Monolayer Semiconductor</div>
+        <div class="pub-authors">Su-Di Chen, Qixin Feng, Wenyu Zhao, Ruishi Qi, Zuocheng Zhang, Dishan Abeysinghe, Can Uzundal, Jingxu Xie, Takashi Taniguchi, Kenji Watanabe, Feng Wang</div>
+        <div class="pub-journal"><a href="https://doi.org/10.1021/acs.nanolett.5c01605" target="_blank"><em>Nano Letters</em></a> 25 (19), 7998-8002 (2025)</div>
+      </li>
+
+      <li>
+        <div class="pub-title">Measurement of far-infrared surface phonon polaritons in AlN nanowires via electron microscope</div>
+        <div class="pub-authors">Chao He, Ze Hua, Peiyi He, Ruishi Qi, Yuehui Li, Ruiwen Shao, Weikang Dong, Ruochen Shi, Yeliang Wang, Peng Gao</div>
+        <div class="pub-journal"><a href="https://iopscience.iop.org/article/10.1088/1674-1056/ae2a00" target="_blank"><em>Chinese Physics B</em></a> 35, 037901 (2025)</div>
+      </li>
+
+      <li>
+        <div class="pub-title">Femtojoule All-optical Nonlinearity for Deep Learning with Incoherent Illumination</div>
+        <div class="pub-authors">Qixin Feng, Can B. Uzundal, Ruihan Guo, Collin Sanborn, Ruishi Qi, Jingxu Xie, Jianing Zhang, Junqiao Wu, Feng Wang</div>
+        <div class="pub-journal"><a href="https://doi.org/10.1126/sciadv.ads4224" target="_blank"><em>Science Advances</em></a> 11, eads4224 (2025)</div>
+      </li>
+
+      <li>
+        <div class="pub-title">Strongly confined Mid-infrared to Terahertz Phonon Polaritons in Ultra-thin SrTiO3</div>
+        <div class="pub-authors">Peiyi He, Jiade Li, Cong Li, Ning Li, Bo Han, Ruochen Shi, Ruishi Qi, Jinlong Du, Pu Yu, Peng Gao</div>
+        <div class="pub-journal"><a href="https://www.science.org/doi/10.1126/sciadv.ady7316" target="_blank"><em>Science Advances</em></a> 11, eady7316 (2025)</div>
+      </li>
+
+      <li>
+        <div class="pub-title">Single-dislocation phonons: atomic-scale measurement and their thermal properties</div>
+        <div class="pub-authors">Yue-Hui Li, Bo Han, Xiao-Long Yang, Rui-Lin Mao, Fa-Chen Liu, Ruo-Chen Shi, Rui-Shi Qi, Xiao-Rui Hao, Ning Li, Bing-Yao Liu, Xiao-Mei Li, Jin-Long Du, Ji Chen, Wu Li, Peng Gao</div>
+        <div class="pub-journal"><a href="https://doi.org/10.1088/0256-307X/42/6/066302" target="_blank"><em>Chinese Physics Letters</em></a> 42, 066302 (2025)</div>
+      </li>
+
+      <li>
+        <div class="pub-title">Terahertz phonon engineering with van der Waals heterostructures</div>
+        <div class="pub-authors">Yoseob Yoon, Zheyu Lu, Can Uzundal, Ruishi Qi, Wenyu Zhao, Sudi Chen, Qixin Feng, Woochang Kim, Mit H. Naik, Kenji Watanabe, Takashi Taniguchi, Steven G. Louie, Michael F. Crommie, Feng Wang</div>
+        <div class="pub-journal"><a href="https://doi.org/10.1038/s41586-024-07604-9" target="_blank"><em>Nature</em></a> 631, 771-776 (2024)</div>
+      </li>
+
+      <li>
+        <div class="pub-title">Low Resistance Contact to P-type Monolayer WSe2</div>
+        <div class="pub-authors">Jingxu Xie, Zuocheng Zhang, Haodong Zhang, Vikram Nagarajan, Wenyu Zhao, Ha-Leem Kim, Collin Sanborn, Ruishi Qi, Sudi Chen, Salman Kahn, Kenji Watanabe, Takashi Taniguchi, Alex Zettl, Michael F. Crommie, James Analytis, Feng Wang</div>
+        <div class="pub-journal"><a href="https://doi.org/10.1021/acs.nanolett.3c04195" target="_blank"><em>Nano Letters</em></a> 24 (20), 5937-5943 (2024)</div>
+      </li>
+
+      <li>
+        <div class="pub-title">Engineering correlated insulators in bilayer graphene with a remote Coulomb superlattice</div>
+        <div class="pub-authors">Zuocheng Zhang, Jingxu Xie, Wenyu Zhao, Ruishi Qi, Collin Sanborn, Shaoxin Wang, Salman Kahn, Kenji Watanabe, Takashi Taniguchi, Alex Zettl, Michael Crommie, Feng Wang</div>
+        <div class="pub-journal"><a href="https://doi.org/10.1038/s41563-023-01754-3" target="_blank"><em>Nature Materials</em></a> 23, 189-195 (2024)</div>
+      </li>
+
+      <li>
+        <div class="pub-title">Atomic-scale observation of localized phonons at FeSe/SrTiO3 interface</div>
+        <div class="pub-authors">Ruochen Shi, Qize Li, Xiaofeng Xu, Bo Han, Ruixue Zhu, Fachen Liu, Ruishi Qi, Xiaowen Zhang, Jinlong Du, Ji Chen, Dapeng Yu, Xuetao Zhu, Jiandong Guo, Peng Gao</div>
+        <div class="pub-journal"><a href="https://doi.org/10.1038/s41467-024-47688-5" target="_blank"><em>Nature Communications</em></a> 15, 3418 (2024)</div>
+      </li>
+
+      <li>
+        <div class="pub-title">Probing Hyperbolic Shear Polaritons in β-Ga2O3 Nanostructures Using STEM-EELS</div>
+        <div class="pub-authors">Zhenyu Zhang, Tao Wang, Hailing Jiang, Ruishi Qi, Yuehui Li, Jinlin Wang, Shanshan Sheng, Ning Li, Ruochen Shi, Jiaqi Wei, Fang Liu, Shengnan Zhang, Xiaoqing Huo, Jinlong Du, Jingmin Zhang, Jun Xu, Xin Rong, Peng Gao, Bo Shen, Xinqiang Wang</div>
+        <div class="pub-journal"><a href="https://doi.org/10.1002/adma.202204884" target="_blank"><em>Advanced Materials</em></a> 36, 2204884 (2024)</div>
+      </li>
+
+      <li>
+        <div class="pub-title">Nanoscale Localized Phonons at Al2O3 Grain Boundaries</div>
+        <div class="pub-authors">Jingyuan Yan, Ruochen Shi, Jiake Wei, Yuehui Li, Ruishi Qi, Mei Wu, Xiaomei Li, Bin Feng, Peng Gao, Naoya Shibata, Yuichi Ikuhara</div>
+        <div class="pub-journal"><a href="https://doi.org/10.1021/acs.nanolett.3c04149" target="_blank"><em>Nano Letters</em></a> 24 (11), 3323-3330 (2024)</div>
+      </li>
+
+      <li>
+        <div class="pub-title">Four-dimensional electron energy-loss spectroscopy</div>
+        <div class="pub-authors">Mei Wu, Ruochen Shi, Ruishi Qi, Yuehui Li, Jinlong Du, Peng Gao</div>
+        <div class="pub-journal"><a href="https://www.sciencedirect.com/science/article/pii/S0304399123001353" target="_blank"><em>Ultramicroscopy</em></a> 253, 113818 (2023)</div>
+      </li>
+
+      <li>
+        <div class="pub-title">Effects of localized interface phonons on heat conductivity in ingredient heterogeneous solids</div>
+        <div class="pub-authors">Mei Wu, Ruochen Shi, Ruishi Qi, Yuehui Li, Tao Feng, Bingyao Liu, Jingyuan Yan, Xiaomei Li, Zhetong Liu, Tao Wang, Tongbo Wei, Zhiqiang Liu, Jinlong Du, Ji Chen, Peng Gao</div>
+        <div class="pub-journal"><a href="https://doi.org/10.1088/0256-307X/40/3/036801" target="_blank"><em>Chinese Physics Letters</em></a> 40 (3), 036801 (2023)</div>
+      </li>
+
+      <li>
+        <div class="pub-title">Hyperbolic whispering-gallery phonon polaritons in boron-nitride nanotubes</div>
+        <div class="pub-authors">Xiangdong Guo, Ning Li, Xiaoxia Yang, Ruishi Qi, Chenchen Wu, Ruochen Shi, Yuehui Li, Yang Huang, F. Javier García de Abajo, En-Ge Wang, Peng Gao, Qing Dai</div>
+        <div class="pub-journal"><a href="https://www.nature.com/articles/s41565-023-01324-3" target="_blank"><em>Nature Nanotechnology</em></a> 18, 529-534 (2023)</div>
+      </li>
+
+      <li>
+        <div class="pub-title">Phonon transition across an isotopic interface</div>
+        <div class="pub-authors">Ning Li, Ruochen Shi, Yifei Li, Ruishi Qi, Fachen Liu, Xiaowen Zhang, Zhetong Liu, Yuehui Li, Xiangdong Guo, Kaihui Liu, Ying Jiang, Xin-Zheng Li, Ji Chen, Lei Liu, En-Ge Wang, Peng Gao</div>
+        <div class="pub-journal"><a href="https://doi.org/10.1038/s41467-023-38053-z" target="_blank"><em>Nature Communications</em></a> 14, 2382 (2023)</div>
+      </li>
+
+      <li>
+        <div class="pub-title">Atomic-scale probing of heterointerface phonon bridges in nitride semiconductor</div>
+        <div class="pub-authors">Yue-Hui Li, Rui-Shi Qi, Ruo-Chen Shi, Jian-Nan Hu, Zhe-Tong Liu, Yuan-Wei Sun, Ming-Qiang Li, Ning Li, Can-Li Song, Lai Wang, Zhi-Biao Hao, Yi Luo, Qi-Kun Xue, Xu-Cun Ma, Peng Gao</div>
+        <div class="pub-journal"><a href="https://doi.org/10.1073/pnas.2117027119" target="_blank"><em>Proceedings of the National Academy of Sciences</em></a> 119 (8), e2117027119 (2022)</div>
+      </li>
+
+      <li>
+        <div class="pub-title">Dynamics of Polar Skyrmion Bubbles under Electric Fields</div>
+        <div class="pub-authors">Ruixue Zhu, Zhexin Jiang, Xinxin Zhang, Xiangli Zhong, Congbing Tan, Mingwei Liu, Yuanwei Sun, Xiaomei Li, Ruishi Qi, Ke Qu, Zhetong Liu, Mei Wu, Mingqiang Li, Boyuan Huang, Zhi Xu, Jinbin Wang, Kaihui Liu, Peng Gao, Jie Wang, Jiangyu Li, Xuedong Bai</div>
+        <div class="pub-journal"><a href="https://doi.org/10.1103/PhysRevLett.129.107601" target="_blank"><em>Physical Review Letters</em></a> 129 (10), 107601 (2022)</div>
+      </li>
+
+      <li>
+        <div class="pub-title">Studying Plasmon Dispersion of MXene for Enhanced Electromagnetic Absorption</div>
+        <div class="pub-authors">Xiangdong Guo, Ning Li, Chenchen Wu, Xiaokang Dai, Ruishi Qi, Tianyu Qiao, Tuoyi Su, Dandan Lei, Nishuang Liu, Jinlong Du, Enge Wang, Xiaoxia Yang, Peng Gao, Qing Dai</div>
+        <div class="pub-journal"><a href="https://doi.org/10.1002/adma.202201120" target="_blank"><em>Advanced Materials</em></a> 34 (33), 2270237 (2022)</div>
+      </li>
+
+      <li>
+        <div class="pub-title">Charge Transfer Dynamics in MoSe2/hBN/WSe2 Heterostructures</div>
+        <div class="pub-authors">Yoseob Yoon, Zuocheng Zhang, Ruishi Qi, Andrew Y. Joe, Renee Sailus, Kenji Watanabe, Takashi Taniguchi, Sefaattin Tongay, Feng Wang</div>
+        <div class="pub-journal"><a href="https://doi.org/10.1021/acs.nanolett.2c04030" target="_blank"><em>Nano Letters</em></a> 22 (24), 10140-10146 (2022)</div>
+      </li>
+
+      <li>
+        <div class="pub-title">Direct observation of highly confined phonon polaritons in suspended monolayer hexagonal boron nitride</div>
+        <div class="pub-authors">Ning Li, Xiangdong Guo, Xiaoxia Yang, Ruishi Qi, Tianyu Qiao, Yifei Li, Ruochen Shi, Yuehui Li, Kaihui Liu, Zhi Xu, Lei Liu, F. Javier García de Abajo, Qing Dai, En-Ge Wang, Peng Gao</div>
+        <div class="pub-journal"><a href="https://doi.org/10.1038/s41563-020-0763-z" target="_blank"><em>Nature Materials</em></a> 20, 43-48 (2021)</div>
+      </li>
+
+      <li>
+        <div class="pub-title">Anisotropic moiré optical transitions in twisted monolayer/bilayer phosphorene heterostructures</div>
+        <div class="pub-authors">Shilong Zhao, Erqing Wang, Ebru Alime Üzer, Shuaifei Guo, Ruishi Qi, Junyang Tan, Kenji Watanabe, Takashi Taniguchi, Tom Nilges, Peng Gao, Yuanbo Zhang, Hui-Ming Cheng, Bilu Liu, Xiaolong Zou, Feng Wang</div>
+        <div class="pub-journal"><a href="https://doi.org/10.1038/s41467-021-24272-9" target="_blank"><em>Nature Communications</em></a> 12, 3947 (2021)</div>
+      </li>
+
+      <li>
+        <div class="pub-title">Broad-Spectral-Range Sustainability and Controllable Excitation of Hyperbolic Phonon Polaritons in α-MoO3</div>
+        <div class="pub-authors">Weikang Dong, Ruishi Qi, Tiansheng Liu, Yi Li, Ning Li, Ze Hua, Zirui Gao, Shuyuan Zhang, Kaihui Liu, Jiandong Guo, Peng Gao</div>
+        <div class="pub-journal"><a href="https://doi.org/10.1002/adma.202002014" target="_blank"><em>Advanced Materials</em></a> 32, 2002014 (2020)</div>
+      </li>
+
+      <li>
+        <div class="pub-title">Manipulation of surface phonon polaritons in SiC nanorods</div>
+        <div class="pub-authors">Yuehui Li, Ruishi Qi, Ruochen Shi, Ning Li, Peng Gao</div>
+        <div class="pub-journal"><a href="https://doi.org/10.1016/j.scib.2020.02.026" target="_blank"><em>Science Bulletin</em></a> 65 (10), 820-826 (2020)</div>
+      </li>
+
+      <li>
+        <div class="pub-title">Probing lattice vibrations at SiO2/Si surface and interface with nanometer resolution</div>
+        <div class="pub-authors">Yue-Hui Li, Mei Wu, Rui-Shi Qi, Ning Li, Yuan-Wei Sun, Cheng-Long Shi, Xue-Tao Zhu, Jian-Dong Guo, Da-Peng Yu, Peng Gao</div>
+        <div class="pub-journal"><a href="https://doi.org/10.1088/0256-307X/36/2/026801" target="_blank"><em>Chinese Physics Letters</em></a> 36 (2), 026801 (2019)</div>
+      </li>
+    </ul>
+  </div>
+
   <div class="section-card">
-    <h2>Full publication list</h2>
-    <div class="button-row" style="margin-bottom: 1rem; justify-content: center;">
-      <a class="button secondary" href="https://scholar.google.com/citations?user=NA7sfwsAAAAJ&hl=en" target="_blank">Google Scholar</a>
+    <h2>Publication profiles</h2>
+    <div class="profile-links publication-profile-links">
+      <a class="profile-link" href="https://scholar.google.com/citations?user=NA7sfwsAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
+        <span class="profile-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 3 1.8 10.1 12 17.2l10.2-7.1L12 3Zm0 16.5-6.2-4.3v2.3L12 21.8l6.2-4.3v-2.3L12 19.5Z"/></svg>
+        </span>
+        <span>Google Scholar</span>
+      </a>
+      <a class="profile-link" href="https://www.researchgate.net/profile/Ruishi-Qi?ev=hdr_xprf" target="_blank" rel="noopener noreferrer">
+        <span class="profile-icon researchgate" aria-hidden="true">RG</span>
+        <span>ResearchGate</span>
+      </a>
     </div>
   </div>
 
@@ -1030,6 +1268,16 @@
   });
 
   activateTab(getHashTab());
+
+  const collaborativePublications = document.getElementById('collaborativePublications');
+  const collaborativeToggle = collaborativePublications?.querySelector('.publication-collapse-toggle');
+
+  if (collaborativePublications && collaborativeToggle) {
+    collaborativeToggle.addEventListener('click', () => {
+      const expanded = collaborativePublications.classList.toggle('expanded');
+      collaborativeToggle.setAttribute('aria-expanded', String(expanded));
+    });
+  }
 
     const slides = Array.from(document.querySelectorAll(".slide"));
     const dotsContainer = document.getElementById("dots");
@@ -1115,6 +1363,15 @@
       el.innerHTML = el.innerHTML.replace(
         /\bRuishi Qi\b/g,
         '<strong>Ruishi Qi</strong>'
+      ).replace(
+        /\bRui-Shi Qi\b/g,
+        '<strong>Rui-Shi Qi</strong>'
+      ).replace(
+        /\bR\. Qi\b/g,
+        '<strong>R. Qi</strong>'
+      ).replace(
+        /\bRui-Shi\b/g,
+        '<strong>Rui-Shi</strong>'
       );
     });
 
