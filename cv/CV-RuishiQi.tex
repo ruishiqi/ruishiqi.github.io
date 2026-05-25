@@ -1,0 +1,481 @@
+%!TEX program = LuaLaTeX
+
+\documentclass[11pt,sans]{moderncv}
+%\usepackage[9pt]{extsizes}
+\usepackage{color}
+\usepackage{xcolor}
+\moderncvcolor{blue}
+\usepackage[UTF8]{ctex}
+\setCJKmainfont[Scale=0.9]{SimSun}
+\linespread{1.0}
+
+% Google Scholar link
+\newcommand{\scholarurl}{https://scholar.google.com/citations?user=NA7sfwsAAAAJ\&hl=en}
+\newcommand{\researchgateurl}{https://www.researchgate.net/profile/Ruishi-Qi}
+\newcommand{\homepageurl}{https://ruishiqi.github.io/}
+\newcommand{\orcidurl}{https://orcid.org/0009-0000-1305-1104}
+% ===== CV version control =====
+\makeatletter
+\@ifundefined{ifshortcv}{\newif\ifshortcv}{}
+\@ifundefined{shortcvset}{\shortcvfalse}{}
+\@ifundefined{ifprintchinese}{\newif\ifprintchinese}{}
+\@ifundefined{printchinese}{\printchinesefalse}{}
+\@ifundefined{ifprinttalks}{\newif\ifprinttalks}{}
+\@ifundefined{printtalks}{\printtalksfalse}{}
+\@ifundefined{ifshowMA}{\newif\ifshowMA}{}
+\@ifundefined{showMA}{\showMAfalse}{}
+
+
+\shortcvtrue % full CV for faculty applications; switch to true for a shorter CV
+% \printchinesetrue % print Chinese awards section
+\printtalkstrue  % print presentations section
+\showMAtrue 
+
+\usepackage{graphicx}
+\usepackage{calc}
+\newcommand{\arxivicon}{%
+  \aiarXiv%
+}
+\newcommand{\googlescholaricon}{%
+  \aiGoogleScholar%
+}
+\newcommand{\myemph}[1]{\textbf{\textit{#1}}}
+\newcommand{\myname}[1]{\textbf{#1}}
+% \newcommand{\mylink}[1]{\href{#1}{\color{mycolor}\faLink}}
+% \newcommand{\myarxiv}[1]{\href{#1}{\color{mycolor}\arxivicon}}
+\newcommand{\mylink}[1]{\href{#1}{\color{mycolor}\faLink}}
+\newcommand{\myarxiv}[1]{\href{#1}{\color{mycolor}\arxivicon}}
+\makeatother
+\usepackage{calc}
+\usepackage{enumitem}
+%\definecolor{color1}{RGB}{0,0,139}
+\definecolor{color1}{RGB}{0, 78, 148}
+\definecolor{color2}{RGB}{0, 54, 103}
+% \definecolor{mycolor}{RGB}{75,131,180} % 50% blue
+% \definecolor{mycolor}{RGB}{0,0,255} 
+\definecolor{mycolor}{RGB}{0, 78, 148} 
+\usepackage{academicons}
+\moderncvstyle{classic}
+
+% --- moderncv column widths ---
+\setlength{\hintscolumnwidth}{5.5em}        % left (date) column; default is 5.75em
+\recomputelengths
+
+\newcommand{\clr}[1][]{\color{color1} \textbf{{#1}}}
+
+\newcommand{\progressbar}[2][1.5cm]{%
+    \textcolor{color1!80}{\rule{#1 * \real{#2} / 100}{1.3ex}}%
+    \textcolor{gray!30}{\rule{#1 - #1 * \real{#2} / 100}{1.3ex}}}
+
+\RequirePackage[left=56pt,right=64pt,top=72pt,bottom=72pt]{geometry}
+
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[english]{babel}
+\usepackage{fontawesome5}
+\RequirePackage[normalem]{ulem}
+\RequirePackage{contour}
+\usepackage{sansmath}
+\sansmath
+\renewcommand{\ULdepth}{1.8pt}\contourlength{0.6pt}
+\newcommand{\myuline}[1]{\uline{\contour{white}{#1}}}
+\newcommand{\myurl}[1]{\myuline{\url{{#1}}}}
+
+\newcommand{\mycomment}[1]{\cvitem{}{\small{#1}}}
+\newcommand{\mycvitemcomment}[3]{\cvitem{#1}{{#2}\hfill{#3}}}
+\usepackage[short,nodayofweek]{datetime}
+\usepackage{array,setspace}
+\usepackage{xpatch}
+\xpatchcmd{\cventry}{\slshape#4}{#4}{}{} % cventry: remove italic from institution name
+
+% Author information
+\ifprintchinese
+\name{Ruishi}{Qi \LARGE(亓瑞时)}
+\else
+\name{Ruishi}{Qi}
+\fi
+\title{Curriculum Vitae}
+
+\extrainfo{
+	{\large\href{\homepageurl}{\color{mycolor}\faGlobeAmericas}\hspace{1pt}
+	\href{\scholarurl}{\color{mycolor}\aiGoogleScholarSquare}\hspace{1pt}
+	\href{\researchgateurl}{\color{mycolor}\aiResearchGateSquare}\hspace{1pt}
+	\href{\orcidurl}{\color{mycolor}\aiOrcid}}\\
+	\faPhone*\ (510)-833-4696\\
+	\faEnvelope\ {ruishiqi@berkeley.edu}  \\
+	\faMapMarker*\ 225 Birge Hall, UC Berkeley \\
+	\faArrowCircleUp\ Last updated on \today\\
+%	\faGlobeAmericas \ https://sites.google.com/view/homepage-rs-qi/home
+}
+\begin{document}
+\makecvtitle
+% ===============Education==========
+%  Condensed-matter experimentalist; Peking University B.S. $\rightarrow$ UC Berkeley Ph.D. $\rightarrow$ Stanford Science Fellow; First-author publications in Nature$\times$2, Science$\times$3, Nat. Mater., Nature Physisc, ...
+
+% \ifshortcv
+% \else
+% \section{Research Profile}
+% \cvitem{}{Experimental condensed matter physicist studying correlated exciton phases and emergent quantum states in van der Waals electron-hole systems, using low-temperature optical spectroscopy and electronic transport.}
+% \fi
+
+\section{Research Areas}
+\cvlistdoubleitem{Strongly correlated quantum matter}{Two-dimensional materials}
+\cvlistdoubleitem{Excitonic insulators and condensates}{Low-temperature optics and transport}
+
+\section{Academic Appointments}
+
+\cventry{2026 -- }{Stanford Science Fellow}{Stanford University}{}{}{}
+\cvitem{}{Incoming fellow starting July 2026 \hfill Faculty host: Prof. Tony F. Heinz}
+
+% \cventry{2020 -- 2021}{Research assistant}{Electron Microscopy Laboratory, Peking {}{}{}University}{}
+% \cvitem{}{Faculty host: Prof. Peng Gao}
+
+\section{Education}
+
+\cventry{2020 -- 2026}{Ph.D. in physics}{University of California, Berkeley}{}{}{}
+\cvitem{}{Advisor: Prof. Feng Wang}
+\cvitem{}{Thesis: Correlated exciton physics in van der Waals electron-hole bilayers}
+\ifshowMA
+\cventry{2020 -- 2022}{M.A. in physics}{University of California, Berkeley}{}{}{}
+% \cvitem{}{GPA: 4.0/4}
+\fi
+\cventry{2016 -- 2020}{B.S. in physics}{Peking University (PKU)}{}{}{}
+\cvitem{}{GPA: 3.9/4; Rank: 1/200\textsuperscript{+}}
+\cvitem{}{Graduation honors: Weiming Scholar; Outstanding Graduate in Peking University; Outstanding Graduate of Beijing}
+
+\section{Publications}
+\cvitem{}{\small 30\textsuperscript{+} peer-reviewed articles; 1000\textsuperscript{+} citations. Full publication record: \href{\scholarurl}{\color{mycolor}\googlescholaricon\ Google Scholar}.}
+\cvitem{}{\small $\dag$: equal contribution; $\ddag$: corresponding author.}
+\subsection{Selected first- and corresponding-author publications}
+
+	\begin{enumerate}[topsep=2pt,itemsep=1ex,partopsep=1ex,parsep=1ex,leftmargin=6.35em]
+
+	\item \myname{R. Qi}$^{\dag\ddag}$, Q. Li$^\dag$, J. Nie, ..., F. Wang$^\ddag$. 
+	Two-component exciton condensates in an electron-hole bilayer. 
+	\myemph{Nature} accepted. 
+	arXiv:2603.15443 (2026). \myarxiv{https://arxiv.org/pdf/2603.15443}
+
+	\item \myname{R. Qi}$^{\dag\ddag}$, Q. Li$^\dag$,  Z. Zhang, ..., F. Wang$^\ddag$. 
+	Gate-tunable biexcitons in electron-hole-electron trilayers.
+	Under revision at \myemph{Science}. 
+
+	% \item \myname{R. Qi}$^\ddag$, Q. Li, J. Nie, F. Wang$^\ddag$.
+	% Microscopic theory of spinor condensate symmetry in bilayer exciton condensates.
+	% .
+
+	\item \myname{R. Qi}$^\dag$, Q. Li$^\dag$, H. Kim, ..., F. Wang$^\ddag$.  
+	An exciton crystal in a moiré excitonic insulator.  
+	\myemph{Nature Physics} 22, 514-520 (2026).
+	\mylink{https://www.nature.com/articles/s41567-026-03184-9}
+	% \myarxiv{https://arxiv.org/abs/2601.19603}
+	\\Featured in \emph{Nature Physics} \href{https://doi.org/10.1038/s41567-026-03244-0}{\color{mycolor} News \& Views}; \emph{Nature Reviews Materials} \href{https://doi.org/10.1038/s41578-026-00916-4}{\color{mycolor} Research Highlight}
+
+	\item \myname{R. Qi}$^\dag$, Q. Li$^\dag$, Z. Zhang, ..., F. Wang$^\ddag$.  
+	Competition between excitonic insulators and quantum Hall states in correlated electron-hole bilayers.  
+	\myemph{Nature Materials} 25, 35-41 (2026). \mylink{https://www.nature.com/articles/s41563-025-02316-5}
+
+	\item Z. Zhang$^{\dag\ddag}$, \myname{R. Qi}$^\dag$, J. Xie, ..., F. Wang$^\ddag$. 
+	Orbital dependent Coulomb drag in electron-hole bilayer graphene heterostructures. 
+	\myemph{Physical Review Letters} 136, 126303 (2026). 
+	\mylink{ https://doi.org/10.1103/4v1f-lkh2}
+	\\Featured in \emph{Physical Review Letters} \href{https://journals.aps.org/prl/issues/136/12}{\color{mycolor} Editor's suggestion}
+
+	\item Z. Lu$^{\dag\ddag}$, \myname{R. Qi}$^\dag$, R. Dutta$^\dag$, ..., F. Wang$^\ddag$. 
+	Nature of emergent moiré excitations in MoSe\textsubscript{2}/WS\textsubscript{2} moiré superlattices. 
+	\myemph{Nano Letters} 26 (12), 4096-4102 (2026). 
+	\mylink{https://doi.org/10.1021/acs.nanolett.5c06149}
+
+	\item \myname{R. Qi}, Q. Li, Z. Zhang, ..., F. Wang$^\ddag$. 
+	Electrically controlled interlayer trion fluid in electron-hole bilayers. 
+	\myemph{Science} 390 (6770), 299-303 (2025).
+	\mylink{https://www.science.org/doi/10.1126/science.adn4584}
+	\\Featured in \emph{Science} \href{https://www.science.org/doi/10.1126/science.aec0463}{\color{mycolor} Perspective}
+
+	\item \myname{R. Qi}$^\dag$, A. Joe$^{\dag\ddag}$, Z. Zhang, ..., F. Wang$^\ddag$. 
+	Perfect Coulomb drag and exciton transport in an excitonic insulator. 
+	\myemph{Science} 388 (6744), 278-283 (2025).
+	\mylink{https://www.science.org/doi/10.1126/science.adl1839}
+	\\Featured in \href{https://www.condmatjclub.org/jccm_january_2026_01}{\color{mycolor} \emph{Journal Club for Condensed Matter Physics}}
+
+
+	\item \myname{R. Qi}$^\dag$, A. Joe$^{\dag\ddag}$, Z. Zhang, ..., F. Wang$^\ddag$. 
+	Thermodynamic behavior of correlated electron-hole fluids in van der Waals heterostructures. 
+	\myemph{Nature Communications} {14}, 8264 (2023). 
+	\mylink{https://www.nature.com/articles/s41467-023-43799-7} 
+	
+	\item \myname{R. Qi}$^\dag$, R. Shi$^\dag$, Y. Li, ..., P. Gao$^\ddag$. 
+	Measuring phonon dispersion at an interface. 
+	\myemph{Nature} 599, 399-403 (2021). 
+	\mylink{https://www.nature.com/articles/s41586-021-03971-9}
+
+	\item \myname{R. Qi}$^\dag$, N. Li$^\dag$, J. Du, ..., P. Gao$^\ddag$. 
+	Four-dimensional vibrational spectroscopy for nanoscale mapping of phonon dispersion in BN nanotubes. 
+	\myemph{Nature Communications} {12}, 1179 (2021). 
+	\mylink{https://www.nature.com/articles/s41467-021-21452-5}
+
+	% \item Q. Li$^\dag$, \myname{R. Qi}$^{\dag,*}$, ..., F. Wang. 
+	% Polaron spectroscopy of excitonic insulating electron-hole bilayers. 
+	% arXiv:. 
+
+	\item \myname{R. Qi}$^\dag$, R. Wang$^\dag$, Y. Li, ..., P. Gao$^\ddag$. 
+	Probing far-infrared surface phonon polaritons in semiconductor nanostructures at nanoscale. 
+	\myemph{Nano Letters} {19} (8), 5070-5076 (2019). 
+	\mylink{https://pubs.acs.org/doi/10.1021/acs.nanolett.9b01350}
+
+
+	\end{enumerate}
+\ifshortcv
+\else
+\subsection{Collaborative publications}
+\begin{enumerate}[topsep=2pt,itemsep=1ex,partopsep=1ex,parsep=1ex,leftmargin=6.35em,resume]
+
+	% Z. Chen, R. Shi, L. Yan, B. Han, \myname{R. Qi}, ..., S. Cheng.
+	% Phonon renormalization at metal-semiconductor interface.
+	% Under review at \myemph{Nature Nanotechnology}. arXiv:
+
+	% \item J. Rodriguez, R. Qi, C. Xu, F. Wang, J. Analytis, H. Taghinejad.
+	% Joule-Heating Assisted Magnetization Reversal in Intercalated 2D Magnets
+	% arXiv:.
+
+	\item B. Han, R. Shi, ..., \myname{R. Qi}, ..., P. Gao$^\ddag$.
+	Electron Microscopy Measurement of Picometer-Level Distortion Induced Local Phonons at a Defect.
+	\myemph{Nano Letters} 26 (4), 1449-1454 (2026).
+	\mylink{https://pubs.acs.org/doi/10.1021/acs.nanolett.5c05660}
+
+	\item S.D. Chen$^\ddag$, \myname{R. Qi}, H. Kim, ..., F. Wang$^\ddag$.
+	Terahertz electrodynamics in a zero-field Wigner crystal.
+	arXiv:2509.10624.
+	\mylink{https://arxiv.org/abs/2509.10624}
+
+	\item T. Chistolini$^\dag$, ..., \myname{R. Qi}, ..., F. Wang$^\ddag$.
+	Contactless cavity sensing of superfluid stiffness in atomically thin 4Hb-TaS\textsubscript{2}.
+	arXiv:2510.25124.
+	\mylink{https://arxiv.org/abs/2510.25124}
+
+	\item S.D. Chen, Q. Feng, W. Zhao, \myname{R. Qi}, ..., F. Wang$^\ddag$.
+	Direct Measurement of Terahertz Conductivity in a Gated Monolayer Semiconductor.
+	\myemph{Nano Letters} 25 (19) 7998-8002 (2025).
+	\mylink{https://pubs.acs.org/doi/10.1021/acs.nanolett.5c01605}
+
+	\item C. He, Z. Hua, P. He, \myname{R. Qi}, ..., P. Gao$^\ddag$.
+	Measurement of far-infrared surface phonon polaritons in AlN nanowires via electron microscope.
+	\myemph{Chinese Physics B} 35, 037901 (2025).
+	\mylink{https://iopscience.iop.org/article/10.1088/1674-1056/ae2a00/meta}
+
+	\item Q. Feng$^\dag$, C. Uzundal$^\dag$, ..., \myname{R. Qi}, ..., F. Wang$^\ddag$.
+	Femtojoule All-optical Nonlinearity for Deep Learning with Incoherent Illumination.
+	\myemph{Science Advances} 11, eads4224 (2025).
+	\mylink{https://www.science.org/doi/10.1126/sciadv.ads4224}
+	
+	\item P. He$^\dag$, J. Li$^\dag$, ..., \myname{R. Qi}, ..., P. Gao$^\ddag$.
+	Strongly confined Mid-infrared to Terahertz Phonon Polaritons in Ultra-thin SrTiO\textsubscript{3}.
+	\myemph{Science Advances} 11, eady7316 (2025).	
+	\mylink{https://www.science.org/doi/10.1126/sciadv.ady7316}
+
+	\item Y. Li$^\dag$, B. Han$^\dag$, ..., \myname{R. Qi}, ..., P. Gao$^\ddag$.
+	Single-dislocation phonons: atomic-scale measurement and their thermal properties.
+	\myemph{Chinese Physics Letters} 42, 066302 (2025). 
+	\mylink{https://iopscience.iop.org/article/10.1088/0256-307X/42/6/066302}
+
+	\item Y. Yoon$^\ddag$, Z. Lu, C. Uzundal, \myname{R. Qi}, ..., F. Wang$^\ddag$.
+	Terahertz phonon engineering with van der Waals heterostructures. \myemph{Nature} 631, 771-776 (2024).
+	\mylink{https://www.nature.com/articles/s41586-024-07604-9}
+
+	\item J. Xie,  ..., \myname{R. Qi}, ..., F. Wang$^\ddag$.
+	Low Resistance Contact to P-type Monolayer WSe\textsubscript{2}. 
+	\myemph{Nano Letters} 24 (20), 5937-5943 (2024).
+	\mylink{https://pubs.acs.org/doi/10.1021/acs.nanolett.3c04195}
+
+	\item Z. Zhang$^\dag$, J. Xie$^\dag$, W, Zhao, \myname{R. Qi}, ..., F. Wang$^\ddag$.
+	Engineering correlated insulators in bilayer graphene with a remote Coulomb superlattice.
+	\myemph{Nature Materials} 23, 189-195 (2024).
+	\mylink{https://www.nature.com/articles/s41563-023-01754-3}
+
+	\item R. Shi$^\dag$, Q. Li$^\dag$, ..., \myname{R. Qi}, ..., P. Gao$^\ddag$.
+	Atomic-scale observation of localized phonons at FeSe/SrTiO\textsubscript{3} interface.
+	\myemph{Nature Communications} 15, 3418 (2024).
+	\mylink{https://www.nature.com/articles/s41467-024-47688-5}
+
+	\item Z. Zhang, ..., \myname{R. Qi}, ..., X. Wang$^\ddag$.
+	Probing Hyperbolic Shear Polaritons in $\beta$-Ga\textsubscript{2}O\textsubscript{3} Nanostructures Using STEM-EELS.
+	\myemph{Advanced Materials} 36, 2204884 (2024).
+	\mylink{https://onlinelibrary.wiley.com/doi/full/10.1002/adma.202204884}
+	
+	\item J. Yan, ..., \myname{R. Qi}, ..., Y. Ikuhara$^\ddag$.
+	Nanoscale Localized Phonons at Al\textsubscript{2}O\textsubscript{3} Grain Boundaries.
+	\myemph{Nano Letters} 24, 11, 3323-3330 (2024).
+	\mylink{https://pubs.acs.org/doi/10.1021/acs.nanolett.3c04149}
+
+	\item M. Wu, R. Shi, \myname{R. Qi}, ..., P. Gao$^\ddag$.
+	Four-dimensional electron energy-loss spectroscopy.
+	\myemph{Ultramicroscopy} 253, 113818 (2023).
+	\mylink{https://www.sciencedirect.com/science/article/pii/S0304399123001353}
+
+	\item M. Wu$^\dag$, R. Shi$^\dag$, \myname{R. Qi}$^\dag$, ..., P. Gao$^\ddag$.
+	Effects of localized interface phonons on heat conductivity in ingredient heterogeneous solids.
+	\myemph{Chinese Physics Letters}, 40 (3), 036801 (2023).
+	\mylink{https://iopscience.iop.org/article/10.1088/0256-307X/40/3/036801}
+
+	\item X. Guo$^\dag$, N. Li$^\dag$, X. Yang$^\ddag$, \myname{R. Qi}, ..., Q. Dai$^\ddag$.
+	Hyperbolic whispering-gallery phonon polaritons in boron-nitride nanotubes.
+	\myemph{Nature Nanotechnology} 18, 529-534 (2023).
+	\mylink{https://www.nature.com/articles/s41565-023-01324-3}
+
+	\item N. Li$^\dag$, R. Shi$^\dag$, Y. Li$^\dag$, \myname{R. Qi}, ..., P. Gao$^\ddag$.
+	Phonon transition across an isotopic interface.
+	\myemph{Nature Communications} 14, 2382 (2023).
+	\mylink{https://www.nature.com/articles/s41467-023-38053-z}
+
+	\item Y. Li, \myname{R. Qi}, ..., P. Gao$^\ddag$. 
+	Atomic-scale probing of heterointerface phonon bridges in nitride semiconductor. 
+	\myemph{Proceedings of the National Academy of Sciences} 119 (8), e2117027119 (2022). 
+	\mylink{https://www.pnas.org/content/119/8/e2117027119}
+
+	\item R. Zhu$^\dag$, ..., \myname{R. Qi}, ..., P. Gao$^\ddag$.
+	Dynamics of Polar Skyrmion Bubbles under Electric Fields.
+	\myemph{Physical Review Letters} 129 (10), 107601 (2022).
+	\mylink{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.129.107601}
+
+	\item X. Guo$^\dag$, N. Li$^\dag$, C. Wu, X. Dai, \myname{R. Qi}, ..., Q. Dai$^\ddag$.
+	Studying Plasmon Dispersion of MXene for Enhanced Electromagnetic Absorption.
+	\myemph{Advanced Materials} 34 (33), 2270237 (2022).
+	\mylink{https://onlinelibrary.wiley.com/doi/full/10.1002/adma.202270237}
+
+	\item Y. Yoon, Z. Zhang, \myname{R. Qi}, ..., F. Wang$^\ddag$. 
+	Charge Transfer Dynamics in MoSe\textsubscript{2}/hBN/WSe\textsubscript{2} Heterostructures.
+	\myemph{Nano Letters} {22} (24), 10140-10146 (2022).
+	\mylink{https://pubs.acs.org/doi/10.1021/acs.nanolett.2c04030}
+
+	\item N. Li$^\dag$, X. Guo$^\dag$, X. Yang$^\ddag$, \myname{R. Qi}, ..., P. Gao$^\ddag$. 
+	Direct observation of highly confined phonon polaritons in suspended monolayer hexagonal boron nitride. 
+	\myemph{Nature Materials} 20, 43-48 (2021).
+	\mylink{https://www.nature.com/articles/s41563-020-0763-z}
+
+	\item S. Zhao$^\dag$, E. Wang$^\dag$, E. A. Üzer, S. Guo, \myname{R. Qi}, ..., F. Wang$^\ddag$. 
+	Anisotropic moiré optical transitions in twisted monolayer/bilayer phosphorene heterostructures. 
+	\myemph{Nature Communications} {12}, 3947 (2021).  
+	\mylink{https://www.nature.com/articles/s41467-021-24272-9}
+
+	\item W. Dong$^\dag$, \myname{R. Qi}$^\dag$, ..., P. Gao$^\ddag$. 
+	Broad‐Spectral‐Range Sustainability and Controllable Excitation of Hyperbolic Phonon Polaritons in $\alpha$‐MoO\textsubscript{3}.
+	\myemph{Advanced Materials} 32, 2002014 (2020). 
+	\mylink{https://onlinelibrary.wiley.com/doi/full/10.1002/adma.202002014}
+
+	\item Y. Li, \myname{R. Qi}, R. Shi, N. Li, P. Gao$^\ddag$.
+	Manipulation of surface phonon polaritons in SiC nanorods.	
+	\myemph{Science Bulletin} 65 (10), 820-826 (2020).
+	\mylink{https://www.sciencedirect.com/science/article/pii/S2095927320301134}
+
+	\item  Y. Li$^\dag$, M. Wu$^\dag$, \myname{R. Qi}, ..., P. Gao$^\ddag$. 
+	Probing lattice vibrations at SiO\textsubscript{2}/Si surface and interface with nanometer resolution.
+	\myemph{Chinese Physics Letters} 36 (2), 026801 (2019).
+	\mylink{https://iopscience.iop.org/article/10.1088/0256-307X/36/2/026801}
+\end{enumerate}
+\fi
+
+
+
+\section{Honors and Fellowships}
+\mycvitemcomment{2026 -- 2029}{Stanford Science Fellow, Stanford University \mylink{https://stanfordsciencefellows.stanford.edu/people/ruishi-qi}}{}
+\mycvitemcomment{2023 -- 2024}{Kavli ENSI Graduate Student Fellow, Kavli Energy NanoScience Institute \mylink{https://kavli.berkeley.edu/ruishi-qi}}{ }
+
+\ifprintchinese
+	\mycvitemcomment{2020}{Beijing Merit Student (北京市三好学生)}{(top 1\% in PKU)}
+	\mycvitemcomment{2020}{Outstanding Graduate in Peking University (北京大学优秀毕业生)}{}
+	\mycvitemcomment{2020}{Outstanding Graduate of Beijing (北京市普通高等学校优秀毕业生)}{}
+	\mycvitemcomment{2020}{Weiming Scholar, Peking University (北京大学未名学士) \mylink{https://www.phy.pku.edu.cn/info/1180/5579.htm}}{(top 1\% in PKU)}
+	\mycvitemcomment{2020}{Outstanding Undergraduate Research Project, Peking University (北京大学本科生科研优秀项目)}{}
+	\mycvitemcomment{2019}{National Southwest Associated University Grand Scholarship (西南联大奖学金)}{(top 1\% in PKU)}
+	\mycvitemcomment{2018, 2019}{National Scholarship (国家奖学金)}{(top 1\% in PKU)}
+\else
+\mycvitemcomment{2018, 2019}{National Scholarship (China)}{}
+\fi
+
+% ===============Experience==========
+\section{Research Experience}
+
+% \cventry{2026 --}{Postdoctoral researcher}{Ginzton Lab, Department of Applied Physics, and School of Humanities and Sciences, Stanford University}{}{}{}
+
+% \cvitem{}{Faculty host: Prof. Tony Heinz \href{mailto:tony.heinz@stanford.edu}{\color{mycolor}\small\faEnvelope} \href{https://heinz.stanford.edu/people/current-members}{\color{mycolor}\footnotesize\faGlobeAmericas}}
+
+% \cvlistitem[0.33em]{Optical spectroscopy of correlated quantum phases in two-dimensional materials and heterostructures.}
+
+
+\cventry{2021 -- 2026}{Graduate Student Researcher}{Department of Physics, UC Berkeley}{}{}{}
+
+\cvitem{}{Ultrafast nano-optics group (PI: Prof. Feng Wang)}
+
+\cvlistitem[0.33em]{Established electrically tunable van der Waals electron-hole bilayers as a platform for correlated exciton phases, including interlayer excitons, trions, biexcitons, exciton condensates, and exciton crystals.}
+
+\cvlistitem[0.33em]{Developed optical spectroscopy approaches for measuring compressibility, Coulomb drag, and transport properties in strongly interacting two-dimensional systems.}
+
+\cvlistitem[0.33em]{Designed and performed low-temperature, high-magnetic-field optical and transport experiments down to 10 mK and up to 12 T.}
+
+\cventry{2018 -- 2021}{Undergraduate Research Assistant}{Peking University}{}{}{}
+\cvitem{}{Electron microscopy laboratory (PI: Prof. Peng Gao)}
+
+\cvlistitem[0.33em]{Developed electron energy-loss spectroscopy techniques combining nanometer spatial resolution, high momentum resolution, and milli-electron-volt energy resolution.}
+\cvlistitem[0.33em]{Investigated local lattice dynamics at heterointerfaces and nanostructures.}
+
+% \cventry{{\scriptsize Jun-Sep }2019}{Exchange visitor}{Physics \& Astronomy Department, {}{}{}UCLA}{Los Angeles, }
+% \cvitem{}{Advisor: Prof. Jianwei (John) Miao}  
+% % \href{http://www.physics.ucla.edu/research/imaging/}{\color{gray}\footnotesize\faGlobeAmericas} 
+% \begin{itemize}[leftmargin=0pt, itemsep=0ex, partopsep=1ex, parsep=1ex]
+% 	\item Atomic electron tomography reconstruction of 2D materials.
+% \end{itemize}
+% }
+
+%================TEACHING============
+
+
+\section{Teaching and Mentoring}
+
+\cventry{2020 -- 2021}{Graduate Student Instructor}{Department of Physics, UC Berkeley}{}{}{}{}
+\cvitem{}{Physics 7A: Physics for Scientists and Engineers (Fall 2020, Spring 2021)}{}
+\cvitem{}{Led discussion and laboratory sections; graded homework and exams; held office hours.}
+
+\cventry{2023 -- 2024}{Undergraduate Research Mentor}{Berkeley Physics Innovators Initiative (Pi\textsuperscript{2})}{}{}{}{}
+\cvitem{}{Mentored Berkeley undergraduate researchers (selective funded research program).}
+
+\cventry{2022, 2025}{Undergraduate Research Mentor}{Berkeley Physics International Education (BPIE)}{}{}{}{}
+\cvitem{}{Mentored visiting undergraduate researchers.}
+
+
+% \cvitem{}{\textbf{Research advisees:} R. Xia (visiting undergraduate, USTC, 2025); K. Ng (undergraduate, UC Berkeley, 2024); Q. Li (visiting undergraduate, PKU, 2023); Y. Bawazir (undergraduate, UC Berkeley, 2023); T. Zheng (visiting undergraduate, UCAS, 2022).}
+% \ifshortcv
+% \else
+% \cvitem{Advisees}{Qize Li (UCB PhD student, 2023-), 
+%  Jiahui Nie (UCB PhD student, 2024-),
+%  Jeffery Cui (UCB PhD student, 2023 -- 2024),
+%  Ruichen Xia (visiting undergrad from USTC, 2024 -- 2025),
+%  Kenneth Ng (UCB undergrad, 2024 Pi\textsuperscript{2} Scholar),
+%  Yara Bawazir (UCB undergrad, 2023 Pi\textsuperscript{2} Scholar).}
+% \fi
+
+\ifprinttalks
+\section{Talks and Presentations}
+
+\mycvitemcomment{2026}{``Correlated exciton physics in strongly coupled electron-hole bilayers'', APS March Meeting, Denver
+\mylink{https://summit.aps.org/smt/2026/events/MAR-Y23/12}}{}
+
+\mycvitemcomment{2026}{``Excitonic insulators and condensates in electron-hole bilayers'' (Poster), New Frontiers in Nanoscale Materials 2026 Symposium
+}{}
+
+\mycvitemcomment{2025}{``Interlayer excitons and trions in electron-hole bilayers'', Berkeley Condensed Matter Seminar 
+\mylink{https://events.berkeley.edu/physics/event/286065-condensed-matter-seminar-interlayer-excitons-and-trio}}{}
+
+\mycvitemcomment{2024}{``Perfect Coulomb drag and exciton transport in an excitonic insulator'', APS March Meeting, Minneapolis
+\mylink{https://meetings.aps.org/Meeting/MAR24/Session/N12.14}}{}
+
+\mycvitemcomment{2024}{``Correlated interlayer excitons and trions in electron-hole bilayers'' (Poster), Kavli ENSI 10th Anniversary Symposium
+\mylink{https://www.kavlifoundation.org/news/10-years-and-beyond-celebrating-the-impact-of-kavli-ensi}}{}
+
+% \mycvitemcomment{2023}{``Thermodynamic behavior and perfect Coulomb drag in strongly correlated electron-hole bilayers'', 2023 Kavli Energy NanoScience Institute Retreat
+% \mylink{https://kavli.berkeley.edu/news/2023-kavli-ensi-retreat} }{}
+
+% \section{Professional Service}
+
+% \mycvitemcomment{Referee}{Science Advances; Applied Physics Letters; APL Materials}{}
+% % %AIP Advances, APL Materials, Photonics and Nanostructures - Fundamentals and Applications
+% % % \mycvitemcomment{2022}{Exam reviewer for PhD Preliminary Examinations, Department of Physics, UC Berkeley.}{}
+\fi
+\end{document}

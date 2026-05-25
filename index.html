@@ -1,0 +1,1648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="google-site-verification" content="E-wbC4l4Fm26j9HIg4xlPpg-3zAd63bc64rCMernNzY" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="format-detection" content="telephone=no" />
+  <title>Ruishi Qi</title>
+  <meta name="description" content="Ruishi Qi is an experimental condensed matter physicist and Stanford Science Fellow studying strongly correlated excitonic matter in two-dimensional quantum materials." />
+  <style>
+    :root {
+      --bg: #f7f3ec;
+      --surface: #ffffff;
+      --surface-soft: #fafbfc;
+      --surface-warm: #fbf5ea;
+      --text: #1d2433;
+      --muted: #5e6778;
+      --line: #e1ded8;
+      --accent: #1f4f8f;
+      --accent-secondary: #e85d04;
+      --accent-green: #1f6b45;
+      --accent-soft: #eaf1fb;
+      --shadow: 0 10px 30px rgba(20, 28, 45, 0.06);
+      --radius: 14px;
+      --maxw: 1200px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-size: clamp(12px, 1.6vw, 16px);
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: linear-gradient(to bottom, #fbfaf7 0%, var(--bg) 100%);
+      line-height: 1.5;
+    }
+
+    /* a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; } */
+    a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-thickness: 0.5px;
+      text-underline-offset: 2px;
+    }
+
+    a[x-apple-data-detectors] {
+      color: inherit !important;
+      text-decoration: none !important;
+      font: inherit !important;
+      pointer-events: none;
+    }
+    .container { width: min(100% - 2rem, var(--maxw)); margin: 0 auto; }
+
+    header {
+      position: sticky; top: 0; z-index: 30;
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(221,227,234,0.8);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1.2rem;
+    }
+
+    .brand { display: flex; flex-direction: column; color: var(--text); }
+    .brand strong { font-size: 1.06rem; font-weight: 700; }
+    .brand span { color: var(--muted); font-size: 0.9rem; }
+
+    .tabs { display: flex; gap: 0.45rem; flex-wrap: wrap; }
+
+    .tab-link {
+      border: none; background: transparent; cursor: pointer;
+      padding: 0.6rem 0.9rem; border-radius: 999px;
+      color: var(--muted); font: inherit;
+      text-decoration: none;
+    }
+
+    .tab-link.active {
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .panel { display: none; }
+    .panel.active { display: block; }
+    
+
+    .pub-title {
+      font-size: 1.22rem;
+      font-weight: 550;
+      line-height: 1.35;
+      margin-bottom: 0.35rem;
+    }
+
+    .pub-authors {
+      color: var(--muted);
+      font-size: 0.97rem;
+      line-height: 1.45;
+      margin-bottom: 0.25rem;
+    }
+
+    .pub-authors sup,
+    .publication-legend sup {
+      color: var(--accent);
+      font-size: 0.72em;
+      font-weight: 700;
+      line-height: 0;
+      margin-left: 0.06rem;
+    }
+
+    .pub-journal {
+      font-size: 1.0rem;
+      font-weight: 450;
+      line-height: 1.45;
+    }
+
+    .pub-note {
+      color: var(--muted);
+      font-weight: 450;
+    }
+
+    .pub-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.55rem;
+    }
+
+    .pub-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.2rem 0.48rem;
+      border: 1px solid rgba(232, 93, 4, 0.18);
+      border-radius: 999px;
+      background: rgba(251, 245, 234, 0.62);
+      color: #7c4a22;
+      font-size: 0.82rem;
+      line-height: 1.2;
+      font-weight: 550;
+      text-decoration: none;
+    }
+
+    #panel-publications .pub-journal a.pub-badge {
+      color: #7c4a22;
+      font-weight: 550;
+    }
+
+    .pub-badge:hover {
+      color: #7c4a22;
+      background: rgba(251, 245, 234, 0.62);
+      border-color: rgba(232, 93, 4, 0.18);
+      text-decoration: none;
+    }
+
+    .pub-badge::before {
+      content: "";
+      width: 0.28rem;
+      height: 0.28rem;
+      border-radius: 50%;
+      background: var(--accent-secondary);
+      opacity: 0.55;
+    }
+
+    #panel-publications .news-list li {
+      padding: 1.1rem 0 1.2rem;
+    }
+
+    #panel-publications .pub-journal a {
+      color: var(--accent-secondary);
+      font-weight: 500;
+    }
+
+    .publication-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0.25rem 0 0.55rem;
+    }
+
+    .publication-toolbar-label {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-right: 0.15rem;
+    }
+
+    .sort-button {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--accent);
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 0.42rem 0.78rem;
+    }
+
+    .sort-button.active,
+    .sort-button:hover {
+      background: var(--accent-soft);
+      border-color: rgba(11, 75, 145, 0.18);
+      text-decoration: none;
+    }
+
+    .publication-legend {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin: 0 0 0.55rem;
+      text-align: center;
+    }
+
+    .publication-collapse {
+      padding-top: 0.2rem;
+    }
+
+    .publication-collapse-toggle {
+      position: relative;
+      width: 100%;
+      border: none;
+      background: transparent;
+      color: var(--accent);
+      cursor: pointer;
+      font: inherit;
+      display: block;
+      padding: 0 3rem;
+      text-align: center;
+    }
+
+    .publication-collapse-toggle h2 {
+      margin: 0;
+    }
+
+    .publication-collapse-toggle h3 {
+      margin: 0;
+      color: var(--accent);
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    .news-collapse {
+      display: flex;
+      flex-direction: column;
+      margin-top: 0.55rem;
+      padding-top: 0.45rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .news-collapse.expanded {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: none;
+    }
+
+    .news-collapse .publication-collapse-toggle {
+      order: 1;
+      padding: 0 2.25rem;
+    }
+
+    .news-collapse.expanded .publication-collapse-toggle {
+      order: 2;
+      margin-top: 0.45rem;
+    }
+
+    .news-collapse .publication-collapse-toggle h3 {
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .news-collapse .collapse-icon {
+      right: 0.35rem;
+      width: 0.72rem;
+      height: 0.72rem;
+      border-right-width: 3px;
+      border-bottom-width: 3px;
+    }
+
+    .news-collapse .collaborative-publication-list {
+      order: 1;
+    }
+
+    .news-collapse .news-list li:first-child {
+      border-top: 1px solid var(--line);
+    }
+
+    .collapse-icon {
+      position: absolute;
+      right: 0.6rem;
+      top: 50%;
+      width: 1.05rem;
+      height: 1.05rem;
+      border-right: 4px solid var(--accent-secondary);
+      border-bottom: 4px solid var(--accent-secondary);
+      transform: translateY(-65%) rotate(45deg);
+      transition: transform 0.2s ease;
+    }
+
+    .publication-collapse.expanded .collapse-icon {
+      transform: translateY(-35%) rotate(225deg);
+    }
+
+    .collaborative-publication-list {
+      display: none;
+      margin-top: 1rem;
+    }
+
+    .publication-collapse.expanded .collaborative-publication-list {
+      display: block;
+    }
+
+    .publication-profile-links {
+      grid-template-columns: repeat(2, minmax(0, 15rem));
+      justify-content: center;
+      max-width: none;
+      margin: 0 auto 1rem;
+    }
+    
+    main { padding: 2rem 0 2.5rem; }
+
+    h1 {
+      font-size: clamp(2.0rem, 4.0vw, 3.0rem);
+      line-height: 1.05;
+      margin: 0 0 0.9rem;
+      letter-spacing: -0.02em;
+      font-weight: 600;
+    }
+
+    h2 {
+      margin: 0 0 1rem;
+      font-size: 1.7rem;
+      color: var(--accent);
+      font-weight: 500;
+      text-align: center;
+    }
+
+    h3 {
+      margin: 0 0 0.8rem;
+      font-size: 1.1rem;
+    }
+
+    .hero-card, .section-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      padding: 1.8rem 1.8rem 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .section-card {
+      padding: 1.5rem 1.5rem 1.35rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .lead {
+      font-size: 1.08rem;
+      color: var(--muted);
+      margin: 0;
+      max-width: 54rem;
+    }
+
+    .research-overview .lead {
+      max-width: none;
+    }
+
+    .about-text p {
+      margin: 0 0 1rem;
+    }
+
+    .button-row, .link-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .button {
+      padding: 0.68rem 1rem;
+      border-radius: 999px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .button:hover { text-decoration: none; }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid var(--line);
+    }
+
+    .news-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .news-list li {
+      padding: 0.95rem 0;
+      border-top: 1px solid var(--line);
+      font-size: 1.02rem;
+    }
+
+    .news-list li:first-child { border-top: none; }
+
+    .news-date {
+      white-space: nowrap;
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+
+    .news-divider {
+      color: var(--muted);
+      padding: 0 0.35rem;
+    }
+
+    .news-timeline li {
+      display: grid;
+      grid-template-columns: 6.2rem minmax(0, 1fr);
+      gap: 0.95rem;
+    }
+
+    .news-timeline .news-divider {
+      display: none;
+    }
+
+    @media (max-width: 620px) {
+      .news-timeline li {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+      }
+    }
+
+    .pub-list li { margin-bottom: 1rem; }
+
+
+    .hero-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 1.25rem;
+      align-items: stretch;
+    }
+
+    .hero-left,
+    .hero-right {
+      display: flex;
+      min-width: 0;
+    }
+
+    .hero-left .hero-card,
+    .hero-right .carousel {
+      width: 100%;
+    }
+
+    .hero-left .hero-card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-bottom: 0;
+    }
+
+    .hero-left h1 {
+      font-size: clamp(2.0rem, 4.0vw, 3.0rem);
+      line-height: 1.0;
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-left .lead {
+      max-width: none;
+      font-size: 1.02rem;
+    }
+
+    .hero-tagline {
+      color: var(--accent);
+      font-size: 1.12rem;
+      line-height: 1.35;
+      font-weight: 600;
+      margin: 0 0 0.9rem;
+    }
+
+    .hero-summary {
+      color: var(--muted);
+      margin: 1rem 0 0;
+      font-size: 0.98rem;
+    }
+
+    .affiliation-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.9rem 0 0;
+      display: grid;
+      gap: 0.45rem;
+      color: #2f394a;
+      font-size: 0.95rem;
+    }
+
+    .affiliation-list li {
+      display: flex;
+      gap: 0.55rem;
+      align-items: baseline;
+    }
+
+    .affiliation-role {
+      color: var(--accent);
+      min-width: 5.2rem;
+      font-weight: 600;
+    }
+
+    .profile-links {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.65rem;
+      margin-top: 1.25rem;
+    }
+
+    .profile-link {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      min-width: 0;
+      padding: 0.48rem 0.58rem;
+      border: 1px solid rgba(31, 79, 143, 0.14);
+      border-radius: 8px;
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.68);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 550;
+    }
+
+    .profile-link:hover {
+      border-color: rgba(232, 93, 4, 0.34);
+      background: #fff8f2;
+      text-decoration: none;
+    }
+
+    .profile-icon {
+      width: 1.25rem;
+      height: 1.25rem;
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+    }
+
+    .profile-icon svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      display: block;
+      fill: currentColor;
+    }
+
+    .profile-icon.orcid {
+      color: #a6ce39;
+      font-weight: 800;
+      font-size: 0.86rem;
+      letter-spacing: -0.04em;
+    }
+
+    .profile-icon.researchgate {
+      color: #00ccbb;
+      font-weight: 800;
+      font-size: 0.86rem;
+      letter-spacing: -0.04em;
+    }
+
+    .profile-icon.cv {
+      color: #6a7280;
+    }
+
+    @media (max-width: 520px) {
+      .profile-links {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (min-width: 521px) and (max-width: 940px) {
+      .profile-links {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .carousel {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: #ffffff;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--line);
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.6s ease-in-out;
+      pointer-events: none;
+    }
+
+    .slide.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      background: #fff;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 32px;
+      height: 32px;
+      border: none;
+      border-radius: 999px;
+      background: rgba(20, 28, 45, 0.28);
+      backdrop-filter: blur(4px);
+      color: #fff;
+      font-size: 32px;
+      line-height: 1;
+      cursor: pointer;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease, transform 0.2s ease;
+      padding-bottom: 4px
+    }
+
+    .arrow:hover {
+      background: rgba(20, 28, 45, 0.65);
+    }
+
+    .arrow:active {
+      transform: translateY(-50%) scale(0.96);
+    }
+
+    .arrow.left {
+      left: 4px;
+    }
+
+    .arrow.right {
+      right: 4px;
+    }
+
+    .dots {
+      position: absolute;
+      left: 50%;
+      bottom: 3px;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      z-index: 5;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(20, 28, 45, 0.28);
+      backdrop-filter: blur(5px);
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.55);
+      cursor: pointer;
+      padding: 0;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .dot.active {
+      background: #ffffff;
+      transform: scale(1.15);
+    }
+
+    .caption {
+      position: absolute;
+      left: 3px;
+      top: 3px;
+      /* transform: translateX(-50%); */
+      z-index: 5;
+      background: rgba(245, 245, 245, 0.8);
+      backdrop-filter: blur(5px);
+      color: #1d2433;
+      padding: 8px 8px;
+      border-radius: calc(var(--radius) - 3px);
+      font-size: 15px;
+      font-weight: 550;
+      max-width: 500px;
+      /* box-shadow: 0 4px 16px rgba(20, 28, 45, 0.12); */
+    }
+
+
+
+    @media (max-width: 820px) {
+      .hero-row {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-left .hero-card {
+        margin-bottom: 0;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 0.0rem 0;
+        min-height: auto;
+        gap: 0.4rem;
+      }
+      .brand span {
+        display: none;
+      }
+      .tabs {
+        width: 100%;
+        flex-wrap: nowrap;
+        gap: 0.25rem;
+        overflow-x: auto;
+        padding-bottom: 0.15rem;
+        scrollbar-width: none;
+      }
+      .tabs::-webkit-scrollbar {
+        display: none;
+      }
+      .tab-link {
+        flex: 0 0 auto;
+        padding: 0.42rem 0.62rem;
+        line-height: 1.2;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+    }
+
+    .research-item {
+      display: grid;
+      grid-template-columns: 35fr 65fr;
+      gap: 2rem;
+      /* margin-bottom: 1em;
+      margin-top: 1em; */
+      border-top: 1px solid var(--line);
+      align-items: center;
+    }
+    .research-item:first-child { border-top: none; }
+    .research-item h3 {
+      margin-top: 1.05rem;
+      margin-bottom: 1.05rem;
+    }
+    .research-links {
+      display: grid;
+      gap: 0.28rem;
+      margin: 0.95rem 0 0;
+    }
+
+    .research-detail-link {
+      display: inline-flex;
+      margin-top: 0.9rem;
+      color: var(--accent);
+      font-size: 0.95rem;
+      font-weight: 650;
+      text-decoration: none;
+    }
+
+    .research-detail-link:hover {
+      color: var(--accent-secondary);
+      text-decoration: underline;
+      text-underline-offset: 0.18em;
+    }
+    @media (max-width: 620px) {
+      .research-item {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="brand">
+      <strong>Ruishi Qi</strong>
+      <span>B.S. Peking University  ·  Ph.D. UC Berkeley  ·  Stanford Science Fellow</span>
+    </div>
+
+    <nav class="tabs">
+      <a class="tab-link active" href="#home" data-tab="home">Home</a>
+      <a class="tab-link" href="#profile" data-tab="profile">Profile</a>
+      <a class="tab-link" href="#research" data-tab="research">Research</a>
+      <a class="tab-link" href="#publications" data-tab="publications">Publications</a>
+      <a class="tab-link" href="cv/CV-RuishiQi.pdf" target="_blank">CV</a>
+      <a class="tab-link" href="#contact" data-tab="contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+<section class="panel active" id="panel-home">
+
+  
+  <div class="hero-row">
+    <div class="hero-left">
+      <div class="hero-card">
+        <h1>Ruishi Qi</h1>
+        <p class="hero-tagline">Experimental condensed matter physicist studying strongly correlated excitonic matter in two-dimensional quantum materials.</p>
+        <ul class="affiliation-list">
+          <li><span class="affiliation-role">Incoming</span><span>Stanford Science Fellow, Stanford University</span></li>
+          <li><span class="affiliation-role">Ph.D.</span><span>Physics, UC Berkeley</span></li>
+          <li><span class="affiliation-role">B.S.</span><span>Physics, Peking University</span></li>
+        </ul>
+        <p class="hero-summary">My research combines van der Waals heterostructures, low-temperature optical spectroscopy, and electronic transport to create and probe collective phases of excitons, trions, biexcitons, and related electron-hole fluids.</p>
+        <div class="profile-links">
+          <a class="profile-link" href="https://scholar.google.com/citations?user=NA7sfwsAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
+            <span class="profile-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3 1.8 10.1 12 17.2l10.2-7.1L12 3Zm0 16.5-6.2-4.3v2.3L12 21.8l6.2-4.3v-2.3L12 19.5Z"/></svg>
+            </span>
+            <span>Google Scholar</span>
+          </a>
+          <a class="profile-link" href="https://orcid.org/0009-0000-1305-1104" target="_blank" rel="noopener noreferrer">
+            <span class="profile-icon orcid" aria-hidden="true">iD</span>
+            <span>ORCID</span>
+          </a>
+          <a class="profile-link" href="https://stanfordsciencefellows.stanford.edu/people/ruishi-qi" target="_blank" rel="noopener noreferrer">
+            <span class="profile-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3 3 7.5v1.8h18V7.5L12 3ZM5 11v7H3.5v2h17v-2H19v-7h-2v7h-3v-7h-4v7H7v-7H5Z"/></svg>
+            </span>
+            <span>Stanford Profile</span>
+          </a>
+          <a class="profile-link" href="https://www.researchgate.net/profile/Ruishi-Qi?ev=hdr_xprf" target="_blank" rel="noopener noreferrer">
+            <span class="profile-icon researchgate" aria-hidden="true">RG</span>
+            <span>ResearchGate</span>
+          </a>
+          <a class="profile-link" href="cv/CV-RuishiQi.pdf" target="_blank">
+            <span class="profile-icon cv" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6 2h8l4 4v16H6V2Zm7 1.8V7h3.2L13 3.8ZM8 11v1.5h8V11H8Zm0 3v1.5h8V14H8Zm0 3v1.5h5V17H8Z"/></svg>
+            </span>
+            <span>CV</span>
+          </a>
+          <a class="profile-link" href="mailto:ruishiqi@berkeley.edu">
+            <span class="profile-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 5h18v14H3V5Zm9 8.2L5 8.1V17h14V8.1l-7 5.1Zm0-2.4L18.2 7H5.8L12 10.8Z"/></svg>
+            </span>
+            <span>Email</span>
+          </a>
+          <a class="profile-link" href="https://physics.berkeley.edu/research-faculty/ultrafast-nano-optics-group" target="_blank" rel="noopener noreferrer">
+            <span class="profile-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 2.5 4 7v10l8 4.5 8-4.5V7l-8-4.5Zm0 2.3 5 2.8-5 2.9-5-2.9 5-2.8Zm-6 4.5 5 2.9v6.4l-5-2.8V9.3Zm7 9.3v-6.4l5-2.9v6.5l-5 2.8Z"/></svg>
+            </span>
+            <span>Wang Group</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="carousel" id="carousel">
+        <div class="slide active">
+          <img src="images/phasediag.png" alt="Rich phase diagrams of electron-hole bilayers" />
+        </div>
+        <div class="slide">
+          <img src="images/ehb.png" alt="Correlated electron-hole fluids" />
+        </div>
+        <div class="slide">
+          <img src="images/devices.png" alt="van der Waals electron-hole bilayer devices" />
+        </div>
+        <div class="slide">
+          <img src="images/eiqo.png" alt="Excitonic quantum oscillations" />
+        </div>
+        <div class="slide">
+          <img src="images/moke.png" alt="Optical imaging of magnetic domains" />
+        </div>
+        <div class="slide">
+          <img src="images/fan.png" alt="Landau fan diagram in monolayer WSe2" />
+        </div>
+        <div class="slide">
+          <img src="images/laser.png" alt="Laser directly visible during a wildfire in California" />
+        </div>
+        <div class="slide">
+          <img src="images/dr.png" alt="Inside a dilution refrigerator" />
+        </div>
+        <div class="slide">
+          <img src="images/opticool.png" alt="Device loaded in an optical cryostat" />
+        </div>
+        <div class="caption" id="caption">Rich phase diagrams of electron-hole bilayers</div>
+
+        <button class="arrow left" id="prevBtn" aria-label="Previous image">&#8249;</button>
+        <button class="arrow right" id="nextBtn" aria-label="Next image">&#8250;</button>
+
+        <div class="dots" id="dots"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="section-card">
+    <h2>About</h2>
+    <div class="about-text">
+      <p>I am a Ph.D. candidate in Physics at the University of California, Berkeley. I work in Prof. Feng Wang's group, where my Ph.D. research focuses on strongly interacting electron-hole systems in two-dimensional van der Waals heterostructures. I combine high-quality device fabrication with low-temperature optical and electrical measurements to study interaction-driven phases in reduced dimensions. My current research interests center on excitonic and correlated electronic phases, including excitonic insulators, biexciton and trion fluids, and related many-body states arising from strong Coulomb interactions in 2D systems.</p>
+      <p>Starting this summer, I will join Stanford as a Stanford Science Fellow, working with Prof. Tony Heinz.</p>
+    </div>
+  </div> -->
+
+  <div class="section-card">
+    <h2>News</h2>
+    <ul class="news-list news-timeline">
+      <li><span class="news-date">May 2026</span><span class="news-divider">|</span><span class="news-content">I received my <strong>Ph.D. in Physics</strong> from UC Berkeley.</span></li>
+      <li><span class="news-date">May 2026</span><span class="news-divider">|</span><span class="news-content">I received the <strong>Alex Zettl Graduate Student Award in Physics</strong> and the <strong>Jackson C. Koo Award</strong> from UC Berkeley.</span></li>
+      <li><span class="news-date">Mar 2026</span><span class="news-divider">|</span><span class="news-content">Our paper <a href="https://doi.org/10.1103/4v1f-lkh2" target="_blank"><em>Orbital-dependent Coulomb drag in electron-hole bilayer graphene heterostructures</em></a> appeared in <strong>Physical Review Letters</strong>.</span></li>
+      <li><span class="news-date">Jan 2026</span><span class="news-divider">|</span><span class="news-content">I received the 2026-2029 <strong>Stanford Science Fellowship</strong> and will join Stanford this summer.</span></li>
+      <li><span class="news-date">Jan 2026</span><span class="news-divider">|</span><span class="news-content">Our paper <a href="https://www.nature.com/articles/s41567-026-03184-9" target="_blank"><em>An exciton crystal in a moiré excitonic insulator</em></a> appeared in <strong>Nature Physics</strong>.</span></li>
+      <li><span class="news-date">Oct 2025</span><span class="news-divider">|</span><span class="news-content">Our paper <a href="https://www.science.org/doi/10.1126/science.adn4584" target="_blank"><em>Electrically controlled interlayer trion fluid in electron-hole bilayers</em></a> was published in <strong>Science</strong>.</span></li>
+      <li><span class="news-date">Aug 2025</span><span class="news-divider">|</span><span class="news-content">Our paper <a href="https://doi.org/10.1038/s41563-025-02316-5" target="_blank"><em>Competition between excitonic insulators and quantum Hall states in correlated electron-hole fluids</em></a> appeared in <strong>Nature Materials</strong>.</span></li>
+      <li><span class="news-date">Apr 2025</span><span class="news-divider">|</span><span class="news-content">Our paper <a href="https://doi.org/10.1126/science.adl1839" target="_blank"><em>Perfect Coulomb drag and exciton transport in an excitonic insulator</em></a> was published in <strong>Science</strong>.</span></li>
+    </ul>
+    <div class="publication-collapse news-collapse" id="olderNews">
+      <button class="publication-collapse-toggle" type="button" aria-expanded="false" aria-controls="olderNewsList">
+        <h3>Show more</h3>
+        <span class="collapse-icon" aria-hidden="true"></span>
+      </button>
+      <ul class="news-list news-timeline collaborative-publication-list" id="olderNewsList">
+        <li><span class="news-date">Dec 2023</span><span class="news-divider">|</span><span class="news-content">Our paper <a href="https://doi.org/10.1038/s41467-023-43799-7" target="_blank"><em>Thermodynamic behavior of correlated electron-hole fluids in van der Waals heterostructures</em></a> appeared in <strong>Nature Communications</strong>.</span></li>
+        <li><span class="news-date">Nov 2021</span><span class="news-divider">|</span><span class="news-content">Our paper <a href="https://doi.org/10.1038/s41586-021-03971-9" target="_blank"><em>Measuring phonon dispersion at an interface</em></a> appeared in <strong>Nature</strong>.</span></li>
+        <li><span class="news-date">Feb 2021</span><span class="news-divider">|</span><span class="news-content">Our paper <a href="https://doi.org/10.1038/s41467-021-21452-5" target="_blank"><em>Four-dimensional vibrational spectroscopy for nanoscale mapping of phonon dispersion in BN nanotubes</em></a> appeared in <strong>Nature Communications</strong>.</span></li>
+        <li><span class="news-date">Jul 2020</span><span class="news-divider">|</span><span class="news-content">I received my B.S. degree from Peking University with the highest graduation honors, and began my Ph.D. at <strong>UC Berkeley</strong>.</span></li>
+        <li><span class="news-date">Jul 2019</span><span class="news-divider">|</span><span class="news-content">Our paper <a href="https://doi.org/10.1021/acs.nanolett.9b01350" target="_blank"><em>Probing Far-Infrared Surface Phonon Polaritons in Semiconductor Nanostructures at Nanoscale</em></a> appeared in <strong>Nano Letters</strong>.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <h2>Note</h2>
+    <div class="about-text lead">
+      I expect to be on the 2026-2027 academic job market. My independent research program will focus on creating and probing strongly correlated excitonic matter in two-dimensional materials.
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="panel-profile">
+
+  <div class="section-card">
+    <h2>Appointments</h2>
+    <ul class="news-list">
+      <li><strong>Stanford Science Fellow</strong> Stanford University (2026-)</li>
+    </ul>
+  </div>
+
+  <div class="section-card">
+    <h2>Education</h2>
+    <ul class="news-list">
+      <li><strong>Ph.D. in Physics</strong> University of California, Berkeley (2026)</li>
+      <li><strong>M.A. in Physics</strong> University of California, Berkeley (2022)</li>
+      <li><strong>B.S. in Physics</strong> Peking University (2020)</li>
+    </ul>
+  </div>
+
+  <div class="section-card">
+    <h2>Experience</h2>
+    <ul class="news-list">
+      <li><strong>Graduate Student Researcher</strong> Ultrafast nano-optics group at UC Berkeley (PI: Prof. Feng Wang)  (2021-2026)</li>
+      <li><strong>Graduate Student Instructor</strong> Department of Physics, UC Berkeley (2020-2021)</li>
+      <li><strong>Undergraduate Research Assistant </strong> Electron microscopy laboratory at Peking University  (PI: Prof. Peng Gao)  (2018-2021)</li>
+    </ul>
+  </div>
+
+  <div class="section-card">
+    <h2>Awards and Honors</h2>
+    <ul class="news-list">
+      <li>Alex Zettl Graduate Student Award in Physics, UC Berkeley (2026)</li>
+      <li>Jackson C. Koo Award, UC Berkeley (2026)</li>
+      <li>Stanford Science Fellow (2026)</li>
+      <li>Kavli ENSI Graduate Student Fellow (2023)</li>
+      <li>Weiming Scholar, Peking University (2020)</li>
+      <li>Outstanding Graduate of Beijing (2020)</li>
+      <li>Outstanding Graduate in Peking University (2020)</li>
+      <li>Outstanding Undergraduate Research Project, Peking University (2020)</li>
+      <li>Beijing Merit Student (2020)</li>
+      <li>National Scholarship (China) (2018, 2019)</li>
+      <li>Merit Student Pacesetter, Peking University (2018, 2019)</li>
+      <li>Southwest Associated University Grand Scholarship (2019)</li>
+      <li>PKU Scholarship in Physics (2019)</li>
+      <li>First prize, XingCheng seminar for undergraduates (2019)</li>
+      <li>May 4th Scholarship, Peking University (2017)</li>
+      <li>Merit Student, Peking University (2017)</li>
+      <li>Gold medal, Chinese Physics Olympiad (CPhO) (2015)</li>
+    </ul>
+  </div>
+
+</section>
+
+
+<section class="panel" id="panel-research">
+  <div class="section-card research-overview">
+    <h2>Research</h2>
+    <p class="lead" style="text-align:left;">
+      My research focuses on interacting electron-hole systems in two-dimensional van der Waals heterostructures, with emphasis on excitons, trions, biexcitons, and their many-body collective quantum phases such as superfluids and crystals.
+    </p>
+    <p class="lead" style="text-align:left; margin-top:1rem;">
+      I aim to establish electrically tunable electron-hole systems as a versatile platform for discovering and controlling strongly correlated quantum matter. By combining van der Waals heterostructures with low-temperature optical and transport probes, my work seeks to reveal how composite particles such as excitons, trions, and biexcitons organize into collective phases.
+    </p>
+    <p class="lead" style="text-align:left; margin-top:1rem;">
+      Looking ahead, I am interested in using this platform to explore equilibrium condensates, crystalline states, multicomponent quantum fluids, and new regimes where strong Coulomb interactions, dimensionality, topology, and optical control meet. A central goal is to build experimental systems where correlated bosonic and fermionic matter can be created, measured, and tuned with microscopic precision.
+    </p>
+    <!-- <p><strong>Keywords:</strong> Strongly correlated quantum matter, Two-dimensional materials, Excitonic insulators and condensates, Low-temperature optics and transport</p> -->
+      <div>
+        <img src="images/intro.png" alt="Electron-hole fluids" style="width:100%; display:block; margin:0 auto; border-radius:6px; " />
+      </div>
+  </div>
+
+  <div class="section-card">
+    <h2>Featured Results</h2>
+
+    <div style="display:flex; flex-direction:column; gap:2rem;">
+
+      <div class="research-item">
+        <div>
+          <img src="images/ei.png" alt="Correlated excitonic insulator" style="width:90%; display:block; margin:0 auto; border-radius:6px; " />
+        </div>
+        <div>
+          <h3>Dipolar excitonic insulator in electron-hole bilayers</h3>
+          <p class="lead" style="text-align:left;">
+            Establishment of equilibrium excitonic insulating phases through thermodynamic measurements and perfect Coulomb drag, demonstrating strongly correlated electron-hole pairing.
+          </p>
+          <div class="research-links">
+            <div><a href="https://www.science.org/doi/10.1126/science.adl1839" target="_blank">Perfect Coulomb drag and exciton transport</a> <span class="pub-note">(<em>Science</em>, 2025)</span></div>
+            <div><a href="https://www.nature.com/articles/s41563-025-02316-5" target="_blank">Excitonic quantum oscillations</a> <span class="pub-note">(<em>Nature Materials</em>, 2026)</span></div>
+            <div><a href="https://www.nature.com/articles/s41467-023-43799-7" target="_blank">Thermodynamics of correlated electron-hole fluids</a> <span class="pub-note">(<em>Nature Communications</em>, 2023)</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="research-item">
+        <div>
+          <img src="images/trion.png" alt="Interlayer trions and trilayer biexcitons" style="width:90%; display:block; margin:0 auto; border-radius:6px; " />
+        </div>
+        <div>
+          <h3>Equilibrium fluids of excitonic ions and molecules</h3>
+          <p class="lead" style="text-align:left;">
+            Demonstration of electrically tunable equilibrium fluids formed by charged interlayer trions and neutral trilayer biexcitons, establishing excitonic ions and excitonic molecules as interacting quasiparticles in strongly coupled electron-hole systems.
+          </p>
+          <div class="research-links">
+            <div><a href="https://www.science.org/doi/10.1126/science.adn4584" target="_blank">Electrically controlled interlayer trion fluid</a> <span class="pub-note">(<em>Science</em>, 2025)</span></div>
+            <div>Gate-tunable biexcitons in electron-hole-electron trilayers <span class="pub-note">(under revision at <em>Science</em>)</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="research-item">
+        <div>
+          <img src="images/crystal.png" alt="Exciton crystal" style="width:90%; display:block; margin:0 auto; border-radius:6px; " />
+        </div>
+        <div>
+          <h3>Exciton crystal</h3>
+          <p class="lead" style="text-align:left;">
+            Observation of an exciton crystal phase in a moiré excitonic insulator, revealing interaction-driven ordering of composite bosonic quasiparticles.
+          </p>
+          <div class="research-links"><div><a href="https://www.nature.com/articles/s41567-026-03184-9" target="_blank">Exciton crystal in a moiré excitonic insulator</a> <span class="pub-note">(<em>Nature Physics</em>, 2026)</span></div></div>
+        </div>
+      </div>
+
+      <div class="research-item">
+        <div>
+          <img src="images/condensate.png" alt="Two-component exciton condensate" style="width:90%; display:block; margin:0 auto; border-radius:6px; " />
+        </div>
+        <div>
+          <h3>Two-component exciton condensate</h3>
+          <p class="lead" style="text-align:left;">
+            Observation of a two-component exciton condensate in an equilibrium exciton fluid, revealing a spinor condensate order that can be switched among competing condensate states by a weak magnetic field.
+          </p>
+          <div class="research-links"><div><a href="https://arxiv.org/abs/2603.15443" target="_blank">Two-component exciton condensate</a> <span class="pub-note">(<em>arXiv</em>, 2026)</span></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-card" style="opacity:0.9;">
+    <h2>Earlier Work</h2>
+    <div style="display:flex; flex-direction:column; gap:2rem;">
+
+      <div class="research-item">
+        <div>
+          <img src="images/phonon.png" style="width:90%; margin:0 auto; display:block; border-radius:6px; " />
+        </div>
+        <div>
+          <h3>Interface phonons at the nanoscale</h3>
+          <p class="lead">
+            Direct measurement of phonon dispersion at interfaces using electron energy-loss spectroscopy with nanometer spatial resolution.
+          </p>
+          <div class="research-links"><div><a href="https://doi.org/10.1038/s41586-021-03971-9" target="_blank">Measuring phonon dispersion at an interface</a> <span class="pub-note">(<em>Nature</em>, 2021)</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="panel-publications">
+  <div class="section-card">
+    <h2>Publications</h2>
+    <div class="publication-toolbar" aria-label="Publication sorting options">
+      <span class="publication-toolbar-label">Sort by</span>
+      <button class="sort-button active" type="button" data-publication-sort="featured" aria-pressed="true">Featured first</button>
+      <button class="sort-button" type="button" data-publication-sort="newest" aria-pressed="false">Newest first</button>
+      <button class="sort-button" type="button" data-publication-sort="oldest" aria-pressed="false">Oldest first</button>
+    </div>
+    <p class="publication-legend"><sup>†</sup> equal contribution; <sup>‡</sup> corresponding author</p>
+    <ul class="news-list publication-list" id="publicationList">
+      <li data-year="2026" data-authorship="0" data-kind="preprint" data-original-order="1" data-featured-order="1">
+        <div class="pub-title">Two-component exciton condensates in an electron-hole bilayer</div>
+        <div class="pub-authors">Ruishi Qi<sup class="author-mark">†‡</sup>, Qize Li<sup class="author-mark">†</sup>, Jiahui Nie, Ruichen Xia, Haleem Kim, Hyungbin Lim, Jingxu Xie, Takashi Taniguchi, Kenji Watanabe, Michael F. Crommie, Allan H. MacDonald, Feng Wang<sup class="author-mark">‡</sup></div>
+        <div class="pub-journal"><a href="https://arxiv.org/abs/2603.15443" target="_blank"><em>arXiv</em></a>:2603.15443 (2026); accepted at <em>Nature</em></div>
+        
+      </li>
+
+      <li data-year="2026" data-authorship="0" data-kind="preprint" data-original-order="2" data-featured-order="4">
+        <div class="pub-title">Gate-tunable biexcitons in electron-hole-electron trilayers</div>
+        <div class="pub-authors">Ruishi Qi<sup class="author-mark">†‡</sup>, Qize Li<sup class="author-mark">†</sup>, Zuocheng Zhang, Jingxu Xie, Zhiyuan Cui, Takashi Taniguchi, Kenji Watanabe, Michael F. Crommie, Feng Wang<sup class="author-mark">‡</sup></div>
+        <div class="pub-journal">Under revision at <em>Science</em> (2026)</div>
+      </li>
+
+      <li data-year="2026" data-authorship="1" data-kind="first" data-original-order="3" data-featured-order="2">
+        <div class="pub-title">An exciton crystal in a moiré excitonic insulator</div>
+        <div class="pub-authors">Ruishi Qi<sup class="author-mark">†</sup>, Qize Li<sup class="author-mark">†</sup>, Haleem Kim, Jiahui Nie, Zuocheng Zhang, Ruichen Xia, Zhiyuan Cui, Jianghan Xiao, Takashi Taniguchi, Kenji Watanabe, Michael F. Crommie, Feng Wang<sup class="author-mark">‡</sup></div>
+        <div class="pub-journal"><a href="https://www.nature.com/articles/s41567-026-03184-9" target="_blank"><em>Nature Physics</em></a>, 22, 514-520 (2026)
+          <div class="pub-badges">
+            <a class="pub-badge" href="https://doi.org/10.1038/s41578-026-00916-4" target="_blank">Nature Reviews Materials Research Highlight</a>
+            <a class="pub-badge" href="https://doi.org/10.1038/s41567-026-03244-0" target="_blank">Nature Physics News &amp; Views</a>
+          </div>
+        </div>
+      </li>
+
+      <li data-year="2026" data-authorship="1" data-kind="first" data-original-order="4" data-featured-order="9">
+        <div class="pub-title">Orbital dependent Coulomb drag in electron-hole bilayer graphene heterostructures</div>
+        <div class="pub-authors">Zuocheng Zhang<sup class="author-mark">†‡</sup>, Ruishi Qi<sup class="author-mark">†</sup>, Jingxu Xie, Qize Li, Takashi Taniguchi, Kenji Watanabe, Michael F. Crommie, Feng Wang<sup class="author-mark">‡</sup></div>
+        <div class="pub-journal"><a href="https://doi.org/10.1103/4v1f-lkh2" target="_blank"><em>Physical Review Letters</em></a>, 136, 126303 (2026)
+          <div class="pub-badges">
+            <span class="pub-badge">Editor's Suggestion</span>
+          </div>
+        </div>
+      </li>
+
+      <li data-year="2026" data-authorship="1" data-kind="first" data-original-order="5" data-featured-order="10">
+        <div class="pub-title">Nature of emergent moiré excitations in MoSe2/WS2 moiré superlattices</div>
+        <div class="pub-authors">Zheyu Lu<sup class="author-mark">†‡</sup>, Ruishi Qi<sup class="author-mark">†</sup>, Rwik Dutta<sup class="author-mark">†</sup>, Jingxu Xie, Jiahui Nie, Ziyu Wang, Yibo Feng, Woochang Kim, Kenji Watanabe, Takashi Taniguchi, Archana Raja, Mit H. Naik, Steven G. Louie, Feng Wang<sup class="author-mark">‡</sup></div>
+        <div class="pub-journal">
+          <a href="https://doi.org/10.1021/acs.nanolett.5c06149" target="_blank"><em>Nano Letters</em></a> 26 (12), 4096-4102 (2026)
+        </div>
+      </li>
+
+      <li data-year="2026" data-authorship="1" data-kind="first" data-original-order="6" data-featured-order="3">
+        <div class="pub-title">Competition between excitonic insulators and quantum Hall states in correlated electron-hole bilayers</div>
+        <div class="pub-authors">Ruishi Qi<sup class="author-mark">†</sup>, Qize Li<sup class="author-mark">†</sup>, Zuocheng Zhang, Jiahui Nie, Bo Zou, Zhiyuan Cui, Haleem Kim, Collin Sanborn, Sudi Chen, Jingxu Xie, Takashi Taniguchi, Kenji Watanabe, Michael F. Crommie, Allan H. MacDonald, Feng Wang<sup class="author-mark">‡</sup> </div>
+        <div class="pub-journal">
+          <a href="https://doi.org/10.1038/s41563-025-02316-5" target="_blank"><em>Nature Materials</em></a> 25, 35–41 (2026)
+        </div>
+      </li>
+
+      <li data-year="2025" data-authorship="1" data-kind="first" data-original-order="7" data-featured-order="5">
+        <div class="pub-title">Electrically controlled interlayer trion fluid in electron-hole bilayers</div>
+        <div class="pub-authors">Ruishi Qi, Qize Li, Zuocheng Zhang, Sudi Chen, Jingxu Xie, Yunbo Ou, Zhiyuan Cui, David D. Dai, Andrew Y. Joe, Takashi Taniguchi, Kenji Watanabe, Sefaattin Tongay, Alex Zettl, Liang Fu, Feng Wang<sup class="author-mark">‡</sup></div>
+        <div class="pub-journal">
+          <a href="https://doi.org/10.1126/science.adn4584" target="_blank"><em>Science</em></a> 390, 299–303 (2025)
+          <div class="pub-badges">
+            <a class="pub-badge" href="https://www.science.org/doi/10.1126/science.aec0463" target="_blank">Science Perspective</a>
+          </div>
+        </div>
+      </li>
+
+      <li data-year="2025" data-authorship="1" data-kind="first" data-original-order="8" data-featured-order="6">
+        <div class="pub-title">Perfect Coulomb drag and exciton transport in an excitonic insulator</div>
+        <div class="pub-authors">Ruishi Qi<sup class="author-mark">†</sup>, Andrew Y. Joe<sup class="author-mark">†‡</sup>, Zuocheng Zhang, Jingxu Xie, Qixin Feng, Zheyu Lu, Ziyu Wang, Takashi Taniguchi, Kenji Watanabe, Sefaattin Tongay, Feng Wang<sup class="author-mark">‡</sup></div>
+        <div class="pub-journal">
+          <a href="https://doi.org/10.1126/science.adl1839" target="_blank"><em>Science</em></a> 388, 278–283 (2025)
+          <div class="pub-badges">
+            <a class="pub-badge" href="https://www.condmatjclub.org/jccm_january_2026_01" target="_blank">Journal Club for Condensed Matter Physics</a>
+          </div>
+        </div>
+      </li>
+
+      <li data-year="2023" data-authorship="1" data-kind="first" data-original-order="9" data-featured-order="8">
+        <div class="pub-title">Thermodynamic behavior of correlated electron-hole fluids in van der Waals heterostructures</div>
+        <div class="pub-authors">Ruishi Qi<sup class="author-mark">†</sup>, Andrew Y. Joe<sup class="author-mark">†‡</sup>, Zuocheng Zhang, Yongxin Zeng, Tiancheng Zheng, Qixin Feng, Jingxu Xie, Emma Regan, Zheyu Lu, Takashi Taniguchi, Kenji Watanabe, Sefaattin Tongay, Michael F. Crommie, Allan H. MacDonald, Feng Wang<sup class="author-mark">‡</sup> </div>
+        <div class="pub-journal">
+          <a href="https://doi.org/10.1038/s41467-023-43799-7" target="_blank"><em>Nature Communications</em></a> 14, 8264 (2023)
+        </div>
+      </li>
+
+      <li data-year="2021" data-authorship="1" data-kind="first" data-original-order="10" data-featured-order="7">
+        <div class="pub-title">Measuring phonon dispersion at an interface</div>
+        <div class="pub-authors">Ruishi Qi<sup class="author-mark">†</sup>, Ruochen Shi<sup class="author-mark">†</sup>, Yuehui Li, Yuanwei Sun, Mei Wu, Ning Li, Jinlong Du, Kaihui Liu, Chunlin Chen,  Ji Chen, Feng Wang, Dapeng Yu, En-Ge Wang, Peng Gao<sup class="author-mark">‡</sup></div>
+        <div class="pub-journal">
+          <a href="https://doi.org/10.1038/s41586-021-03971-9" target="_blank"><em>Nature</em></a> 599, 399–403 (2021)
+        </div>
+      </li>
+
+      <li data-year="2021" data-authorship="1" data-kind="first" data-original-order="11" data-featured-order="11">
+        <div class="pub-title">Four-dimensional vibrational spectroscopy for nanoscale mapping of phonon dispersion in BN nanotubes</div>
+        <div class="pub-authors">Ruishi Qi<sup class="author-mark">†</sup>, Ning Li<sup class="author-mark">†</sup>, Jinlong Du, Ruochen Shi, Yang Huang, Xiaoxia Yang, Lei Liu, Zhi Xu, Qing Dai, Dapeng Yu, Peng Gao<sup class="author-mark">‡</sup> </div>
+        <div class="pub-journal">
+          <a href="https://doi.org/10.1038/s41467-021-21452-5" target="_blank"><em>Nature Communications</em></a> 12, 1179 (2021)
+        </div>
+      </li>
+
+      <li data-year="2019" data-authorship="1" data-kind="first" data-original-order="12" data-featured-order="12">
+        <div class="pub-title">Probing far-infrared surface phonon polaritons in semiconductor nanostructures at nanoscale</div>
+        <div class="pub-authors">Ruishi Qi<sup class="author-mark">†</sup>, Renfei Wang<sup class="author-mark">†</sup>, Yuehui Li, Yuanwei Sun, Shulin Chen, Bo Han, Ning Li, Qing Zhang, Xinfeng Liu, Dapeng Yu, Peng Gao<sup class="author-mark">‡</sup></div>
+        <div class="pub-journal">
+          <a href="https://doi.org/10.1021/acs.nanolett.9b01350" target="_blank"><em>Nano Letters</em></a> 19, 5070–5076 (2019)
+        </div>
+      </li>
+
+      <li data-year="2026" data-authorship="2" data-kind="collaborative" data-original-order="13">
+        <div class="pub-title">Electron Microscopy Measurement of Picometer-Level Distortion Induced Local Phonons at a Defect</div>
+        <div class="pub-authors">Bo Han, Ruochen Shi, Huining Peng, Yingjie Lv, Ruishi Qi, Yuehui Li, Jingmin Zhang, Jinlong Du, Pu Yu, Peng Gao<sup class="author-mark">‡</sup></div>
+        <div class="pub-journal"><a href="https://pubs.acs.org/doi/10.1021/acs.nanolett.5c05660" target="_blank"><em>Nano Letters</em></a> 26 (4), 1449-1454 (2026)</div>
+      </li>
+
+      <li data-year="2026" data-authorship="2" data-kind="collaborative" data-original-order="13.1">
+        <div class="pub-title">Tunable Interlayer Charge-transfer States in MoSe<sub>2</sub>/WS<sub>2</sub> Moiré Superlattices</div>
+        <div class="pub-authors">Zheyu Lu, Jiahui Nie, Tianle Wang, Rwik Dutta, Ruishi Qi, Jingxu Xie, Can Uzundal, Jianghan Xiao, Ziyu Wang, Yibo Feng, Kenji Watanabe, Takashi Taniguchi, James R. Chelikowsky, Archana Raja, Steven G. Louie, Mit H. Naik, Michael P. Zaletel, Feng Wang</div>
+        <div class="pub-journal"><a href="https://arxiv.org/abs/2605.05571" target="_blank"><em>arXiv</em></a>:2605.05571 (2026)</div>
+      </li>
+
+      <li data-year="2026" data-authorship="2" data-kind="collaborative" data-original-order="13.2">
+        <div class="pub-title">Electrically controlled Heat Assisted Magnetic Recording in Intercalated 2D Magnets</div>
+        <div class="pub-authors">Josue Rodriguez, Ruishi Qi, Catherine Xu, Feng Wang, James G. Analytis, Hossein Taghinejad</div>
+        <div class="pub-journal"><a href="https://arxiv.org/abs/2605.06645" target="_blank"><em>arXiv</em></a>:2605.06645 (2026)</div>
+      </li>
+
+      <li data-year="2025" data-authorship="2" data-kind="collaborative" data-original-order="14">
+        <div class="pub-title">Terahertz electrodynamics in a zero-field Wigner crystal</div>
+        <div class="pub-authors">Su-Di Chen<sup class="author-mark">‡</sup>, Ruishi Qi, Ha-Leem Kim, Qixin Feng, Ruichen Xia, Dishan Abeysinghe, Jingxu Xie, Takashi Taniguchi, Kenji Watanabe, Dung-Hai Lee, Feng Wang<sup class="author-mark">‡</sup></div>
+        <div class="pub-journal"><a href="https://arxiv.org/abs/2509.10624" target="_blank"><em>arXiv</em></a>:2509.10624 (2025)</div>
+      </li>
+
+      <li data-year="2025" data-authorship="2" data-kind="collaborative" data-original-order="15">
+        <div class="pub-title">Contactless cavity sensing of superfluid stiffness in atomically thin 4Hb-TaS2</div>
+        <div class="pub-authors">Trevor Chistolini<sup class="author-mark">†</sup>, Ha-Leem Kim, Qiyu Wang, Su-Di Chen, Luke Pritchard Cairns, Ryan Patrick Day, Collin Sanborn, Hyunseong Kim, Zahra Pedramrazi, Ruishi Qi, Takashi Taniguchi, Kenji Watanabe, James G. Analytis, David I. Santiago, Irfan Siddiqi, Feng Wang<sup class="author-mark">‡</sup></div>
+        <div class="pub-journal"><a href="https://arxiv.org/abs/2510.25124" target="_blank"><em>arXiv</em></a>:2510.25124 (2025)</div>
+      </li>
+
+      <li data-year="2025" data-authorship="2" data-kind="collaborative" data-original-order="16">
+        <div class="pub-title">Direct Measurement of Terahertz Conductivity in a Gated Monolayer Semiconductor</div>
+        <div class="pub-authors">Su-Di Chen, Qixin Feng, Wenyu Zhao, Ruishi Qi, Zuocheng Zhang, Dishan Abeysinghe, Can Uzundal, Jingxu Xie, Takashi Taniguchi, Kenji Watanabe, Feng Wang<sup class="author-mark">‡</sup></div>
+        <div class="pub-journal"><a href="https://doi.org/10.1021/acs.nanolett.5c01605" target="_blank"><em>Nano Letters</em></a> 25 (19), 7998-8002 (2025)</div>
+      </li>
+
+      <li data-year="2025" data-authorship="2" data-kind="collaborative" data-original-order="17">
+        <div class="pub-title">Measurement of far-infrared surface phonon polaritons in AlN nanowires via electron microscope</div>
+        <div class="pub-authors">Chao He, Ze Hua, Peiyi He, Ruishi Qi, Yuehui Li, Ruiwen Shao, Weikang Dong, Ruochen Shi, Yeliang Wang, Peng Gao<sup class="author-mark">‡</sup></div>
+        <div class="pub-journal"><a href="https://iopscience.iop.org/article/10.1088/1674-1056/ae2a00" target="_blank"><em>Chinese Physics B</em></a> 35, 037901 (2025)</div>
+      </li>
+
+      <li data-year="2025" data-authorship="2" data-kind="collaborative" data-original-order="18">
+        <div class="pub-title">Femtojoule All-optical Nonlinearity for Deep Learning with Incoherent Illumination</div>
+        <div class="pub-authors">Qixin Feng<sup class="author-mark">†</sup>, Can B. Uzundal<sup class="author-mark">†</sup>, Ruihan Guo, Collin Sanborn, Ruishi Qi, Jingxu Xie, Jianing Zhang, Junqiao Wu, Feng Wang<sup class="author-mark">‡</sup></div>
+        <div class="pub-journal"><a href="https://doi.org/10.1126/sciadv.ads4224" target="_blank"><em>Science Advances</em></a> 11, eads4224 (2025)</div>
+      </li>
+
+      <li data-year="2025" data-authorship="2" data-kind="collaborative" data-original-order="19">
+        <div class="pub-title">Strongly confined Mid-infrared to Terahertz Phonon Polaritons in Ultra-thin SrTiO3</div>
+        <div class="pub-authors">Peiyi He<sup class="author-mark">†</sup>, Jiade Li<sup class="author-mark">†</sup>, Cong Li, Ning Li, Bo Han, Ruochen Shi, Ruishi Qi, Jinlong Du, Pu Yu, Peng Gao<sup class="author-mark">‡</sup></div>
+        <div class="pub-journal"><a href="https://www.science.org/doi/10.1126/sciadv.ady7316" target="_blank"><em>Science Advances</em></a> 11, eady7316 (2025)</div>
+      </li>
+
+      <li data-year="2025" data-authorship="2" data-kind="collaborative" data-original-order="20">
+        <div class="pub-title">Single-dislocation phonons: atomic-scale measurement and their thermal properties</div>
+        <div class="pub-authors">Yue-Hui Li<sup class="author-mark">†</sup>, Bo Han<sup class="author-mark">†</sup>, Xiao-Long Yang, Rui-Lin Mao, Fa-Chen Liu, Ruo-Chen Shi, Rui-Shi Qi, Xiao-Rui Hao, Ning Li, Bing-Yao Liu, Xiao-Mei Li, Jin-Long Du, Ji Chen, Wu Li, Peng Gao<sup class="author-mark">‡</sup></div>
+        <div class="pub-journal"><a href="https://doi.org/10.1088/0256-307X/42/6/066302" target="_blank"><em>Chinese Physics Letters</em></a> 42, 066302 (2025)</div>
+      </li>
+
+      <li data-year="2024" data-authorship="2" data-kind="collaborative" data-original-order="21">
+        <div class="pub-title">Terahertz phonon engineering with van der Waals heterostructures</div>
+        <div class="pub-authors">Yoseob Yoon<sup class="author-mark">‡</sup>, Zheyu Lu, Can Uzundal, Ruishi Qi, Wenyu Zhao, Sudi Chen, Qixin Feng, Woochang Kim, Mit H. Naik, Kenji Watanabe, Takashi Taniguchi, Steven G. Louie, Michael F. Crommie, Feng Wang<sup class="author-mark">‡</sup></div>
+        <div class="pub-journal"><a href="https://doi.org/10.1038/s41586-024-07604-9" target="_blank"><em>Nature</em></a> 631, 771-776 (2024)</div>
+      </li>
+
+      <li data-year="2024" data-authorship="2" data-kind="collaborative" data-original-order="22">
+        <div class="pub-title">Low Resistance Contact to P-type Monolayer WSe2</div>
+        <div class="pub-authors">Jingxu Xie, Zuocheng Zhang, Haodong Zhang, Vikram Nagarajan, Wenyu Zhao, Ha-Leem Kim, Collin Sanborn, Ruishi Qi, Sudi Chen, Salman Kahn, Kenji Watanabe, Takashi Taniguchi, Alex Zettl, Michael F. Crommie, James Analytis, Feng Wang<sup class="author-mark">‡</sup></div>
+        <div class="pub-journal"><a href="https://doi.org/10.1021/acs.nanolett.3c04195" target="_blank"><em>Nano Letters</em></a> 24 (20), 5937-5943 (2024)</div>
+      </li>
+
+      <li data-year="2024" data-authorship="2" data-kind="collaborative" data-original-order="23">
+        <div class="pub-title">Engineering correlated insulators in bilayer graphene with a remote Coulomb superlattice</div>
+        <div class="pub-authors">Zuocheng Zhang<sup class="author-mark">†</sup>, Jingxu Xie<sup class="author-mark">†</sup>, Wenyu Zhao, Ruishi Qi, Collin Sanborn, Shaoxin Wang, Salman Kahn, Kenji Watanabe, Takashi Taniguchi, Alex Zettl, Michael Crommie, Feng Wang<sup class="author-mark">‡</sup></div>
+        <div class="pub-journal"><a href="https://doi.org/10.1038/s41563-023-01754-3" target="_blank"><em>Nature Materials</em></a> 23, 189-195 (2024)</div>
+      </li>
+
+      <li data-year="2024" data-authorship="2" data-kind="collaborative" data-original-order="24">
+        <div class="pub-title">Atomic-scale observation of localized phonons at FeSe/SrTiO3 interface</div>
+        <div class="pub-authors">Ruochen Shi<sup class="author-mark">†</sup>, Qize Li<sup class="author-mark">†</sup>, Xiaofeng Xu, Bo Han, Ruixue Zhu, Fachen Liu, Ruishi Qi, Xiaowen Zhang, Jinlong Du, Ji Chen, Dapeng Yu, Xuetao Zhu, Jiandong Guo, Peng Gao<sup class="author-mark">‡</sup></div>
+        <div class="pub-journal"><a href="https://doi.org/10.1038/s41467-024-47688-5" target="_blank"><em>Nature Communications</em></a> 15, 3418 (2024)</div>
+      </li>
+
+      <li data-year="2024" data-authorship="2" data-kind="collaborative" data-original-order="25">
+        <div class="pub-title">Probing Hyperbolic Shear Polaritons in β-Ga2O3 Nanostructures Using STEM-EELS</div>
+        <div class="pub-authors">Zhenyu Zhang, Tao Wang, Hailing Jiang, Ruishi Qi, Yuehui Li, Jinlin Wang, Shanshan Sheng, Ning Li, Ruochen Shi, Jiaqi Wei, Fang Liu, Shengnan Zhang, Xiaoqing Huo, Jinlong Du, Jingmin Zhang, Jun Xu, Xin Rong, Peng Gao, Bo Shen, Xinqiang Wang<sup class="author-mark">‡</sup></div>
+        <div class="pub-journal"><a href="https://doi.org/10.1002/adma.202204884" target="_blank"><em>Advanced Materials</em></a> 36, 2204884 (2024)</div>
+      </li>
+
+      <li data-year="2024" data-authorship="2" data-kind="collaborative" data-original-order="26">
+        <div class="pub-title">Nanoscale Localized Phonons at Al2O3 Grain Boundaries</div>
+        <div class="pub-authors">Jingyuan Yan, Ruochen Shi, Jiake Wei, Yuehui Li, Ruishi Qi, Mei Wu, Xiaomei Li, Bin Feng, Peng Gao, Naoya Shibata, Yuichi Ikuhara<sup class="author-mark">‡</sup></div>
+        <div class="pub-journal"><a href="https://doi.org/10.1021/acs.nanolett.3c04149" target="_blank"><em>Nano Letters</em></a> 24 (11), 3323-3330 (2024)</div>
+      </li>
+
+      <li data-year="2023" data-authorship="2" data-kind="collaborative" data-original-order="27">
+        <div class="pub-title">Four-dimensional electron energy-loss spectroscopy</div>
+        <div class="pub-authors">Mei Wu, Ruochen Shi, Ruishi Qi, Yuehui Li, Jinlong Du, Peng Gao<sup class="author-mark">‡</sup></div>
+        <div class="pub-journal"><a href="https://www.sciencedirect.com/science/article/pii/S0304399123001353" target="_blank"><em>Ultramicroscopy</em></a> 253, 113818 (2023)</div>
+      </li>
+
+      <li data-year="2023" data-authorship="2" data-kind="collaborative" data-original-order="28">
+        <div class="pub-title">Effects of localized interface phonons on heat conductivity in ingredient heterogeneous solids</div>
+        <div class="pub-authors">Mei Wu<sup class="author-mark">†</sup>, Ruochen Shi<sup class="author-mark">†</sup>, Ruishi Qi<sup class="author-mark">†</sup>, Yuehui Li, Tao Feng, Bingyao Liu, Jingyuan Yan, Xiaomei Li, Zhetong Liu, Tao Wang, Tongbo Wei, Zhiqiang Liu, Jinlong Du, Ji Chen, Peng Gao<sup class="author-mark">‡</sup></div>
+        <div class="pub-journal"><a href="https://doi.org/10.1088/0256-307X/40/3/036801" target="_blank"><em>Chinese Physics Letters</em></a> 40 (3), 036801 (2023)</div>
+      </li>
+
+      <li data-year="2023" data-authorship="2" data-kind="collaborative" data-original-order="29">
+        <div class="pub-title">Hyperbolic whispering-gallery phonon polaritons in boron-nitride nanotubes</div>
+        <div class="pub-authors">Xiangdong Guo<sup class="author-mark">†</sup>, Ning Li<sup class="author-mark">†</sup>, Xiaoxia Yang<sup class="author-mark">‡</sup>, Ruishi Qi, Chenchen Wu, Ruochen Shi, Yuehui Li, Yang Huang, F. Javier García de Abajo, En-Ge Wang, Peng Gao, Qing Dai<sup class="author-mark">‡</sup></div>
+        <div class="pub-journal"><a href="https://www.nature.com/articles/s41565-023-01324-3" target="_blank"><em>Nature Nanotechnology</em></a> 18, 529-534 (2023)</div>
+      </li>
+
+      <li data-year="2023" data-authorship="2" data-kind="collaborative" data-original-order="30">
+        <div class="pub-title">Phonon transition across an isotopic interface</div>
+        <div class="pub-authors">Ning Li<sup class="author-mark">†</sup>, Ruochen Shi<sup class="author-mark">†</sup>, Yifei Li<sup class="author-mark">†</sup>, Ruishi Qi, Fachen Liu, Xiaowen Zhang, Zhetong Liu, Yuehui Li, Xiangdong Guo, Kaihui Liu, Ying Jiang, Xin-Zheng Li, Ji Chen, Lei Liu, En-Ge Wang, Peng Gao<sup class="author-mark">‡</sup></div>
+        <div class="pub-journal"><a href="https://doi.org/10.1038/s41467-023-38053-z" target="_blank"><em>Nature Communications</em></a> 14, 2382 (2023)</div>
+      </li>
+
+      <li data-year="2022" data-authorship="2" data-kind="collaborative" data-original-order="31">
+        <div class="pub-title">Atomic-scale probing of heterointerface phonon bridges in nitride semiconductor</div>
+        <div class="pub-authors">Yue-Hui Li, Rui-Shi Qi, Ruo-Chen Shi, Jian-Nan Hu, Zhe-Tong Liu, Yuan-Wei Sun, Ming-Qiang Li, Ning Li, Can-Li Song, Lai Wang, Zhi-Biao Hao, Yi Luo, Qi-Kun Xue, Xu-Cun Ma, Peng Gao<sup class="author-mark">‡</sup></div>
+        <div class="pub-journal"><a href="https://doi.org/10.1073/pnas.2117027119" target="_blank"><em>Proceedings of the National Academy of Sciences</em></a> 119 (8), e2117027119 (2022)</div>
+      </li>
+
+      <li data-year="2022" data-authorship="2" data-kind="collaborative" data-original-order="32">
+        <div class="pub-title">Dynamics of Polar Skyrmion Bubbles under Electric Fields</div>
+        <div class="pub-authors">Ruixue Zhu<sup class="author-mark">†</sup>, Zhexin Jiang, Xinxin Zhang, Xiangli Zhong, Congbing Tan, Mingwei Liu, Yuanwei Sun, Xiaomei Li, Ruishi Qi, Ke Qu, Zhetong Liu, Mei Wu, Mingqiang Li, Boyuan Huang, Zhi Xu, Jinbin Wang, Kaihui Liu, Peng Gao<sup class="author-mark">‡</sup>, Jie Wang, Jiangyu Li, Xuedong Bai</div>
+        <div class="pub-journal"><a href="https://doi.org/10.1103/PhysRevLett.129.107601" target="_blank"><em>Physical Review Letters</em></a> 129 (10), 107601 (2022)</div>
+      </li>
+
+      <li data-year="2022" data-authorship="2" data-kind="collaborative" data-original-order="33">
+        <div class="pub-title">Studying Plasmon Dispersion of MXene for Enhanced Electromagnetic Absorption</div>
+        <div class="pub-authors">Xiangdong Guo<sup class="author-mark">†</sup>, Ning Li<sup class="author-mark">†</sup>, Chenchen Wu, Xiaokang Dai, Ruishi Qi, Tianyu Qiao, Tuoyi Su, Dandan Lei, Nishuang Liu, Jinlong Du, Enge Wang, Xiaoxia Yang, Peng Gao, Qing Dai<sup class="author-mark">‡</sup></div>
+        <div class="pub-journal"><a href="https://doi.org/10.1002/adma.202201120" target="_blank"><em>Advanced Materials</em></a> 34 (33), 2270237 (2022)</div>
+      </li>
+
+      <li data-year="2022" data-authorship="2" data-kind="collaborative" data-original-order="34">
+        <div class="pub-title">Charge Transfer Dynamics in MoSe2/hBN/WSe2 Heterostructures</div>
+        <div class="pub-authors">Yoseob Yoon, Zuocheng Zhang, Ruishi Qi, Andrew Y. Joe, Renee Sailus, Kenji Watanabe, Takashi Taniguchi, Sefaattin Tongay, Feng Wang<sup class="author-mark">‡</sup></div>
+        <div class="pub-journal"><a href="https://doi.org/10.1021/acs.nanolett.2c04030" target="_blank"><em>Nano Letters</em></a> 22 (24), 10140-10146 (2022)</div>
+      </li>
+
+      <li data-year="2021" data-authorship="2" data-kind="collaborative" data-original-order="35">
+        <div class="pub-title">Direct observation of highly confined phonon polaritons in suspended monolayer hexagonal boron nitride</div>
+        <div class="pub-authors">Ning Li<sup class="author-mark">†</sup>, Xiangdong Guo<sup class="author-mark">†</sup>, Xiaoxia Yang<sup class="author-mark">‡</sup>, Ruishi Qi, Tianyu Qiao, Yifei Li, Ruochen Shi, Yuehui Li, Kaihui Liu, Zhi Xu, Lei Liu, F. Javier García de Abajo, Qing Dai, En-Ge Wang, Peng Gao<sup class="author-mark">‡</sup></div>
+        <div class="pub-journal"><a href="https://doi.org/10.1038/s41563-020-0763-z" target="_blank"><em>Nature Materials</em></a> 20, 43-48 (2021)</div>
+      </li>
+
+      <li data-year="2021" data-authorship="2" data-kind="collaborative" data-original-order="36">
+        <div class="pub-title">Anisotropic moiré optical transitions in twisted monolayer/bilayer phosphorene heterostructures</div>
+        <div class="pub-authors">Shilong Zhao<sup class="author-mark">†</sup>, Erqing Wang<sup class="author-mark">†</sup>, Ebru Alime Üzer, Shuaifei Guo, Ruishi Qi, Junyang Tan, Kenji Watanabe, Takashi Taniguchi, Tom Nilges, Peng Gao, Yuanbo Zhang, Hui-Ming Cheng, Bilu Liu, Xiaolong Zou, Feng Wang<sup class="author-mark">‡</sup></div>
+        <div class="pub-journal"><a href="https://doi.org/10.1038/s41467-021-24272-9" target="_blank"><em>Nature Communications</em></a> 12, 3947 (2021)</div>
+      </li>
+
+      <li data-year="2020" data-authorship="2" data-kind="collaborative" data-original-order="37">
+        <div class="pub-title">Broad-Spectral-Range Sustainability and Controllable Excitation of Hyperbolic Phonon Polaritons in α-MoO3</div>
+        <div class="pub-authors">Weikang Dong<sup class="author-mark">†</sup>, Ruishi Qi<sup class="author-mark">†</sup>, Tiansheng Liu, Yi Li, Ning Li, Ze Hua, Zirui Gao, Shuyuan Zhang, Kaihui Liu, Jiandong Guo, Peng Gao<sup class="author-mark">‡</sup></div>
+        <div class="pub-journal"><a href="https://doi.org/10.1002/adma.202002014" target="_blank"><em>Advanced Materials</em></a> 32, 2002014 (2020)</div>
+      </li>
+
+      <li data-year="2020" data-authorship="2" data-kind="collaborative" data-original-order="38">
+        <div class="pub-title">Manipulation of surface phonon polaritons in SiC nanorods</div>
+        <div class="pub-authors">Yuehui Li, Ruishi Qi, Ruochen Shi, Ning Li, Peng Gao<sup class="author-mark">‡</sup></div>
+        <div class="pub-journal"><a href="https://doi.org/10.1016/j.scib.2020.02.026" target="_blank"><em>Science Bulletin</em></a> 65 (10), 820-826 (2020)</div>
+      </li>
+
+      <li data-year="2019" data-authorship="2" data-kind="collaborative" data-original-order="39">
+        <div class="pub-title">Probing lattice vibrations at SiO2/Si surface and interface with nanometer resolution</div>
+        <div class="pub-authors">Yue-Hui Li<sup class="author-mark">†</sup>, Mei Wu<sup class="author-mark">†</sup>, Rui-Shi Qi, Ning Li, Yuan-Wei Sun, Cheng-Long Shi, Xue-Tao Zhu, Jian-Dong Guo, Da-Peng Yu, Peng Gao<sup class="author-mark">‡</sup></div>
+        <div class="pub-journal"><a href="https://doi.org/10.1088/0256-307X/36/2/026801" target="_blank"><em>Chinese Physics Letters</em></a> 36 (2), 026801 (2019)</div>
+      </li>
+    </ul>
+  </div>
+<div class="section-card">
+    <h2>Publication profiles</h2>
+    <div class="profile-links publication-profile-links">
+      <a class="profile-link" href="https://scholar.google.com/citations?user=NA7sfwsAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
+        <span class="profile-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 3 1.8 10.1 12 17.2l10.2-7.1L12 3Zm0 16.5-6.2-4.3v2.3L12 21.8l6.2-4.3v-2.3L12 19.5Z"/></svg>
+        </span>
+        <span>Google Scholar</span>
+      </a>
+      <a class="profile-link" href="https://www.researchgate.net/profile/Ruishi-Qi?ev=hdr_xprf" target="_blank" rel="noopener noreferrer">
+        <span class="profile-icon researchgate" aria-hidden="true">RG</span>
+        <span>ResearchGate</span>
+      </a>
+    </div>
+  </div>
+
+
+
+
+</section>
+
+
+
+<section class="panel" id="panel-contact">
+  <div class="section-card">
+    <h2>Contact</h2>
+    <div class="about-text">
+      <p><strong>Email:</strong> <a href="mailto:ruishiqi@berkeley.edu">ruishiqi@berkeley.edu</a></p>
+      <p><strong>Address:</strong> 225 Birge Hall, University of California, Berkeley, CA 94720, USA</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script>
+  const tabs = document.querySelectorAll('[data-tab]');
+  const panels = document.querySelectorAll('.panel');
+  const tabNames = Array.from(tabs).map(tab => tab.dataset.tab);
+
+  function getHashTab() {
+    const hash = window.location.hash.replace('#', '');
+    return tabNames.includes(hash) ? hash : 'home';
+  }
+
+  function activateTab(name) {
+    tabs.forEach(tab => {
+      tab.classList.toggle('active', tab.dataset.tab === name);
+    });
+    panels.forEach(panel => {
+      panel.classList.toggle('active', panel.id === 'panel-' + name);
+    });
+  }
+
+  function scrollToPanelTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', event => {
+      event.preventDefault();
+      activateTab(tab.dataset.tab);
+      history.pushState(null, '', '#' + tab.dataset.tab);
+      scrollToPanelTop();
+    });
+  });
+
+  window.addEventListener('popstate', () => {
+    activateTab(getHashTab());
+    scrollToPanelTop();
+  });
+
+  window.addEventListener('hashchange', () => {
+    activateTab(getHashTab());
+    scrollToPanelTop();
+  });
+
+  activateTab(getHashTab());
+
+  const olderNews = document.getElementById('olderNews');
+  const olderNewsToggle = olderNews?.querySelector('.publication-collapse-toggle');
+
+  if (olderNews && olderNewsToggle) {
+    olderNewsToggle.addEventListener('click', () => {
+      const expanded = olderNews.classList.toggle('expanded');
+      olderNewsToggle.setAttribute('aria-expanded', String(expanded));
+      const label = olderNewsToggle.querySelector('h3');
+      if (label) {
+        label.textContent = expanded ? 'Show less' : 'Show more';
+      }
+    });
+  }
+
+  const publicationList = document.getElementById('publicationList');
+  const publicationSortButtons = document.querySelectorAll('[data-publication-sort]');
+
+  function comparePublicationOrder(a, b, mode) {
+    const yearA = Number(a.dataset.year || 0);
+    const yearB = Number(b.dataset.year || 0);
+    const authorshipA = Number(a.dataset.authorship || 99);
+    const authorshipB = Number(b.dataset.authorship || 99);
+    const originalA = Number(a.dataset.originalOrder || 999);
+    const originalB = Number(b.dataset.originalOrder || 999);
+    const featuredA = Number(a.dataset.featuredOrder || originalA);
+    const featuredB = Number(b.dataset.featuredOrder || originalB);
+
+    if (mode === 'newest') {
+      return yearB - yearA || authorshipA - authorshipB || originalA - originalB;
+    }
+
+    if (mode === 'oldest') {
+      return yearA - yearB || authorshipA - authorshipB || originalA - originalB;
+    }
+
+    return featuredA - featuredB || authorshipA - authorshipB || originalA - originalB;
+  }
+
+  function sortPublications(mode) {
+    if (!publicationList) return;
+
+    const items = Array.from(publicationList.children);
+    items.sort((a, b) => comparePublicationOrder(a, b, mode));
+    items.forEach(item => publicationList.appendChild(item));
+
+    publicationSortButtons.forEach(button => {
+      const isActive = button.dataset.publicationSort === mode;
+      button.classList.toggle('active', isActive);
+      button.setAttribute('aria-pressed', String(isActive));
+    });
+  }
+
+  publicationSortButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      sortPublications(button.dataset.publicationSort);
+    });
+  });
+
+  sortPublications('featured');
+
+    const slides = Array.from(document.querySelectorAll(".slide"));
+    const dotsContainer = document.getElementById("dots");
+    const caption = document.getElementById("caption");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+
+    let current = 0;
+    let timer = null;
+    const intervalMs = 4000;
+
+    function buildDots() {
+      slides.forEach((_, i) => {
+        const dot = document.createElement("button");
+        dot.className = "dot" + (i === 0 ? " active" : "");
+        dot.setAttribute("aria-label", `Go to image ${i + 1}`);
+        dot.addEventListener("click", () => {
+          showSlide(i);
+          restartAutoPlay();
+        });
+        dotsContainer.appendChild(dot);
+      });
+    }
+
+    function updateDots() {
+      const dots = dotsContainer.querySelectorAll(".dot");
+      dots.forEach((dot, i) => {
+        dot.classList.toggle("active", i === current);
+      });
+    }
+
+    function showSlide(index) {
+      slides[current].classList.remove("active");
+      current = (index + slides.length) % slides.length;
+      slides[current].classList.add("active");
+      const img = slides[current].querySelector("img");
+      caption.textContent = img.alt || "";
+      updateDots();
+    }
+
+    function nextSlide() {
+      showSlide(current + 1);
+    }
+
+    function prevSlide() {
+      showSlide(current - 1);
+    }
+
+    function startAutoPlay() {
+      stopAutoPlay();
+      timer = setInterval(nextSlide, intervalMs);
+    }
+
+    function stopAutoPlay() {
+      if (timer) {
+        clearInterval(timer);
+        timer = null;
+      }
+    }
+
+    function restartAutoPlay() {
+      startAutoPlay();
+    }
+
+    prevBtn.addEventListener("click", () => {
+      prevSlide();
+      restartAutoPlay();
+    });
+
+    nextBtn.addEventListener("click", () => {
+      nextSlide();
+      restartAutoPlay();
+    });
+
+    const carousel = document.getElementById("carousel");
+    carousel.addEventListener("mouseenter", stopAutoPlay);
+    carousel.addEventListener("mouseleave", startAutoPlay);
+
+    buildDots();
+    startAutoPlay();
+
+    document.querySelectorAll('.pub-authors').forEach(el => {
+      el.innerHTML = el.innerHTML.replace(
+        /\bRuishi Qi\b/g,
+        '<strong>Ruishi Qi</strong>'
+      ).replace(
+        /\bRui-Shi Qi\b/g,
+        '<strong>Rui-Shi Qi</strong>'
+      ).replace(
+        /\bR\. Qi\b/g,
+        '<strong>R. Qi</strong>'
+      );
+    });
+
+</script>
+
+</body>
+</html>
