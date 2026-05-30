@@ -372,6 +372,10 @@
       max-width: none;
     }
 
+    .note-text {
+      max-width: none;
+    }
+
     .about-text p {
       margin: 0 0 1rem;
     }
@@ -930,8 +934,7 @@
   <div class="section-card">
     <h2>News</h2>
     <ul class="news-list news-timeline">
-      <li><span class="news-date">May 2026</span><span class="news-divider">|</span><span class="news-content">I received my <strong>Ph.D. in Physics</strong> from UC Berkeley.</span></li>
-      <li><span class="news-date">May 2026</span><span class="news-divider">|</span><span class="news-content">I received the <strong>Alex Zettl Graduate Student Award in Physics</strong> and the <strong>Jackson C. Koo Award</strong> from UC Berkeley.</span></li>
+      <li><span class="news-date">May 2026</span><span class="news-divider">|</span><span class="news-content">I received my <strong>Ph.D. in Physics</strong> from UC Berkeley and was awarded the <strong>Alex Zettl Graduate Student Award in Physics</strong> and the <strong>Jackson C. Koo Award</strong>.</span></li>
       <li><span class="news-date">Mar 2026</span><span class="news-divider">|</span><span class="news-content">Our paper <a href="https://doi.org/10.1103/4v1f-lkh2" target="_blank"><em>Orbital-dependent Coulomb drag in electron-hole bilayer graphene heterostructures</em></a> appeared in <strong>Physical Review Letters</strong>.</span></li>
       <li><span class="news-date">Jan 2026</span><span class="news-divider">|</span><span class="news-content">I received the 2026-2029 <strong>Stanford Science Fellowship</strong> and will join Stanford this summer.</span></li>
       <li><span class="news-date">Jan 2026</span><span class="news-divider">|</span><span class="news-content">Our paper <a href="https://www.nature.com/articles/s41567-026-03184-9" target="_blank"><em>An exciton crystal in a moiré excitonic insulator</em></a> appeared in <strong>Nature Physics</strong>.</span></li>
@@ -956,7 +959,7 @@
 
   <div class="section-card">
     <h2>Note</h2>
-    <div class="about-text lead">
+    <div class="about-text lead note-text">
       I expect to be on the 2026-2027 academic job market. My independent research program will focus on creating and probing strongly correlated excitonic matter in two-dimensional materials.
     </div>
   </div>
@@ -992,11 +995,18 @@
   <div class="section-card">
     <h2>Awards and Honors</h2>
     <ul class="news-list">
+      <li>Stanford Science Fellow (2026)</li>
       <li>Alex Zettl Graduate Student Award in Physics, UC Berkeley (2026)</li>
       <li>Jackson C. Koo Award, UC Berkeley (2026)</li>
-      <li>Stanford Science Fellow (2026)</li>
       <li>Kavli ENSI Graduate Student Fellow (2023)</li>
       <li>Weiming Scholar, Peking University (2020)</li>
+    </ul>
+    <div class="publication-collapse news-collapse" id="earlierHonors">
+      <button class="publication-collapse-toggle" type="button" aria-expanded="false" aria-controls="earlierHonorsList" data-collapsed-label="Show earlier honors" data-expanded-label="Show fewer honors">
+        <h3>Show earlier honors</h3>
+        <span class="collapse-icon" aria-hidden="true"></span>
+      </button>
+      <ul class="news-list collaborative-publication-list" id="earlierHonorsList">
       <li>Outstanding Graduate of Beijing (2020)</li>
       <li>Outstanding Graduate in Peking University (2020)</li>
       <li>Outstanding Undergraduate Research Project, Peking University (2020)</li>
@@ -1009,7 +1019,8 @@
       <li>May 4th Scholarship, Peking University (2017)</li>
       <li>Merit Student, Peking University (2017)</li>
       <li>Gold medal, Chinese Physics Olympiad (CPhO) (2015)</li>
-    </ul>
+      </ul>
+    </div>
   </div>
 
 </section>
@@ -1066,7 +1077,7 @@
           </p>
           <div class="research-links">
             <div><a href="https://www.science.org/doi/10.1126/science.adn4584" target="_blank">Electrically controlled interlayer trion fluid</a> <span class="pub-note">(<em>Science</em>, 2025)</span></div>
-            <div>Gate-tunable biexcitons in electron-hole-electron trilayers <span class="pub-note">(under revision at <em>Science</em>)</span></div>
+            <div>Gate-tunable biexcitons in electron-hole-electron trilayers <span class="pub-note">(under final editorial processing at <em>Science</em>)</span></div>
           </div>
         </div>
       </div>
@@ -1141,7 +1152,7 @@
       <li data-year="2026" data-authorship="0" data-kind="preprint" data-original-order="2" data-featured-order="4">
         <div class="pub-title">Gate-tunable biexcitons in electron-hole-electron trilayers</div>
         <div class="pub-authors">Ruishi Qi<sup class="author-mark">†‡</sup>, Qize Li<sup class="author-mark">†</sup>, Zuocheng Zhang, Jingxu Xie, Zhiyuan Cui, Takashi Taniguchi, Kenji Watanabe, Michael F. Crommie, Feng Wang<sup class="author-mark">‡</sup></div>
-        <div class="pub-journal">Under revision at <em>Science</em> (2026)</div>
+        <div class="pub-journal">Under final editorial processing at <em>Science</em> (2026)</div>
       </li>
 
       <li data-year="2026" data-authorship="1" data-kind="first" data-original-order="3" data-featured-order="2">
@@ -1437,7 +1448,7 @@
   <div class="section-card">
     <h2>Contact</h2>
     <div class="about-text">
-      <p><strong>Email:</strong> <a href="mailto:ruishiqi@berkeley.edu">ruishiqi@berkeley.edu</a></p>
+      <p><strong>Email:</strong> <a href="mailto:ruishiqi@berkeley.edu">ruishiqi@berkeley.edu</a>; <a href="mailto:ruishiqi@stanford.edu">ruishiqi@stanford.edu</a></p>
       <p><strong>Address:</strong> 225 Birge Hall, University of California, Berkeley, CA 94720, USA</p>
     </div>
   </div>
@@ -1489,19 +1500,21 @@
 
   activateTab(getHashTab());
 
-  const olderNews = document.getElementById('olderNews');
-  const olderNewsToggle = olderNews?.querySelector('.publication-collapse-toggle');
+  document.querySelectorAll('.publication-collapse-toggle').forEach(toggle => {
+    const collapsible = toggle.closest('.publication-collapse');
+    if (!collapsible) return;
 
-  if (olderNews && olderNewsToggle) {
-    olderNewsToggle.addEventListener('click', () => {
-      const expanded = olderNews.classList.toggle('expanded');
-      olderNewsToggle.setAttribute('aria-expanded', String(expanded));
-      const label = olderNewsToggle.querySelector('h3');
+    toggle.addEventListener('click', () => {
+      const expanded = collapsible.classList.toggle('expanded');
+      toggle.setAttribute('aria-expanded', String(expanded));
+      const label = toggle.querySelector('h3');
+      const collapsedLabel = toggle.dataset.collapsedLabel || 'Show more';
+      const expandedLabel = toggle.dataset.expandedLabel || 'Show less';
       if (label) {
-        label.textContent = expanded ? 'Show less' : 'Show more';
+        label.textContent = expanded ? expandedLabel : collapsedLabel;
       }
     });
-  }
+  });
 
   const publicationList = document.getElementById('publicationList');
   const publicationSortButtons = document.querySelectorAll('[data-publication-sort]');
